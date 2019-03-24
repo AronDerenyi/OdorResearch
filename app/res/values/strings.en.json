@@ -1,0 +1,13 @@
+{
+	"test": "Test",
+
+	"imageTestStatement": "Do you find this image positive or negative?",
+
+	"positive": "Positive",
+	"lessPositive": "Less positive",
+	"morePositive": "More positive",
+
+	"negative": "Negative",
+	"lessNegative": "Less negative",
+	"moreNegative": "More negative"
+}

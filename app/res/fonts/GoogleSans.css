@@ -1,0 +1,41 @@
+@font-face {
+	font-family: GoogleSans;
+	font-weight: 400;
+	font-style: normal;
+	src: url(GoogleSans-Regular.ttf);
+}
+
+@font-face {
+	font-family: GoogleSans;
+	font-weight: 400;
+	font-style: italic;
+	src: url(GoogleSans-Italic.ttf);
+}
+
+@font-face {
+	font-family: GoogleSans;
+	font-weight: 500;
+	font-style: normal;
+	src: url(GoogleSans-Medium.ttf);
+}
+
+@font-face {
+	font-family: GoogleSans;
+	font-weight: 500;
+	font-style: italic;
+	src: url(GoogleSans-MediumItalic.ttf);
+}
+
+@font-face {
+	font-family: GoogleSans;
+	font-weight: 700;
+	font-style: normal;
+	src: url(GoogleSans-Bold.ttf);
+}
+
+@font-face {
+	font-family: GoogleSans;
+	font-weight: 700;
+	font-style: italic;
+	src: url(GoogleSans-BoldItalic.ttf);
+}

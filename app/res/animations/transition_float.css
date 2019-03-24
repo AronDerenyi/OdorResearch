@@ -1,0 +1,10 @@
+.float-enter-active,
+.float-leave-active {
+	transition: all 0.2s;
+}
+
+.float-enter,
+.float-leave-to {
+	transform: translateY(150%);
+	opacity: 0;
+}

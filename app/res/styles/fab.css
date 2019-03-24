@@ -1,0 +1,85 @@
+.fab {
+	z-index: var(--fab_z_index);
+
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+
+	box-shadow: 0 4px 20px var(--color_shadow);
+
+	overflow: hidden;
+}
+
+.fab * {
+	color: inherit;
+}
+
+/* Sizes */
+
+.fab {
+	min-width: var(--fab_normal_size);
+	height: var(--fab_normal_size);
+
+	border-radius: var(--fab_normal_corner_radius);
+}
+
+.fab *:first-child {
+	margin-left: var(--fab_normal_padding);
+}
+
+.fab *:not(:first-child) {
+	margin-left: var(--fab_normal_spacing);
+}
+
+.fab *:last-child {
+	margin-right: var(--fab_normal_padding);
+}
+
+.fab.selectable:after {
+	border-radius: var(--fab_normal_corner_radius);
+}
+
+/* Colors */
+
+.fab {
+	background: var(--color_accent);
+	color: var(--color_content_pop);
+}
+
+.fab.positive {
+	background: var(--color_positive);
+}
+
+.fab.negative {
+	background: var(--color_negative);
+}
+
+.fab.selectable:after {
+	background: var(--color_control_highlight_pop);
+}
+
+.fab.subtle {
+	background: var(--color_primary);
+	color: var(--color_accent);
+}
+
+.fab.subtle.positive {
+	color: var(--color_positive);
+}
+
+.fab.subtle.negative {
+	color: var(--color_negative);
+}
+
+.fab.subtle.selectable:after {
+	background: var(--color_control_highlight);
+}
+
+.fab.subtle.positive.selectable:after {
+	background: var(--color_control_highlight_positive);
+}
+
+.fab.subtle.negative.selectable:after {
+	background: var(--color_control_highlight_negative);
+}

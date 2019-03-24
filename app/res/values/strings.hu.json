@@ -1,0 +1,13 @@
+{
+	"test": "Teszt",
+
+	"imageTestStatement": "Pozitívnak vagy negatívnak találja a képet?",
+
+	"positive": "Pozitív",
+	"lessPositive": "Kevésbé pozitív",
+	"morePositive": "Pozitívabb",
+
+	"negative": "Negatív",
+	"lessNegative": "Kevésbé negatív",
+	"moreNegative": "Negatívabb"
+}

@@ -1,0 +1,47 @@
+.window_control {
+	z-index: var(--window_control_z_index);
+
+	display: flex;
+	padding: var(--window_control_padding);
+	flex-direction: row-reverse;
+
+	-webkit-app-region: no-drag;
+}
+
+.window_control > * {
+	width: var(--window_control_button_size);
+	height: var(--window_control_button_size);
+
+	padding: var(--window_control_button_padding);
+
+	fill: transparent;
+	background: var(--color_control_window);
+	border-radius: 100%;
+}
+
+.window_control > *:not(:first-child) {
+	margin-right: var(--window_control_spacing);
+}
+
+.window_control > *:first-child {
+	background: var(--color_control_window_close);
+}
+
+.window_control:hover > * {
+	fill: var(--color_control_window_highligh);
+}
+
+.window_control > *:active {
+	box-shadow: 0 0 16px inset var(--color_shadow);
+}
+
+.window_resize_region {
+	min-width: var(--window_control_resize_region_size);
+	min-height: var(--window_control_resize_region_size);
+	z-index: var(--window_control_z_index);
+
+	opacity: 0;
+
+	pointer-events: none;
+	-webkit-app-region: no-drag;
+}

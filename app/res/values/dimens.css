@@ -1,0 +1,40 @@
+body {
+
+	/* Window control */
+	--window_control_z_index: 32;
+	--window_control_padding: 8px;
+	--window_control_spacing: 8px;
+	--window_control_button_size: 12px;
+	--window_control_button_padding: 2px;
+	--window_control_resize_region_size: 5px;
+
+	/* Button */
+	--button_z_index: 2;
+	--button_size: 36px;
+	--button_padding: 16px;
+	--button_corner_radius: 5px;
+
+	/* Selectable */
+	--selectable_corner_radius: 5px;
+
+	/* FAB */
+	--fab_z_index: 12;
+
+		/* Normal */
+		--fab_normal_size: 56px;
+		--fab_normal_padding: 16px;
+		--fab_normal_spacing: 8px;
+		--fab_normal_corner_radius: 28px;
+
+	/* Home */
+	--home_padding: 32px;
+	--home_spacing: 32px;
+
+	/* Image Test */
+	--image_test_padding: 32px;
+	--image_test_spacing: 32px;
+	--image_test_image_corner_radius: 8px;
+	--image_test_image_rating_margin: 8px;
+	--image_test_feeling_select_width: 200px;
+	--image_test_image_rating_description_spacing: 24px;
+}

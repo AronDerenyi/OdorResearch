@@ -1,0 +1,45 @@
+.selectable {
+	position: relative;
+
+	user-select: none;
+	-webkit-app-region: no-drag;
+}
+
+.selectable::after {
+	content: "";
+
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+
+	background: var(--color_control_highlight);
+	opacity: 0;
+
+	transition: opacity 0.2s;
+	pointer-events: none;
+}
+
+.selectable.round_corner::after {
+	border-radius: var(--selectable_corner_radius);
+}
+
+.selectable.round::after {
+	border-radius: 100%;
+}
+
+.selectable:hover::after {
+	opacity: 0.5;
+}
+
+.selectable:active::after {
+	opacity: 1;
+}
+
+.selectable[selected]::after,
+.selectable[selected]:hover::after,
+.selectable[selected]:active::after {
+	background: var(--color_control_selected);
+	opacity: 1;
+}

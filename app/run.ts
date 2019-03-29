@@ -11,7 +11,7 @@ app.on("ready", function () {
 	});
 
 	window.loadFile(Path.resolve(__dirname, "index.html"));
-	window.webContents.toggleDevTools(); // TODO: Remove after debugging
+	//window.webContents.toggleDevTools(); // TODO: Remove after debugging
 });
 
 app.on("window-all-closed", function () {

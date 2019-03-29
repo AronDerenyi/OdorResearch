@@ -28,6 +28,9 @@ module.exports = {
 			title: "Odor Research"
 		}),
 		new CopyPlugin([{
+			from: "app/package.json",
+			to: "package.json",
+		}, {
 			from: "assets",
 			to: "assets",
 			ignore: [".DS_Store"]

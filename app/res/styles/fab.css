@@ -40,6 +40,29 @@
 	border-radius: var(--fab_normal_corner_radius);
 }
 
+.fab.large {
+	min-width: var(--fab_large_size);
+	height: var(--fab_large_size);
+
+	border-radius: var(--fab_large_corner_radius);
+}
+
+.fab.large *:first-child {
+	margin-left: var(--fab_large_padding);
+}
+
+.fab.large *:not(:first-child) {
+	margin-left: var(--fab_large_spacing);
+}
+
+.fab.large *:last-child {
+	margin-right: var(--fab_large_padding);
+}
+
+.fab.large.selectable:after {
+	border-radius: var(--fab_large_corner_radius);
+}
+
 /* Colors */
 
 .fab {

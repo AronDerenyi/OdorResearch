@@ -2,8 +2,9 @@ import {Dictionary} from "src/util/Collections";
 import {Session} from "src/model/test/Session";
 import {IapsAsset} from "src/model/assets/IapsAsset";
 import {IapsQuestion} from "src/model/moodtest/questions/IapsQuestion";
+import {FaceScaleQuestion} from "src/model/moodtest/questions/FaceScaleQuestion";
 
-export class MoodTestSession extends Session<IapsQuestion> {
+export class MoodTestSession extends Session<FaceScaleQuestion | IapsQuestion> {
 
 	static readonly DETAIL_AGE = "age";
 	static readonly DETAIL_GENDER = "gender";
@@ -29,9 +30,11 @@ export class MoodTestSession extends Session<IapsQuestion> {
 		return {};
 	}
 
-	protected onNext(index: number): IapsQuestion {
-		if (index < this.iapsImages.length) {
-			return new IapsQuestion(this.iapsImages[index]);
+	protected onNext(index: number): FaceScaleQuestion | IapsQuestion {
+		if (index < 1) {
+			return new FaceScaleQuestion();
+		} else if (index < this.iapsImages.length + 1) {
+			return new IapsQuestion(this.iapsImages[index + 1]);
 		} else {
 			return null;
 		}

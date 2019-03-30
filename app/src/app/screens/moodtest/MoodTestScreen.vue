@@ -4,9 +4,10 @@
 	import {MoodTestViewModel} from "src/viewmodel/MoodTestViewModel";
 
 	import Progress from "src/app/components/Progress.vue";
+	import FaceScaleQuestionView from "src/app/screens/moodtest/questionviews/FaceScaleQuestionView.vue";
 	import IapsQuestionView from "src/app/screens/moodtest/questionviews/IapsQuestionView.vue";
 
-	@Component({components: {Progress, IapsQuestionView}})
+	@Component({components: {Progress, FaceScaleQuestionView, IapsQuestionView}})
 	export default class MoodTestScreen extends Vue {
 
 		readonly viewModel = MoodTestViewModel.requireInstance();
@@ -35,6 +36,14 @@
 			});
 		}
 
+		get isFaceScaleQuestion(): boolean {
+			if (this.viewModel.question != null) {
+				return this.viewModel.question instanceof MoodTestViewModel.FaceScaleQuestion;
+			} else {
+				return false;
+			}
+		}
+
 		get isIapsQuestion(): boolean {
 			if (this.viewModel.question != null) {
 				return this.viewModel.question instanceof MoodTestViewModel.IapsQuestion;
@@ -49,10 +58,11 @@
 	<div class="container" style="
 		background: var(--color_background);">
 
-		<!-- Question panels -->
+		<!-- Question views -->
 		<transition name="fade" mode="out-in">
 
-			<IapsQuestionView v-if="isIapsQuestion" :question="viewModel.question" key="panel" class="overlay"/>
+			<FaceScaleQuestionView v-if="isFaceScaleQuestion" :question="viewModel.question" key="question_view" class="overlay"/>
+			<IapsQuestionView v-if="isIapsQuestion" :question="viewModel.question" key="question_view" class="overlay"/>
 
 		</transition>
 

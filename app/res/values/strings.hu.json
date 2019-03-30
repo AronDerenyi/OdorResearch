@@ -2,6 +2,8 @@
 	"test": "Teszt",
 	"start_test": "Teszt indítása",
 
+	"face_scale_title": "Hogyan értékelné a hangulatát?",
+
 	"iaps_title": "Pozitív vagy negatív hangulatúnak találja a képet?",
 
 	"positive": "Pozitív",

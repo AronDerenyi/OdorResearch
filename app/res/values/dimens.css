@@ -25,8 +25,8 @@ body {
 		--fab_normal_corner_radius: 28px;
 
 		/* Large */
-		--fab_large_size: 84px;
-		--fab_large_corner_radius: 42px;
+		--fab_large_size: 76px;
+		--fab_large_corner_radius: 38px;
 
 	/* Screens */
 
@@ -39,7 +39,8 @@ body {
 		--test_spacing: 32px;
 
 			/* Face Scale Question */
-			--face_scale_face_margin: 8px;
+			--face_scale_face_size: 48px;
+			--face_scale_face_margin: 16px;
 
 			/* IAPS Question */
 			--iaps_image_corner_radius: 8px;

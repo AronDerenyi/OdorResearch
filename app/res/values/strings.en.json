@@ -2,6 +2,8 @@
 	"test": "Test",
 	"start_test": "Start test",
 
+	"face_scale_title": "How would you rate your mood?",
+
 	"iaps_title": "Do you find this image positive or negative?",
 
 	"positive": "Positive",

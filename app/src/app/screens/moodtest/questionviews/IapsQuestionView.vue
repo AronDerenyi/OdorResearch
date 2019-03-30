@@ -15,10 +15,6 @@
 			this.isMoodPositive = null;
 		}
 
-		get showQuestion(): boolean {
-			return this.question != null;
-		}
-
 		onSelectedPositiveMood() {
 			this.isMoodSelected = true;
 			this.isMoodPositive = true;
@@ -59,7 +55,7 @@
 
 			<transition name="fade">
 
-				<img v-if="showQuestion" :src="question.imagePath" :key="question.imageName" style="
+				<img :src="question.imagePath" :key="question.imageName" style="
 					position: absolute;
 					height: 100%;
 					border-radius: var(--iaps_image_corner_radius);"/>
@@ -72,7 +68,7 @@
 		<transition name="float" mode="out-in">
 
 			<!-- Mood select -->
-			<div v-if="showQuestion && !isMoodSelected" key="selectMood" style="
+			<div v-if="!isMoodSelected" key="selectMood" style="
 				margin-top: var(--test_spacing);
 				display: flex;
 				flex-direction: row;
@@ -97,7 +93,7 @@
 			</div>
 
 			<!-- Mood rate -->
-			<div  v-if="showQuestion && isMoodSelected" key="rateMood" style="
+			<div  v-if="isMoodSelected" key="rateMood" style="
 				margin-top: var(--test_spacing);
 				display: flex;
 				flex-direction: row;

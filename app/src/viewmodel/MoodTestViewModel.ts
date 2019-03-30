@@ -4,6 +4,7 @@ import {Event} from "src/util/Event";
 import {MoodTest} from "src/model/moodtest/MoodTest";
 import {MoodTestSession} from "src/model/moodtest/MoodTestSession";
 import {IapsQuestion} from "src/model/moodtest/questions/IapsQuestion";
+import {FaceScaleQuestion} from "src/model/moodtest/questions/FaceScaleQuestion";
 
 export class MoodTestViewModel {
 
@@ -21,7 +22,9 @@ export class MoodTestViewModel {
 	readonly done: Event;
 
 	readonly loading: boolean;
-	readonly question: MoodTestViewModel.IapsQuestion;
+	readonly question:
+		MoodTestViewModel.FaceScaleQuestion |
+		MoodTestViewModel.IapsQuestion;
 
 	private session: MoodTestSession;
 
@@ -37,7 +40,11 @@ export class MoodTestViewModel {
 		Vue.set(this, "loading", loading);
 	}
 
-	private setQuestion(question: MoodTestViewModel.IapsQuestion) {
+	private setQuestion(
+		question:
+			MoodTestViewModel.FaceScaleQuestion |
+			MoodTestViewModel.IapsQuestion) {
+
 		Vue.set(this, "question", question);
 	}
 
@@ -58,23 +65,34 @@ export class MoodTestViewModel {
 		const viewModel = this;
 
 		if (question) {
-			if (question instanceof IapsQuestion) {
+			if (question instanceof FaceScaleQuestion) {
+				const faceScaleQuestion = question;
+				this.setQuestion(new class extends MoodTestViewModel.FaceScaleQuestion {
+
+					selectFace(face: number): void {
+						faceScaleQuestion.selectFace(face);
+						faceScaleQuestion.finish();
+						viewModel.nextQuestion();
+					}
+				});
+			} else if (question instanceof IapsQuestion) {
+				const iapsQuestion = question;
 				this.setQuestion(new class extends MoodTestViewModel.IapsQuestion {
 
-					readonly imageName = question.imageName;
-					readonly imagePath = question.imagePath;
+					readonly imageName = iapsQuestion.imageName;
+					readonly imagePath = iapsQuestion.imagePath;
 
 					selectPositiveMood() {
-						question.selectNegativeMood();
+						iapsQuestion.selectNegativeMood();
 					}
 
 					selectNegativeMood() {
-						question.selectNegativeMood();
+						iapsQuestion.selectNegativeMood();
 					}
 
 					rateMood(rating: number) {
-						question.rateMood(rating);
-						question.finish();
+						iapsQuestion.rateMood(rating);
+						iapsQuestion.finish();
 						viewModel.nextQuestion();
 					}
 				});
@@ -98,13 +116,20 @@ export class MoodTestViewModel {
 
 export module MoodTestViewModel {
 
+	export abstract class FaceScaleQuestion {
+
+		abstract selectFace(face: number): void;
+	}
+
 	export abstract class IapsQuestion {
 
 		abstract readonly imageName: string;
 		abstract readonly imagePath: string;
 
 		abstract selectPositiveMood(): void;
+
 		abstract selectNegativeMood(): void;
+
 		abstract rateMood(rating: number): void;
 	}
 }

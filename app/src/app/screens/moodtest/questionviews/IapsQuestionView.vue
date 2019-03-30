@@ -39,7 +39,6 @@
 
 <template>
 	<div class="container" style="
-		position: relative;
 		padding: var(--test_padding);
 		align-items: center;
 		background: var(--color_background);">

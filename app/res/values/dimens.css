@@ -22,14 +22,10 @@ body {
 
 		/* Normal */
 		--fab_normal_size: 56px;
-		--fab_normal_padding: 16px;
-		--fab_normal_spacing: 8px;
 		--fab_normal_corner_radius: 28px;
 
 		/* Large */
 		--fab_large_size: 84px;
-		--fab_large_padding: 24px;
-		--fab_large_spacing: 12px;
 		--fab_large_corner_radius: 42px;
 
 	/* Screens */

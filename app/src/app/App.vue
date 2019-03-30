@@ -87,28 +87,20 @@
 
 		<transition name="page">
 
-			<RouterView style="
-				position: absolute;
-				left: 0;
-				right: 0;
-				top: 0;
-				bottom: 0;"/>
+			<RouterView class="overlay"/>
 
 		</transition>
 
 		<div v-if="showResizeRegion" class="window_resize_region"
-		     style="position: absolute; top: 0; left: 0; right: 0;"></div>
+		     style="top: 0; left: 0; right: 0;"></div>
 		<div v-if="showResizeRegion" class="window_resize_region"
-		     style="position: absolute; bottom: 0; left: 0; right: 0;"></div>
+		     style="bottom: 0; left: 0; right: 0;"></div>
 		<div v-if="showResizeRegion" class="window_resize_region"
-		     style="position: absolute; top: 0; bottom: 0; left: 0;"></div>
+		     style="top: 0; bottom: 0; left: 0;"></div>
 		<div v-if="showResizeRegion" class="window_resize_region"
-		     style="position: absolute; top: 0; bottom: 0; right: 0;"></div>
+		     style="top: 0; bottom: 0; right: 0;"></div>
 
-		<div v-if="showWindowControls" class="window_control" style="
-			position: absolute;
-			top: 0;
-			right: 0;">
+		<div v-if="showWindowControls" class="window_control">
 
 			<ImgSvg src="res/drawable/window_close_24px.svg" @click.native="closeWindow"/>
 			<ImgSvg src="res/drawable/window_maximize_24px.svg" @click.native="maximizeWindow" v-if="!isMaximized"/>

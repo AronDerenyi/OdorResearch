@@ -52,22 +52,12 @@
 		<!-- Question panels -->
 		<transition name="fade" mode="out-in">
 
-			<IapsQuestionView v-if="isIapsQuestion" :question="viewModel.question" key="panel" style="
-				position: absolute;
-				left: 0;
-				right: 0;
-				top: 0;
-				bottom: 0;"/>
+			<IapsQuestionView v-if="isIapsQuestion" :question="viewModel.question" key="panel" class="overlay"/>
 
 		</transition>
 
 		<!-- Loading indicator -->
-		<div v-if="viewModel.loading" style="
-			position: absolute;
-			left: 0;
-			right: 0;
-			top: 0;
-			bottom: 0;
+		<div v-if="viewModel.loading" class="overlay" style="
 			background: var(--color_background_loading_overlay)">
 
 			<Progress style="

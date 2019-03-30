@@ -1,4 +1,7 @@
 .window_control {
+	position: absolute;
+	top: 0;
+	right: 0;
 	z-index: var(--window_control_z_index);
 
 	display: flex;
@@ -36,6 +39,7 @@
 }
 
 .window_resize_region {
+	position: absolute;
 	min-width: var(--window_control_resize_region_size);
 	min-height: var(--window_control_resize_region_size);
 	z-index: var(--window_control_z_index);

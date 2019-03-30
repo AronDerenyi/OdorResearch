@@ -9,7 +9,7 @@
 <template>
 	<div class="container" style="
 		position: relative;
-		padding: var(--image_test_padding);
+		padding: var(--test_padding);
 		align-items: center;
 		background: var(--color_background);">
 

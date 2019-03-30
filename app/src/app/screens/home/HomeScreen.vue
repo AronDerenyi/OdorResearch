@@ -19,14 +19,14 @@
 		justify-content: center;
 		background: var(--color_background);">
 
-		<h1 @click="preferencesViewModel.setLocale(preferencesViewModel.locale === 'en' ? 'hu' : 'en')" style="
-			text-align: center;">
+		<!--<h1 @click="preferencesViewModel.setLocale(preferencesViewModel.locale === 'en' ? 'hu' : 'en')" style="-->
+			<!--text-align: center;">-->
 
-			T:{{$strings.test}}  {{preferencesViewModel.locale}}
+			<!--T:{{$strings.test}}  {{preferencesViewModel.locale}}-->
 
-		</h1>
+		<!--</h1>-->
 
-		<RouterLink to="/test/mood">Go to test</RouterLink>
+		<RouterLink to="/test/mood"><h1>{{$strings.start_test}}</h1></RouterLink>
 
 	</div>
 </template>

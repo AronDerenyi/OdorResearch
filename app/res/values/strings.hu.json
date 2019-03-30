@@ -1,13 +1,14 @@
 {
 	"test": "Teszt",
+	"start_test": "Teszt indítása",
 
-	"imageTestStatement": "Pozitívnak vagy negatívnak találja a képet?",
+	"iaps_title": "Pozitív vagy negatív hangulatúnak találja a képet?",
 
 	"positive": "Pozitív",
-	"lessPositive": "Kevésbé pozitív",
-	"morePositive": "Pozitívabb",
+	"less_positive": "Kevésbé pozitív",
+	"more_positive": "Pozitívabb",
 
 	"negative": "Negatív",
-	"lessNegative": "Kevésbé negatív",
-	"moreNegative": "Negatívabb"
+	"less_negative": "Kevésbé negatív",
+	"more_negative": "Negatívabb"
 }

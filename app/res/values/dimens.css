@@ -26,15 +26,19 @@ body {
 		--fab_normal_spacing: 8px;
 		--fab_normal_corner_radius: 28px;
 
-	/* Home */
-	--home_padding: 32px;
-	--home_spacing: 32px;
+	/* Screens */
 
-	/* Image Test */
-	--image_test_padding: 32px;
-	--image_test_spacing: 32px;
-	--image_test_image_corner_radius: 8px;
-	--image_test_image_rating_margin: 8px;
-	--image_test_feeling_select_width: 200px;
-	--image_test_image_rating_description_spacing: 24px;
+		/* Home */
+		--home_padding: 32px;
+		--home_spacing: 32px;
+
+		/* Test */
+		--test_padding: 32px;
+		--test_spacing: 32px;
+
+			/* IAPS Question */
+			--iaps_image_corner_radius: 8px;
+			--iaps_mood_select_width: 200px;
+			--iaps_mood_rating_margin: 8px;
+			--iaps_mood_rating_description_spacing: 24px;
 }

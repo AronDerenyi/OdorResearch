@@ -1,13 +1,14 @@
 {
 	"test": "Test",
+	"start_test": "Start test",
 
-	"imageTestStatement": "Do you find this image positive or negative?",
+	"iaps_title": "Do you find this image positive or negative?",
 
 	"positive": "Positive",
-	"lessPositive": "Less positive",
-	"morePositive": "More positive",
+	"less_positive": "Less positive",
+	"more_positive": "More positive",
 
 	"negative": "Negative",
-	"lessNegative": "Less negative",
-	"moreNegative": "More negative"
+	"less_negative": "Less negative",
+	"more_negative": "More negative"
 }

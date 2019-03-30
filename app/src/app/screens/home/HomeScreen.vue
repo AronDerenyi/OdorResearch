@@ -26,7 +26,11 @@
 
 		<!--</h1>-->
 
-		<RouterLink to="/test/mood"><h1>{{$strings.start_test}}</h1></RouterLink>
+		<div @click="$router.push('/test/mood')" class="selectable fab subtle" style="width: 250px">
+
+			<h3>{{$strings.start_test}}</h3>
+
+		</div>
 
 	</div>
 </template>

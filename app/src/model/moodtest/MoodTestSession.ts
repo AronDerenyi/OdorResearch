@@ -34,7 +34,7 @@ export class MoodTestSession extends Session<FaceScaleQuestion | IapsQuestion> {
 		if (index < 1) {
 			return new FaceScaleQuestion();
 		} else if (index < this.iapsImages.length + 1) {
-			return new IapsQuestion(this.iapsImages[index + 1]);
+			return new IapsQuestion(this.iapsImages[index - 1]);
 		} else {
 			return null;
 		}

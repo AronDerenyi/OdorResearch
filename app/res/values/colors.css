@@ -18,6 +18,7 @@ body {
 	/* Content colors */
 	--color_content: rgb(32, 32, 32);
 	--color_content_light: rgb(96, 96, 96);
+	--color_content_faded: rgb(127, 127, 127);
 	--color_content_pop: rgb(248, 248, 248);
 
 
@@ -30,7 +31,6 @@ body {
 	--color_control_selected: rgba(0, 0, 0, 0.1);
 
 	--color_control_window: rgb(208, 208, 208);
-	/*--color_control_window_close: rgb(244, 67, 54);*/
 	--color_control_window_close: rgb(247, 72, 59);
 	--color_control_window_highligh: rgba(0, 0, 0, 0.5);
 

@@ -55,7 +55,8 @@
 			</div>
 
 			<div @click="onFaceSelected(2)" class="selectable fab large subtle" style="
-				margin: var(--face_scale_face_margin);">
+				margin: var(--face_scale_face_margin);
+				color: var(--color_content_faded);">
 
 				<ImgSvg src="res/drawable/face_neutral_24px.svg" style="
 					width: var(--face_scale_face_size);

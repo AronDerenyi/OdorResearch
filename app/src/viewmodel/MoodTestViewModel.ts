@@ -18,15 +18,16 @@ export class MoodTestViewModel {
 		return this.provider.releaseInstance();
 	}
 
-	readonly error: Event<Error>;
-	readonly done: Event;
+	readonly error: Event<Error> = null;
+	readonly done: Event = null;
 
-	readonly loading: boolean;
+	readonly loading: boolean = false;
+	readonly showInit: boolean = true;
 	readonly question:
 		MoodTestViewModel.FaceScaleQuestion |
-		MoodTestViewModel.IapsQuestion;
+		MoodTestViewModel.IapsQuestion = null;
 
-	private session: MoodTestSession;
+	private session: MoodTestSession = null;
 
 	private emitError(error: Error) {
 		Vue.set(this, "error", new Event(error));
@@ -38,6 +39,10 @@ export class MoodTestViewModel {
 
 	private setLoading(loading: boolean) {
 		Vue.set(this, "loading", loading);
+	}
+
+	private setShowInit(showInit: boolean) {
+		Vue.set(this, "showInit", showInit);
 	}
 
 	private setQuestion(
@@ -55,6 +60,7 @@ export class MoodTestViewModel {
 				this.session = session;
 				this.nextQuestion();
 				this.setLoading(false);
+				this.setShowInit(false);
 			},
 			this.emitError
 		);

@@ -4,20 +4,21 @@
 	import {MoodTestViewModel} from "src/viewmodel/MoodTestViewModel";
 
 	import Progress from "src/app/components/Progress.vue";
+	import MoodTestInit from "src/app/screens/moodtest/MoodTestInit.vue";
 	import FaceScaleQuestionView from "src/app/screens/moodtest/questionviews/FaceScaleQuestionView.vue";
 	import IapsQuestionView from "src/app/screens/moodtest/questionviews/IapsQuestionView.vue";
 
-	@Component({components: {Progress, FaceScaleQuestionView, IapsQuestionView}})
+	@Component({components: {Progress, MoodTestInit, FaceScaleQuestionView, IapsQuestionView}})
 	export default class MoodTestScreen extends Vue {
 
 		readonly viewModel = MoodTestViewModel.requireInstance();
 
-		mounted() {
-			this.viewModel.startTest(null, null, 0, null, null, null);
-		}
-
 		destroyed() {
 			MoodTestViewModel.releaseInstance();
+		}
+
+		startTest(userId: string, groupId: string, age: number, gender: string, residency: string, education: string) {
+			this.viewModel.startTest(userId, groupId, age, gender, residency, education);
 		}
 
 		@Watch("viewModel.error")
@@ -58,11 +59,13 @@
 	<div class="container" style="
 		background: var(--color_background);">
 
-		<!-- Question views -->
+		<!-- Question views and other queries -->
 		<transition name="fade" mode="out-in">
 
-			<FaceScaleQuestionView v-if="isFaceScaleQuestion" :question="viewModel.question" key="question_view" class="overlay"/>
-			<IapsQuestionView v-if="isIapsQuestion" :question="viewModel.question" key="question_view" class="overlay"/>
+			<MoodTestInit v-if="viewModel.showInit" @start-test="startTest" class="overlay"/>
+
+			<FaceScaleQuestionView v-if="isFaceScaleQuestion" :question="viewModel.question" class="overlay"/>
+			<IapsQuestionView v-if="isIapsQuestion" :question="viewModel.question" class="overlay"/>
 
 		</transition>
 

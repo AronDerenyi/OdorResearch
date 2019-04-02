@@ -5,6 +5,8 @@ app.on("ready", function () {
 	const window = new BrowserWindow({
 		width: 960,
 		height: 600,
+		minWidth: 800,
+		minHeight: 540,
 		frame: false,
 		titleBarStyle: "hidden",
 		webPreferences: {nodeIntegration: true}

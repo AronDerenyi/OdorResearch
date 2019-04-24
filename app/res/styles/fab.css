@@ -23,15 +23,10 @@
 	min-width: 56px;
 	height: 56px;
 
+	padding-left: 16px;
+	padding-right: 16px;
+
 	border-radius: 28px;
-}
-
-.fab *:first-child {
-	margin-left: 16px;
-}
-
-.fab *:last-child {
-	margin-right: 16px;
 }
 
 .fab.selectable:after {
@@ -42,15 +37,10 @@
 	min-width: 84px;
 	height: 84px;
 
+	padding-left: 24px;
+	padding-right: 24px;
+
 	border-radius: 42px;
-}
-
-.fab.large *:first-child {
-	margin-left: 24px;
-}
-
-.fab.large *:last-child {
-	margin-right: 24px;
 }
 
 .fab.large.selectable:after {

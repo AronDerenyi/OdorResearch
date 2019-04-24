@@ -34,19 +34,3 @@
 .textarea:focus::placeholder {
 	color: var(--color_control);
 }
-
-.textarea.positive:focus {
-	border-color: var(--color_control_positive);
-}
-
-.textarea.positive:focus::placeholder {
-	color: var(--color_control_positive);
-}
-
-.textarea.negative:focus {
-	border-color: var(--color_control_negative);
-}
-
-.textarea.negative:focus::placeholder {
-	color: var(--color_control_negative);
-}

@@ -15,7 +15,7 @@
 	padding: 2px;
 
 	fill: transparent;
-	background: var(--color_control_window);
+	background: rgb(208, 208, 208);
 	border-radius: 100%;
 }
 
@@ -24,11 +24,11 @@
 }
 
 .window_control > *:first-child {
-	background: var(--color_control_window_close);
+	background: rgb(247, 72, 59);
 }
 
 .window_control:hover > * {
-	fill: var(--color_control_window_highligh);
+	fill: rgba(0, 0, 0, 0.5);
 }
 
 .window_control > *:active {

@@ -32,10 +32,6 @@ body {
 	--color_control_highlight: rgba(0, 188, 212, 0.25);
 	--color_control_highlight_pop: rgba(255, 255, 255, 0.4);
 
-	--color_control_window: rgb(208, 208, 208);
-	--color_control_window_close: rgb(247, 72, 59);
-	--color_control_window_highligh: rgba(0, 0, 0, 0.5);
-
 
 	/* Shadow colors */
 	--color_shadow: rgba(0, 0, 0, 0.2);

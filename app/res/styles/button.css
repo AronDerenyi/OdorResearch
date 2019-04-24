@@ -53,14 +53,6 @@
 	color: var(--color_control_pop);
 }
 
-.button.positive {
-	background: var(--color_control_positive);
-}
-
-.button.negative {
-	background: var(--color_control_negative);
-}
-
 .button.selectable:after {
 	background: var(--color_control_highlight_pop);
 }
@@ -70,22 +62,6 @@
 	color: var(--color_control);
 }
 
-.button.light.positive {
-	color: var(--color_control_positive);
-}
-
-.button.light.negative {
-	color: var(--color_control_negative);
-}
-
 .button.light.selectable:after {
 	background: var(--color_control_highlight);
-}
-
-.button.light.positive.selectable:after {
-	background: var(--color_control_highlight_positive);
-}
-
-.button.light.negative.selectable:after {
-	background: var(--color_control_highlight_negative);
 }

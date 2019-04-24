@@ -17,31 +17,31 @@
 /* Sizes */
 
 .tab {
-	height: var(--tab_size);
+	height: 42px;
 
-	padding-left: var(--tab_padding);
-	padding-right: var(--tab_padding);
+	padding-left: 24px;
+	padding-right: 24px;
 
-	border-top-left-radius: var(--tab_corner_radius);
-	border-top-right-radius: var(--tab_corner_radius);
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
 }
 
 .tab.selectable:after {
-	border-top-left-radius: var(--tab_corner_radius);
-	border-top-right-radius: var(--tab_corner_radius);
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
 }
 
 .tab_indicator {
 	height: 0;
 
-	border-top-left-radius: var(--tab_indicator_height);
-	border-top-right-radius: var(--tab_indicator_height);
+	border-top-left-radius: 3px;
+	border-top-right-radius: 3px;
 
 	background: var(--color_control);
 }
 
 .tab_indicator[selected] {
-	height: var(--tab_indicator_height);
+	height: 3px;
 }
 
 /* Colors */

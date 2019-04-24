@@ -1,5 +1,5 @@
 .button {
-	z-index: var(--button_z_index);
+	z-index: 2;
 
 	display: flex;
 	flex-direction: row;
@@ -24,24 +24,24 @@
 /* Sizes */
 
 .button {
-	height: var(--button_size);
+	height: 36px;
 
-	padding-left: var(--button_padding);
-	padding-right: var(--button_padding);
+	padding-left: 16px;
+	padding-right: 16px;
 
-	border-radius: var(--button_corner_radius);
+	border-radius: 5px;
 }
 
 .button.with_icon {
-	padding-left: var(--button_icon_padding);
+	padding-left: 8px;
 }
 
 .button.with_icon > .button_icon {
-	margin-right: var(--button_icon_padding);
+	margin-right: 8px;
 }
 
 .button.selectable:after {
-	border-radius: var(--button_corner_radius);
+	border-radius: 5px;
 }
 
 /* Colors */

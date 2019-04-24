@@ -37,12 +37,12 @@ body {
 	--color_shadow: rgba(0, 0, 0, 0.2);
 }
 
-body *.positive {
+body .positive {
 	--color_control_positive: rgb(76, 175, 80);
 	--color_control_highlight_positive: rgba(76, 175, 80, 0.25);
 }
 
-body *.negative {
+body .negative {
 	--color_control_negative: rgb(244, 67, 54);
 	--color_control_highlight_negative: rgba(244, 67, 54, 0.25);
 }

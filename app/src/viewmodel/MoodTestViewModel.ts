@@ -22,7 +22,6 @@ export class MoodTestViewModel {
 	readonly done: Event = null;
 
 	readonly loading: boolean = false;
-	readonly showInit: boolean = true;
 	readonly question:
 		MoodTestViewModel.FaceScaleQuestion |
 		MoodTestViewModel.IapsQuestion = null;
@@ -41,10 +40,6 @@ export class MoodTestViewModel {
 		Vue.set(this, "loading", loading);
 	}
 
-	private setShowInit(showInit: boolean) {
-		Vue.set(this, "showInit", showInit);
-	}
-
 	private setQuestion(
 		question:
 			MoodTestViewModel.FaceScaleQuestion |
@@ -60,7 +55,6 @@ export class MoodTestViewModel {
 				this.session = session;
 				this.nextQuestion();
 				this.setLoading(false);
-				this.setShowInit(false);
 			},
 			this.emitError
 		);

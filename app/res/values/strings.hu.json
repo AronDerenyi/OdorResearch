@@ -1,6 +1,18 @@
 {
-	"test": "Teszt",
+	"mood_test": "Hangulat Teszt",
+	"creativity_test": "Kreativitás Teszt",
+
+	"user_id": "Egyéni Azonosító",
+	"group_id": "Csoport Azonosító",
+	"age": "Életkor",
+	"gender": "Nem",
+	"residency": "Lakóhely",
+	"education": "Képzettség",
 	"start_test": "Teszt indítása",
+
+	"save": "Mentés",
+	"open": "Megnyitás",
+	"export_to_csv": "Exportálás CSV-be",
 
 	"face_scale_title": "Hogyan értékelné a hangulatát?",
 

@@ -15,19 +15,19 @@
 			this.isMoodPositive = null;
 		}
 
-		onSelectedPositiveMood() {
+		selectPositiveMood() {
 			this.isMoodSelected = true;
 			this.isMoodPositive = true;
 			this.question.selectPositiveMood();
 		}
 
-		onSelectedNegativeMood() {
+		selectNegativeMood() {
 			this.isMoodSelected = true;
 			this.isMoodPositive = false;
 			this.question.selectNegativeMood();
 		}
 
-		onRatedMood(rating: number) {
+		sateMood(rating: number) {
 			this.question.rateMood(rating);
 		}
 	}
@@ -74,7 +74,7 @@
 				flex-direction: row;
 				justify-content: center;">
 
-				<div @click="onSelectedNegativeMood" class="selectable fab negative" style="
+				<div @click="selectNegativeMood" class="selectable fab negative" style="
 					margin: var(--iaps_mood_rating_margin);
 					width: var(--iaps_mood_select_width);">
 
@@ -82,7 +82,7 @@
 
 				</div>
 
-				<div @click="onSelectedPositiveMood" class="selectable fab positive" style="
+				<div @click="selectPositiveMood" class="selectable fab positive" style="
 					margin: var(--iaps_mood_rating_margin);
 					width: var(--iaps_mood_select_width);">
 
@@ -93,7 +93,7 @@
 			</div>
 
 			<!-- Mood rate -->
-			<div  v-if="isMoodSelected" key="rateMood" style="
+			<div v-if="isMoodSelected" key="rateMood" style="
 				margin-top: var(--test_spacing);
 				display: flex;
 				flex-direction: row;
@@ -111,8 +111,8 @@
 				</h3>
 
 				<div v-for="rating in [1, 2, 3, 4, 5]"
-				     @click="onRatedMood(rating)" :class="{positive: isMoodPositive, negative: !isMoodPositive}"
-				     class="selectable fab subtle" style="margin: var(--iaps_mood_rating_margin);">
+				     @click="sateMood(rating)" :class="{positive: isMoodPositive, negative: !isMoodPositive}"
+				     class="selectable fab light" style="margin: var(--iaps_mood_rating_margin);">
 
 					<h3 style="font-weight: 800;">{{rating}}</h3>
 

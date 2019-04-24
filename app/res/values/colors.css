@@ -23,12 +23,18 @@ body {
 
 
 	/* Control colors */
+	--color_control: var(--color_accent);
+	--color_control_positive: var(--color_positive);
+	--color_control_negative: var(--color_negative);
+	--color_control_pop: var(--color_primary);
+
+	--color_control_inactive: rgb(127, 127, 127);
+	--color_control_overlay: rgba(0, 0, 0, 0.05);
+
 	--color_control_highlight: rgba(0, 188, 212, 0.25);
 	--color_control_highlight_positive: rgba(76, 175, 80, 0.25);
 	--color_control_highlight_negative: rgba(244, 67, 54, 0.25);
 	--color_control_highlight_pop: rgba(255, 255, 255, 0.4);
-
-	--color_control_selected: rgba(0, 0, 0, 0.1);
 
 	--color_control_window: rgb(208, 208, 208);
 	--color_control_window_close: rgb(247, 72, 59);

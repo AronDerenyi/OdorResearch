@@ -8,38 +8,55 @@ body {
 	--window_control_button_padding: 2px;
 	--window_control_resize_region_size: 5px;
 
+	/* Toolbar */
+	--toolbar_z_index: 8;
+
 	/* Button */
 	--button_z_index: 2;
 	--button_size: 36px;
 	--button_padding: 16px;
+	--button_icon_padding: 8px;
 	--button_corner_radius: 5px;
-
-	/* Selectable */
-	--selectable_corner_radius: 5px;
 
 	/* FAB */
 	--fab_z_index: 12;
 
 		/* Normal */
 		--fab_normal_size: 56px;
+		--fab_normal_padding: 16px;
 		--fab_normal_corner_radius: 28px;
 
 		/* Large */
-		--fab_large_size: 76px;
-		--fab_large_corner_radius: 38px;
+		--fab_large_size: 84px;
+		--fab_large_padding: 24px;
+		--fab_large_corner_radius: 42px;
+
+	/* Textarea */
+	--textarea_z_index: 2;
+	--textarea_size: 40px;
+	--textarea_padding: 12px;
+	--textarea_border: 2px;
+	--textarea_corner_radius: 5px;
+
+	/* Tab */
+	--tab_size: 42px;
+	--tab_padding: 24px;
+	--tab_corner_radius: 5px;
+	--tab_indicator_height: 3px;
 
 	/* Screens */
 
 		/* Home */
+		--home_options_width: 360px;
 		--home_padding: 32px;
-		--home_spacing: 32px;
+		--home_spacing: 16px;
 
 		/* Test */
 		--test_padding: 32px;
 		--test_spacing: 32px;
 
 			/* Face Scale Question */
-			--face_scale_face_size: 48px;
+			--face_scale_face_size: 36px;
 			--face_scale_face_margin: 16px;
 
 			/* IAPS Question */

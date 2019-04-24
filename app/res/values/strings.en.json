@@ -1,6 +1,18 @@
 {
-	"test": "Test",
+	"mood_test": "Mood Test",
+	"creativity_test": "Creativity Test",
+
+	"user_id": "User ID",
+	"group_id": "Group ID",
+	"age": "Age",
+	"gender": "Gender",
+	"residency": "Residency",
+	"education": "Education",
 	"start_test": "Start test",
+
+	"save": "Save",
+	"open": "Open",
+	"export_to_csv": "Export to CSV",
 
 	"face_scale_title": "How would you rate your mood?",
 

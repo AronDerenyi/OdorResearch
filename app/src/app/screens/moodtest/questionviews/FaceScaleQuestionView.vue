@@ -34,7 +34,7 @@
 			align-items: center;
 			justify-content: center;">
 
-			<div @click="onFaceSelected(0)" class="selectable fab large subtle negative" style="
+			<div @click="onFaceSelected(0)" class="selectable fab large light negative" style="
 				margin: var(--face_scale_face_margin);">
 
 				<ImgSvg src="res/drawable/face_very_unhappy_24px.svg" style="
@@ -44,7 +44,7 @@
 
 			</div>
 
-			<div @click="onFaceSelected(1)" class="selectable fab large subtle negative" style="
+			<div @click="onFaceSelected(1)" class="selectable fab large light negative" style="
 				margin: var(--face_scale_face_margin);">
 
 				<ImgSvg src="res/drawable/face_unhappy_24px.svg" style="
@@ -54,7 +54,7 @@
 
 			</div>
 
-			<div @click="onFaceSelected(2)" class="selectable fab large subtle" style="
+			<div @click="onFaceSelected(2)" class="selectable fab large light" style="
 				margin: var(--face_scale_face_margin);
 				color: var(--color_content_faded);">
 
@@ -65,7 +65,7 @@
 
 			</div>
 
-			<div @click="onFaceSelected(3)" class="selectable fab large subtle positive" style="
+			<div @click="onFaceSelected(3)" class="selectable fab large light positive" style="
 				margin: var(--face_scale_face_margin);">
 
 				<ImgSvg src="res/drawable/face_happy_24px.svg" style="
@@ -75,7 +75,7 @@
 
 			</div>
 
-			<div @click="onFaceSelected(4)" class="selectable fab large subtle positive" style="
+			<div @click="onFaceSelected(4)" class="selectable fab large light positive" style="
 				margin: var(--face_scale_face_margin);">
 
 				<ImgSvg src="res/drawable/face_very_happy_24px.svg" style="

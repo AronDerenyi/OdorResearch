@@ -1,0 +1,49 @@
+.textarea {
+	height: var(--textarea_size);
+
+	padding-left: var(--textarea_padding);
+	padding-right: var(--textarea_padding);
+
+	background: var(--color_control_overlay);
+	border-bottom: var(--textarea_border) solid var(--color_control_inactive);
+	border-top-left-radius: var(--textarea_corner_radius);
+	border-top-right-radius: var(--textarea_corner_radius);
+
+	transition: border-color 0.2s;
+	overflow: hidden;
+}
+
+.textarea.outlined {
+	background: transparent;
+	border: var(--textarea_border) solid var(--color_control_inactive);
+	border-radius: var(--textarea_corner_radius);
+}
+
+.textarea::placeholder {
+	color: var(--color_control_inactive);
+	transition: color 0.2s;
+}
+
+.textarea:focus {
+	border-color: var(--color_control);
+}
+
+.textarea:focus::placeholder {
+	color: var(--color_control);
+}
+
+.textarea.positive:focus {
+	border-color: var(--color_control_positive);
+}
+
+.textarea.positive:focus::placeholder {
+	color: var(--color_control_positive);
+}
+
+.textarea.negative:focus {
+	border-color: var(--color_control_negative);
+}
+
+.textarea.negative:focus::placeholder {
+	color: var(--color_control_negative);
+}

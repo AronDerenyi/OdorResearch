@@ -58,7 +58,7 @@
 			margin-top: var(--home_spacing);
 			align-self: center;">
 
-			{{$strings.start_test}}
+			<div class="button_text">{{$strings.start_test}}</div>
 
 		</button>
 

@@ -18,7 +18,7 @@
 <template>
 	<div class="container" style="
 		padding: var(--home_padding);
-		background: var(--color_background_strong);">
+		background: var(--color_background_light);">
 
 	</div>
 </template>

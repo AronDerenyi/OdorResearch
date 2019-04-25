@@ -13,7 +13,7 @@
 <template>
 	<div class="container" style="
 		padding: var(--home_padding);
-		background: var(--color_background_light);">
+		background: var(--color_background);">
 
 		<h3>This test is currently unavailable</h3>
 

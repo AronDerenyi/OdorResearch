@@ -1,7 +1,9 @@
 <script lang="ts">
 	import {Vue, Component} from "vue-property-decorator";
 
-	@Component
+	import ImgSvg from "src/app/components/ImgSvg.vue";
+
+	@Component({components: {ImgSvg}})
 	export default class MoodTestInit extends Vue {
 
 		submit() {
@@ -19,14 +21,24 @@
 			display: flex;
 			flex-direction: row;">
 
-			<input type="text" :placeholder="$strings.user_id" size="4" class="textarea outlined" style="
+			<div class="textinput outlined" style="
 				flex-basis: 0;
 				flex-grow: 1;">
 
-			<input type="text" :placeholder="$strings.group_id" size="4" class="textarea outlined" style="
+				<!--suppress HtmlFormInputWithoutLabel -->
+				<input type="text" :placeholder="$strings.user_id" size="4" class="textinput_input"/>
+
+			</div>
+
+			<div class="textinput outlined" style="
 				margin-left: var(--home_spacing);
 				flex-basis: 0;
 				flex-grow: 1;">
+
+				<!--suppress HtmlFormInputWithoutLabel -->
+				<input type="text" :placeholder="$strings.group_id" size="4" class="textinput_input"/>
+
+			</div>
 
 		</div>
 
@@ -35,22 +47,40 @@
 			display: flex;
 			flex-direction: row;">
 
-			<input type="number" :placeholder="$strings.age" size="2" class="textarea outlined" style="
+			<div class="textinput outlined" style="
 				flex-basis: 0;
 				flex-grow: 1;">
 
-			<input type="text" :placeholder="$strings.gender" size="4" class="textarea outlined" style="
+				<!--suppress HtmlFormInputWithoutLabel -->
+				<input type="number" :placeholder="$strings.age" size="4" class="textinput_input"/>
+
+			</div>
+
+			<div class="textinput outlined" style="
 				margin-left: var(--home_spacing);
 				flex-basis: 0;
 				flex-grow: 1;">
 
+				<!--suppress HtmlFormInputWithoutLabel -->
+				<input type="text" :placeholder="$strings.gender" size="4" class="textinput_input"/>
+
+			</div>
+
 		</div>
 
-		<input type="text" :placeholder="$strings.residency" size="4" class="textarea outlined" style="
-			margin-top: var(--home_spacing);">
+		<div class="textinput outlined" style="margin-top: var(--home_spacing);;">
 
-		<input type="text" :placeholder="$strings.education" size="4" class="textarea outlined" style="
-			margin-top: var(--home_spacing);">
+			<!--suppress HtmlFormInputWithoutLabel -->
+			<input type="text" :placeholder="$strings.residency" size="4" class="textinput_input"/>
+
+		</div>
+
+		<div class="textinput outlined" style="margin-top: var(--home_spacing);">
+
+			<!--suppress HtmlFormInputWithoutLabel -->
+			<input type="text" :placeholder="$strings.education" size="4" class="textinput_input"/>
+
+		</div>
 
 		<div style="visibility: hidden; flex-grow: 1;"></div>
 

@@ -37,7 +37,7 @@
 			<div @click="onFaceSelected(0)" class="selectable fab large light negative" style="
 				margin: var(--face_scale_face_margin);">
 
-				<ImgSvg src="res/drawable/face_very_unhappy_24px.svg" style="
+				<ImgSvg src="res/drawable/ic_face_very_unhappy_24px.svg" style="
 					width: var(--face_scale_face_size);
 					height: var(--face_scale_face_size);
 					fill: currentColor;"/>
@@ -47,7 +47,7 @@
 			<div @click="onFaceSelected(1)" class="selectable fab large light negative" style="
 				margin: var(--face_scale_face_margin);">
 
-				<ImgSvg src="res/drawable/face_unhappy_24px.svg" style="
+				<ImgSvg src="res/drawable/ic_face_unhappy_24px.svg" style="
 					width: var(--face_scale_face_size);
 					height: var(--face_scale_face_size);
 					fill: currentColor;"/>
@@ -58,7 +58,7 @@
 				margin: var(--face_scale_face_margin);
 				color: var(--color_on_surface_variant);">
 
-				<ImgSvg src="res/drawable/face_neutral_24px.svg" style="
+				<ImgSvg src="res/drawable/ic_face_neutral_24px.svg" style="
 					width: var(--face_scale_face_size);
 					height: var(--face_scale_face_size);
 					fill: currentColor;"/>
@@ -68,7 +68,7 @@
 			<div @click="onFaceSelected(3)" class="selectable fab large light positive" style="
 				margin: var(--face_scale_face_margin);">
 
-				<ImgSvg src="res/drawable/face_happy_24px.svg" style="
+				<ImgSvg src="res/drawable/ic_face_happy_24px.svg" style="
 					width: var(--face_scale_face_size);
 					height: var(--face_scale_face_size);
 					fill: currentColor;"/>
@@ -78,7 +78,7 @@
 			<div @click="onFaceSelected(4)" class="selectable fab large light positive" style="
 				margin: var(--face_scale_face_margin);">
 
-				<ImgSvg src="res/drawable/face_very_happy_24px.svg" style="
+				<ImgSvg src="res/drawable/ic_face_very_happy_24px.svg" style="
 					width: var(--face_scale_face_size);
 					height: var(--face_scale_face_size);
 					fill: currentColor;"/>

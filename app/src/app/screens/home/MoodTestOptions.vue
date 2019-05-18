@@ -27,7 +27,7 @@
 				flex-basis: 0;
 				flex-grow: 1;">
 
-				<ImgSvg src="res/drawable/save_24px.svg" class="button_icon" style="fill: currentColor;"/>
+				<ImgSvg src="res/drawable/ic_save_24px.svg" class="button_icon" style="fill: currentColor;"/>
 				<div class="button_text">{{$strings.save}}</div>
 
 			</div>
@@ -37,7 +37,7 @@
 				flex-grow: 1;
 				margin-left: var(--home_spacing);">
 
-				<ImgSvg src="res/drawable/open_24px.svg" class="button_icon" style="fill: currentColor;"/>
+				<ImgSvg src="res/drawable/ic_open_24px.svg" class="button_icon" style="fill: currentColor;"/>
 				<div class="button_text">{{$strings.open}}</div>
 
 			</div>
@@ -47,7 +47,7 @@
 		<div class="button with_icon flat light" style="
 			margin-top: var(--home_spacing);">
 
-			<ImgSvg src="res/drawable/export_24px.svg" class="button_icon" style="fill: currentColor;"/>
+			<ImgSvg src="res/drawable/ic_export_24px.svg" class="button_icon" style="fill: currentColor;"/>
 			<div class="button_text">{{$strings.export_to_csv}}</div>
 
 		</div>

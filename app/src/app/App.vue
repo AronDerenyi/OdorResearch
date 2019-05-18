@@ -106,10 +106,10 @@
 			top: 0;
 			right: 0;">
 
-			<ImgSvg src="res/drawable/window_close_24px.svg" @click.native="closeWindow"/>
-			<ImgSvg src="res/drawable/window_maximize_24px.svg" @click.native="maximizeWindow" v-if="!isMaximized"/>
-			<ImgSvg src="res/drawable/window_unmaximize_24px.svg" @click.native="unmaximizeWindow" v-if="isMaximized"/>
-			<ImgSvg src="res/drawable/window_minimize_24px.svg" @click.native="minimizeWindow"/>
+			<ImgSvg src="res/drawable/ic_window_close_24px.svg" @click.native="closeWindow"/>
+			<ImgSvg src="res/drawable/ic_window_maximize_24px.svg" @click.native="maximizeWindow" v-if="!isMaximized"/>
+			<ImgSvg src="res/drawable/ic_window_unmaximize_24px.svg" @click.native="unmaximizeWindow" v-if="isMaximized"/>
+			<ImgSvg src="res/drawable/ic_window_minimize_24px.svg" @click.native="minimizeWindow"/>
 
 		</div>
 

@@ -1,7 +1,7 @@
 /* TODO: Add child classes */
 
 .fab {
-	z-index: 12;
+	z-index: 6;
 
 	display: flex;
 	flex-direction: row;

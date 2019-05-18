@@ -84,13 +84,13 @@
 
 		<div style="visibility: hidden; flex-grow: 1;"></div>
 
-		<button @click="submit" class="button flat" style="
+		<div @click="submit" class="button flat" style="
 			margin-top: var(--home_spacing);
 			align-self: center;">
 
 			<div class="button_text">{{$strings.start_test}}</div>
 
-		</button>
+		</div>
 
 	</div>
 </template>

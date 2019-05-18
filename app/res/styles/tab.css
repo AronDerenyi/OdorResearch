@@ -1,48 +1,66 @@
-/* TODO: Add child classes */
-
 .tab {
+	position: relative;
+	z-index: 2;
+
 	display: flex;
 	flex-direction: row;
 	align-items: center;
 	justify-content: center;
 
-	font-weight: 500;
-	font-size: 20px;
-
 	overflow: hidden;
+	user-select: none;
+	-webkit-app-region: no-drag;
 }
 
-.tab_indicator {
-	transition: height 0.2s;
+.tab::after {
+	content: "";
+
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+
+	transition: all 0.2s;
+	pointer-events: none;
+}
+
+.tab > .tab_text {
+	font-weight: 500;
 }
 
 /* Sizes */
 
 .tab {
-	height: 42px;
+	height: 48px;
 
-	padding-left: 24px;
-	padding-right: 24px;
-
-	border-top-left-radius: 5px;
-	border-top-right-radius: 5px;
+	padding-left: 12px;
+	padding-right: 12px;
 }
 
-.tab.selectable:after {
-	border-top-left-radius: 5px;
-	border-top-right-radius: 5px;
+.tab > .tab_text {
+	margin-right: 4px;
+	margin-left: 4px;
+
+	font-size: 18px;
 }
 
-.tab_indicator {
+.tab > .tab_icon {
+	margin-right: 4px;
+	margin-left: 4px;
+
+	width: 24px;
+	height: 24px;
+}
+
+.tab::after {
 	height: 0;
 
 	border-top-left-radius: 3px;
 	border-top-right-radius: 3px;
-
-	background: var(--color_primary);
 }
 
-.tab_indicator[selected] {
+.tab:hover::after,
+.tab[selected]::after {
 	height: 3px;
 }
 
@@ -50,12 +68,28 @@
 
 .tab {
 	color: var(--color_on_surface);
+	opacity: 0.6;
+}
+
+.tab > .tab_text {
+	color: currentColor;
+}
+
+.tab > .tab_icon {
+	color: currentColor;
+}
+
+.tab::after {
+	background: var(--color_on_surface);
+	opacity: 0.6;
 }
 
 .tab[selected] {
 	color: var(--color_primary);
+	opacity: 1;
 }
 
-.tab_indicator {
+.tab[selected]::after {
 	background: var(--color_primary);
+	opacity: 1;
 }

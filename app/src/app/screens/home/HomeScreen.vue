@@ -49,29 +49,23 @@
 			align-items: flex-end;
 			justify-content: center;">
 
-			<div :selected="isMoodTestSelected" @click="selectMoodTest" class="selectable tab" style="
-				position: relative;">
+			<div :selected="isMoodTestSelected" @click="selectMoodTest" class="tab">
 
-				{{$strings.mood_test}}
+				<div :selected="isMoodTestSelected" @click="selectMoodTest" class="tab_text">
 
-				<div :selected="isMoodTestSelected" class="tab_indicator" style="
-					position: absolute;
-					left: 0;
-					right: 0;
-					bottom: 0;"></div>
+					{{$strings.mood_test}}
+
+				</div>
 
 			</div>
 
-			<div :selected="isCreativityTestSelected" @click="selectCreativityTest" class="selectable tab" style="
-				position: relative;">
+			<div :selected="isCreativityTestSelected" @click="selectCreativityTest" class="tab">
 
-				{{$strings.creativity_test}}
+				<div :selected="isMoodTestSelected" @click="selectMoodTest" class="tab_text">
 
-				<div :selected="isCreativityTestSelected" class="tab_indicator" style="
-					position: absolute;
-					left: 0;
-					right: 0;
-					bottom: 0;"></div>
+					{{$strings.creativity_test}}
+
+				</div>
 
 			</div>
 

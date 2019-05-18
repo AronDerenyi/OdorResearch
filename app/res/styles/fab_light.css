@@ -1,0 +1,10 @@
+/* Colors */
+
+.fab.light {
+	background: var(--color_on_primary);
+	color: var(--color_primary);
+}
+
+.fab.light::before {
+	background: var(--color_primary);
+}

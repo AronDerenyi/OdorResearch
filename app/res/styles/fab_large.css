@@ -1,0 +1,30 @@
+/* Sizes */
+
+.fab.large {
+	min-width: 84px;
+	height: 84px;
+
+	padding-left: 18px;
+	padding-right: 18px;
+
+	border-radius: 42px;
+}
+
+.fab.large > .fab_text {
+	margin-right: 18px;
+	margin-left: 18px;
+
+	font-size: 30px;
+}
+
+.fab.large > .fab_icon {
+	margin-right: 6px;
+	margin-left: 6px;
+
+	width: 36px;
+	height: 36px;
+}
+
+.fab.large::before {
+	border-radius: 42px;
+}

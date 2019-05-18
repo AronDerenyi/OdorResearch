@@ -1,6 +1,5 @@
-/* TODO: Add child classes */
-
 .fab {
+	position: relative;
 	z-index: 6;
 
 	display: flex;
@@ -11,10 +10,32 @@
 	box-shadow: 0 4px 20px var(--color_shadow);
 
 	overflow: hidden;
+	user-select: none;
+	-webkit-app-region: no-drag;
 }
 
-.fab * {
-	color: currentColor;
+.fab::before {
+	content: "";
+
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+
+	transition: all 0.2s;
+	pointer-events: none;
+}
+
+.fab > .fab_text {
+	flex-grow: 1;
+
+	font-weight: 500;
+	text-align: center;
+}
+
+.fab > .fab_icon {
+	flex-grow: 0;
 }
 
 /* Sizes */
@@ -23,28 +44,29 @@
 	min-width: 56px;
 	height: 56px;
 
-	padding-left: 16px;
-	padding-right: 16px;
+	padding-left: 12px;
+	padding-right: 12px;
 
 	border-radius: 28px;
 }
 
-.fab.selectable:after {
+.fab > .fab_text {
+	margin-right: 12px;
+	margin-left: 12px;
+
+	font-size: 20px;
+}
+
+.fab > .fab_icon {
+	margin-right: 4px;
+	margin-left: 4px;
+
+	width: 24px;
+	height: 24px;
+}
+
+.fab::before {
 	border-radius: 28px;
-}
-
-.fab.large {
-	min-width: 84px;
-	height: 84px;
-
-	padding-left: 24px;
-	padding-right: 24px;
-
-	border-radius: 42px;
-}
-
-.fab.large.selectable:after {
-	border-radius: 42px;
 }
 
 /* Colors */
@@ -54,15 +76,23 @@
 	color: var(--color_on_primary);
 }
 
-.fab.selectable:after {
-	background: var(--color_on_primary);
+.fab > .fab_text {
+	color: currentColor;
 }
 
-.fab.light {
-	background: var(--color_on_primary);
-	color: var(--color_primary);
+.fab > .fab_icon {
+	color: currentColor;
 }
 
-.fab.light.selectable:after {
-	background: var(--color_primary);
+.fab::before {
+	background: var(--color_on_primary);
+	opacity: 0;
+}
+
+.fab:hover::before {
+	opacity: 0.3;
+}
+
+.fab:active::before {
+	opacity: 0.5;
 }

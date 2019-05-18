@@ -74,19 +74,19 @@
 				flex-direction: row;
 				justify-content: center;">
 
-				<div @click="selectNegativeMood" class="selectable fab negative" style="
+				<div @click="selectNegativeMood" class="fab negative" style="
 					margin: var(--iaps_mood_rating_margin);
 					width: var(--iaps_mood_select_width);">
 
-					<h3>{{$strings.negative}}</h3>
+					<div class="fab_text">{{$strings.negative}}</div>
 
 				</div>
 
-				<div @click="selectPositiveMood" class="selectable fab positive" style="
+				<div @click="selectPositiveMood" class="fab positive" style="
 					margin: var(--iaps_mood_rating_margin);
 					width: var(--iaps_mood_select_width);">
 
-					<h3>{{$strings.positive}}</h3>
+					<div class="fab_text">{{$strings.positive}}</div>
 
 				</div>
 
@@ -112,9 +112,16 @@
 
 				<div v-for="rating in [1, 2, 3, 4, 5]"
 				     @click="sateMood(rating)" :class="{positive: isMoodPositive, negative: !isMoodPositive}"
-				     class="selectable fab light" style="margin: var(--iaps_mood_rating_margin);">
+				     class="fab light" style="margin: var(--iaps_mood_rating_margin);">
 
-					<h3 style="font-weight: 800;">{{rating}}</h3>
+					<div class="fab_text" style="
+						margin: 0;
+						font-weight: 800;
+						font-size: 24px;">
+
+						{{rating}}
+
+					</div>
 
 				</div>
 

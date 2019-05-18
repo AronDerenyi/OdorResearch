@@ -5,7 +5,7 @@
 	-webkit-app-region: no-drag;
 }
 
-.selectable::after {
+.selectable::before {
 	content: "";
 
 	position: absolute;
@@ -20,15 +20,15 @@
 
 /* Colors */
 
-.selectable::after {
+.selectable::before {
 	background: var(--color_primary);
 	opacity: 0;
 }
 
-.selectable:hover::after {
+.selectable:hover::before {
 	opacity: 0.3;
 }
 
-.selectable:active::after {
+.selectable:active::before {
 	opacity: 0.5;
 }

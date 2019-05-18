@@ -23,7 +23,7 @@
 		<div style="
 			display: flex;">
 
-			<div class="selectable button with_icon flat light" style="
+			<div class="button with_icon flat light" style="
 				flex-basis: 0;
 				flex-grow: 1;">
 
@@ -32,7 +32,7 @@
 
 			</div>
 
-			<div class="selectable button with_icon flat light" style="
+			<div class="button with_icon flat light" style="
 				flex-basis: 0;
 				flex-grow: 1;
 				margin-left: var(--home_spacing);">
@@ -44,7 +44,7 @@
 
 		</div>
 
-		<div class="selectable button with_icon flat light" style="
+		<div class="button with_icon flat light" style="
 			margin-top: var(--home_spacing);">
 
 			<ImgSvg src="res/drawable/export_24px.svg" class="button_icon" style="fill: currentColor;"/>

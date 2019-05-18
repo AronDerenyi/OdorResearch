@@ -84,7 +84,7 @@
 
 		<div style="visibility: hidden; flex-grow: 1;"></div>
 
-		<button @click="submit" class="button flat selectable" style="
+		<button @click="submit" class="button flat" style="
 			margin-top: var(--home_spacing);
 			align-self: center;">
 

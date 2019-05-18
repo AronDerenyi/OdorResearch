@@ -2,10 +2,10 @@ body {
 	--color_primary: rgb(0, 188, 212);
 	--color_on_primary: rgb(255, 255, 255);
 
-	--color_surface: rgb(255, 255, 255);
-	--color_surface_variant: rgb(244, 244, 244);
-	--color_on_surface: rgb(32, 32, 32);
-	--color_on_surface_variant: rgb(127, 127, 127);
+	--color_surface: #fff;
+	--color_surface_variant: #eee;
+	--color_on_surface: #222;
+	--color_on_surface_variant: #888;
 
 	--color_positive: rgb(76, 175, 80);
 	--color_negative: rgb(244, 67, 54);

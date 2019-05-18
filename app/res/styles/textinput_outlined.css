@@ -1,0 +1,9 @@
+.textinput.outlined::after {
+	border-style: solid;
+}
+
+/* Sizes */
+
+.textinput.outlined::after {
+	border-radius: 5px;
+}

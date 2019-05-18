@@ -10,6 +10,7 @@
 	border-style: none;
 
 	overflow: hidden;
+	transition: all 0.2s;
 }
 
 .textinput::after {
@@ -24,10 +25,10 @@
 	border-bottom-style: solid;
 
 	pointer-events: none;
-	transition: border 0.2s, opacity 0.2s;
+	transition: all 0.2s;
 }
 
-.textinput.filled::before {
+.textinput::before {
 	content: "";
 
 	position: absolute;
@@ -37,10 +38,7 @@
 	bottom: 0;
 
 	pointer-events: none;
-}
-
-.textinput.outlined::after {
-	border-style: solid;
+	transition: all 0.2s;
 }
 
 .textinput > .textinput_text {
@@ -57,7 +55,7 @@
 }
 
 .textinput > .textinput_input::placeholder {
-	transition: color 0.2s, opacity 0.2s;
+	transition: all 0.2s;
 }
 
 /* Sizes */
@@ -71,15 +69,6 @@
 
 .textinput::after {
 	border-width: 2px;
-}
-
-.textinput.filled::before {
-	border-top-left-radius: 5px;
-	border-top-right-radius: 5px;
-}
-
-.textinput.outlined::after {
-	border-radius: 5px;
 }
 
 .textinput > .textinput_text {
@@ -114,19 +103,6 @@
 .textinput:focus-within::after {
 	border-color: var(--color_primary);
 	opacity: 1;
-}
-
-.textinput:focus-within {
-	border-color: var(--color_primary);
-}
-
-.textinput.outlined {
-	background: transparent;
-}
-
-.textinput.filled::before {
-	background: var(--color_on_surface);
-	opacity: 0.08;
 }
 
 .textinput > .textinput_input {

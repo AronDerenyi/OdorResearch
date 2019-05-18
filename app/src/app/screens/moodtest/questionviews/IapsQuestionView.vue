@@ -37,7 +37,7 @@
 	<div class="container" style="
 		padding: var(--test_padding);
 		align-items: center;
-		background: var(--color_background);">
+		background: var(--color_surface);">
 
 		<!-- Title -->
 		<h1 style="

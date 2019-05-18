@@ -15,13 +15,13 @@
 <template>
 	<div class="container" style="
 		padding: var(--home_padding);
-		background: var(--color_background);">
+		background: var(--color_surface);">
 
 		<div style="
 			display: flex;
 			flex-direction: row;">
 
-			<div class="textinput outlined" style="
+			<div class="textinput" style="
 				flex-basis: 0;
 				flex-grow: 1;">
 
@@ -30,7 +30,7 @@
 
 			</div>
 
-			<div class="textinput outlined" style="
+			<div class="textinput filled" style="
 				margin-left: var(--home_spacing);
 				flex-basis: 0;
 				flex-grow: 1;">

@@ -1,6 +1,6 @@
 .toolbar {
 	z-index: 8;
 
-	background: var(--color_background);
+	background: var(--color_surface);
 	box-shadow: 0 0 16px var(--color_shadow);
 }

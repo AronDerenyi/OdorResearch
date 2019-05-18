@@ -1,4 +1,5 @@
 .textinput {
+	position: relative;
 	z-index: 2;
 
 	display: flex;
@@ -7,13 +8,38 @@
 	justify-content: center;
 
 	border-style: none;
-	border-bottom-style: solid;
 
 	overflow: hidden;
-	transition: border 0.2s;
 }
 
-.textinput.outlined {
+.textinput::after {
+	content: "";
+
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+
+	border-bottom-style: solid;
+
+	pointer-events: none;
+	transition: border 0.2s, opacity 0.2s;
+}
+
+.textinput.filled::before {
+	content: "";
+
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+
+	pointer-events: none;
+}
+
+.textinput.outlined::after {
 	border-style: solid;
 }
 
@@ -31,7 +57,7 @@
 }
 
 .textinput > .textinput_input::placeholder {
-	transition: color 0.2s;
+	transition: color 0.2s, opacity 0.2s;
 }
 
 /* Sizes */
@@ -41,14 +67,18 @@
 
 	padding-left: 6px;
 	padding-right: 6px;
+}
 
-	border-width: 1px;
+.textinput::after {
+	border-width: 2px;
+}
+
+.textinput.filled::before {
 	border-top-left-radius: 5px;
 	border-top-right-radius: 5px;
 }
 
-.textinput.outlined {
-	border-width: 2px;
+.textinput.outlined::after {
 	border-radius: 5px;
 }
 
@@ -76,31 +106,43 @@
 
 /* Colors */
 
-.textinput {
-	background: var(--color_control_overlay);
-	border-color: var(--color_control_inactive);
+.textinput::after {
+	border-color: var(--color_on_surface);
+	opacity: 0.6;
+}
+
+.textinput:focus-within::after {
+	border-color: var(--color_primary);
+	opacity: 1;
+}
+
+.textinput:focus-within {
+	border-color: var(--color_primary);
 }
 
 .textinput.outlined {
 	background: transparent;
 }
 
-.textinput > .textinput_input {
-	color: var(--color_content);
+.textinput.filled::before {
+	background: var(--color_on_surface);
+	opacity: 0.08;
 }
 
-.textinput > .textinput_input::placeholder {
-	color: var(--color_control_inactive);
+.textinput > .textinput_input {
+	color: var(--color_on_surface);
 }
 
 .textinput > .textinput_icon {
-	color: var(--color_content);
+	color: var(--color_on_surface);
 }
 
-.textinput:focus-within {
-	border-color: var(--color_control);
+.textinput > .textinput_input::placeholder {
+	color: var(--color_on_surface);
+	opacity: 0.6;
 }
 
 .textinput > .textinput_input:focus-within::placeholder {
-	color: var(--color_control);
+	color: var(--color_primary);
+	opacity: 1;
 }

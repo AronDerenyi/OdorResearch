@@ -61,19 +61,19 @@
 /* Colors */
 
 .button {
-	background: var(--color_control);
-	color: var(--color_control_pop);
+	background: var(--color_primary);
+	color: var(--color_on_primary);
 }
 
 .button.selectable:after {
-	background: var(--color_control_highlight_pop);
+	background: var(--color_on_primary);
 }
 
 .button.light {
-	background: var(--color_control_pop);
-	color: var(--color_control);
+	background: var(--color_on_primary);
+	color: var(--color_primary);
 }
 
 .button.light.selectable:after {
-	background: var(--color_control_highlight);
+	background: var(--color_primary);
 }

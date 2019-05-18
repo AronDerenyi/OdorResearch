@@ -39,7 +39,7 @@
 	border-top-left-radius: 3px;
 	border-top-right-radius: 3px;
 
-	background: var(--color_control);
+	background: var(--color_primary);
 }
 
 .tab_indicator[selected] {
@@ -49,13 +49,13 @@
 /* Colors */
 
 .tab {
-	color: var(--color_control_inactive);
+	color: var(--color_on_surface);
 }
 
 .tab[selected] {
-	color: var(--color_control);
+	color: var(--color_primary);
 }
 
 .tab_indicator {
-	background: var(--color_control);
+	background: var(--color_primary);
 }

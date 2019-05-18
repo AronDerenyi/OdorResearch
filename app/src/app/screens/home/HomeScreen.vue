@@ -38,7 +38,7 @@
 
 <template>
 	<div class="container" style="
-		background: var(--color_background);">
+		background: var(--color_surface);">
 
 		<div class="toolbar" style="
 			height: 120px;

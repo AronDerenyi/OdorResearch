@@ -11,7 +11,7 @@
 		position: relative;
 		padding: var(--test_padding);
 		align-items: center;
-		background: var(--color_background);">
+		background: var(--color_surface);">
 
 		<h1 style="text-align: center;">Big Five</h1>
 
@@ -20,15 +20,23 @@
 			left: 0;
 			right: 0;
 			top: 0;
-			bottom: 0;
-			background: var(--color_background_loading_overlay)">
+			bottom: 0;">
+
+			<Progress style="
+				position: absolute;
+				left: 0;
+				right: 0;
+				top: 0;
+				bottom: 0;
+				color: var(--color_surface);
+				opacity: 0.5;"/>
 
 			<Progress style="
 				position: absolute;
 				top: 50%;
 				left: 50%;
 				transform: translate(-50%, -50%);
-				color: var(--color_accent);"/>
+				color: var(--color_primary);"/>
 
 		</div>
 

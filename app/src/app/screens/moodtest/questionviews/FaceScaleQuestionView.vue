@@ -20,7 +20,7 @@
 		padding: var(--test_padding);
 		align-items: center;
 		justify-content: center;
-		background: var(--color_background);">
+		background: var(--color_surface);">
 
 		<!-- Title -->
 		<h1 style="
@@ -56,7 +56,7 @@
 
 			<div @click="onFaceSelected(2)" class="selectable fab large light" style="
 				margin: var(--face_scale_face_margin);
-				color: var(--color_content_faded);">
+				color: var(--color_on_surface_variant);">
 
 				<ImgSvg src="res/drawable/face_neutral_24px.svg" style="
 					width: var(--face_scale_face_size);

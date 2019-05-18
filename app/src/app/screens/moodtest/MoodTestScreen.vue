@@ -56,7 +56,7 @@
 
 <template>
 	<div class="container" style="
-		background: var(--color_background);">
+		background: var(--color_surface);">
 
 		<!-- Question views -->
 		<transition name="fade" mode="out-in">
@@ -67,15 +67,23 @@
 		</transition>
 
 		<!-- Loading indicator -->
-		<div v-if="viewModel.loading" class="overlay" style="
-			background: var(--color_background_loading_overlay)">
+		<div v-if="viewModel.loading" class="overlay">
+
+			<Progress style="
+				position: absolute;
+				left: 0;
+				right: 0;
+				top: 0;
+				bottom: 0;
+				color: var(--color_surface);
+				opacity: 0.5;"/>
 
 			<Progress style="
 				position: absolute;
 				top: 50%;
 				left: 50%;
 				transform: translate(-50%, -50%);
-				color: var(--color_accent);"/>
+				color: var(--color_primary);"/>
 
 		</div>
 

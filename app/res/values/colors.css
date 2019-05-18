@@ -1,48 +1,27 @@
 body {
-	/* Primary colors */
-	--color_primary: rgb(255, 255, 255);
-	--color_accent: rgb(0, 188, 212);
+	--color_primary: rgb(0, 188, 212);
+	--color_on_primary: rgb(255, 255, 255);
+
+	--color_surface: rgb(255, 255, 255);
+	--color_surface_variant: rgb(244, 244, 244);
+	--color_on_surface: rgb(32, 32, 32);
+	--color_on_surface_variant: rgb(127, 127, 127);
+
 	--color_positive: rgb(76, 175, 80);
 	--color_negative: rgb(244, 67, 54);
 
-
-	/* Background colors */
-	--color_background: rgb(255, 255, 255);
-	--color_background_light: rgb(244, 244, 244);
-	--color_background_strong: rgb(236, 236, 236);
-
-	--color_background_dialog_overlay: rgba(0, 0, 0, 0.2);
-	--color_background_loading_overlay: rgba(255, 255, 255, 0.6);
-
-
-	/* Content colors */
-	--color_content: rgb(32, 32, 32);
-	--color_content_light: rgb(96, 96, 96);
-	--color_content_faded: rgb(127, 127, 127);
-	--color_content_pop: rgb(248, 248, 248);
-
-
-	/* Control colors */
-	--color_control: rgb(0, 188, 212);
-	--color_control_pop: rgb(255, 255, 255);
-
-	--color_control_inactive: rgb(127, 127, 127);
-	--color_control_overlay: rgba(0, 0, 0, 0.05);
-
-	--color_control_highlight: rgba(0, 188, 212, 0.25);
-	--color_control_highlight_pop: rgba(255, 255, 255, 0.4);
-
-
-	/* Shadow colors */
 	--color_shadow: rgba(0, 0, 0, 0.2);
 }
 
+/* Alt */
+body {
+	--color_primary: #03a9f4;
+}
+
 body .positive {
-	--color_control: rgb(76, 175, 80);
-	--color_control_highlight: rgba(76, 175, 80, 0.25);
+	--color_primary: var(--color_positive);
 }
 
 body .negative {
-	--color_control: rgb(244, 67, 54);
-	--color_control_highlight: rgba(244, 67, 54, 0.25);
+	--color_primary: var(--color_negative);
 }

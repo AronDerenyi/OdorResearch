@@ -17,7 +17,7 @@ body {
 	-webkit-app-region: drag;
 }
 
-a, button, textarea, input {
+a, button, textarea, input, label {
 	-webkit-app-region: no-drag;
 }
 
@@ -25,7 +25,7 @@ img {
 	-webkit-user-drag: none;
 }
 
-p, a, button, textarea, input, h1, h2, h3, h4, h5, h6, li {
+p, a, button, textarea, input, label, h1, h2, h3, h4, h5, h6, li {
 	padding: 0;
 
 	color: var(--color_on_surface);

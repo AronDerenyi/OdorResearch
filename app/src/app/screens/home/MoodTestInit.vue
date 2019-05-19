@@ -61,8 +61,7 @@
 				flex-basis: 0;
 				flex-grow: 1;">
 
-				<!--suppress HtmlFormInputWithoutLabel -->
-				<input type="text" :placeholder="$strings.gender" size="4" class="textinput_input"/>
+				<div class="textinput_text">Test</div>
 
 			</div>
 

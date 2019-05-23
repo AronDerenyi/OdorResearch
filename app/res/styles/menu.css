@@ -1,0 +1,110 @@
+.menu {
+	position: absolute;
+	z-index: 8;
+
+	display: flex;
+	flex-direction: column;
+	align-items: stretch;
+	justify-content: center;
+
+	box-shadow: 0 4px 20px var(--color_shadow);
+
+	transition: all 0.2s;
+	overflow: hidden;
+	user-select: none;
+	-webkit-app-region: no-drag;
+}
+
+.menu > .menu_item {
+	position: relative;
+
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: flex-start;
+}
+
+.menu > .menu_item::before {
+	content: "";
+
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+
+	transition: all 0.2s;
+	pointer-events: none;
+}
+
+.menu > .menu_item > .menu_item_text {
+	flex-grow: 1;
+
+	font-weight: 500;
+}
+
+.menu > .menu_item > .menu_item_icon {
+	flex-grow: 0;
+}
+
+/* Sizes */
+
+.menu {
+	padding-top: 8px;
+	padding-bottom: 8px;
+
+	border-radius: 5px;
+}
+
+.menu > .menu_item {
+	height: 42px;
+
+	padding-left: 6px;
+	padding-right: 6px;
+}
+
+.menu > .menu_item > .menu_item_text {
+	margin-right: 6px;
+	margin-left: 6px;
+
+	font-size: 16px;
+}
+
+.menu > .menu_item > .menu_item_icon {
+	margin-right: 6px;
+	margin-left: 6px;
+
+	width: 24px;
+	height: 24px;
+}
+
+/* Colors */
+
+.menu {
+	background: var(--color_surface);
+}
+
+.menu > .menu_item {
+	color: var(--color_on_surface);
+}
+
+.menu > .menu_item > .menu_item_text {
+	color: currentColor;
+}
+
+.menu > .menu_item > .menu_item_icon {
+	color: currentColor;
+}
+
+.menu > .menu_item::before {
+	background: var(--color_on_surface);
+	opacity: 0;
+}
+
+.menu > .menu_item:hover::before {
+	opacity: 0.08;
+}
+
+.menu > .menu_item:active::before {
+	opacity: 0.16;
+}

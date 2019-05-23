@@ -1,6 +1,5 @@
 .textinput {
 	position: relative;
-	z-index: 0;
 
 	display: flex;
 	flex-direction: row;
@@ -9,8 +8,8 @@
 
 	border-style: none;
 
-	overflow: hidden;
 	transition: all 0.2s;
+	-webkit-app-region: no-drag;
 }
 
 .textinput::after {
@@ -54,8 +53,20 @@
 	font-weight: 500;
 }
 
+.textinput > .textinput_input[readonly] {
+	cursor: default;
+}
+
 .textinput > .textinput_input::placeholder {
 	transition: all 0.2s;
+}
+
+.textinput > .textinput_menu {
+	pointer-events: none;
+}
+
+.textinput:focus-within > .textinput_menu {
+	pointer-events: initial;
 }
 
 /* Sizes */
@@ -124,5 +135,13 @@
 .textinput[selected] > .textinput_input::placeholder,
 .textinput:focus-within > .textinput_input::placeholder {
 	color: var(--color_primary);
+	opacity: 1;
+}
+
+.textinput > .textinput_menu {
+	opacity: 0;
+}
+
+.textinput:focus-within > .textinput_menu {
 	opacity: 1;
 }

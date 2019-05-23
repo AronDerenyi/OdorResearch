@@ -61,7 +61,18 @@
 				flex-basis: 0;
 				flex-grow: 1;">
 
-				<div class="textinput_text">Test</div>
+				<input type="text" class="textinput_input" readonly value="Test 2"/>
+				<!--<div class="textinput_text">Test 2</div>-->
+
+				<div class="textinput_menu menu" style="left: 0; right: 0; top: 100%;">
+
+					<div v-for="index in [0, 1, 2, 3, 4, 5]" class="menu_item">
+
+						<div class="menu_item_text">Test item {{index}}</div>
+
+					</div>
+
+				</div>
 
 			</div>
 
@@ -71,6 +82,16 @@
 
 			<!--suppress HtmlFormInputWithoutLabel -->
 			<input type="text" :placeholder="$strings.residency" size="4" class="textinput_input"/>
+
+			<div class="textinput_menu menu" style="left: 0; right: 0; top: 100%;">
+
+				<div v-for="index in [0, 1, 2, 3, 4, 5]" class="menu_item">
+
+					<div class="menu_item_text">Test item {{index}}</div>
+
+				</div>
+
+			</div>
 
 		</div>
 

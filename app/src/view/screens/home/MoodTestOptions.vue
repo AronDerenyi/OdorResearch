@@ -2,7 +2,7 @@
 	import {Vue, Component} from "vue-property-decorator";
 	import {PreferencesViewModel} from "src/viewmodel/PreferencesViewModel";
 
-	import ImgSvg from "src/app/components/ImgSvg.vue";
+	import ImgSvg from "src/view/components/ImgSvg.vue";
 
 	@Component({components: {ImgSvg}})
 	export default class MoodTestOptions extends Vue {

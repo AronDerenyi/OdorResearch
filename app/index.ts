@@ -2,7 +2,7 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 import {VueWebpackResources} from "src/util/VueWebpackResources";
 
-import App from "src/app/App.vue";
+import App from "src/view/App.vue";
 
 Vue.use(VueRouter);
 Vue.use(VueWebpackResources, {preRequire: /\.(css)$/});

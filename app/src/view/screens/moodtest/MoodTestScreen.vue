@@ -3,9 +3,9 @@
 	import {Event} from "src/util/Event";
 	import {MoodTestViewModel} from "src/viewmodel/MoodTestViewModel";
 
-	import Progress from "src/app/components/Progress.vue";
-	import FaceScaleQuestionView from "src/app/screens/moodtest/questionviews/FaceScaleQuestionView.vue";
-	import IapsQuestionView from "src/app/screens/moodtest/questionviews/IapsQuestionView.vue";
+	import Progress from "src/view/components/Progress.vue";
+	import FaceScaleQuestionView from "src/view/screens/moodtest/questionviews/FaceScaleQuestionView.vue";
+	import IapsQuestionView from "src/view/screens/moodtest/questionviews/IapsQuestionView.vue";
 
 	@Component({components: {Progress, FaceScaleQuestionView, IapsQuestionView}})
 	export default class MoodTestScreen extends Vue {

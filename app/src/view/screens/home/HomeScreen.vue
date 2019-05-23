@@ -2,10 +2,10 @@
 	import {Vue, Component} from "vue-property-decorator";
 	import {PreferencesViewModel} from "src/viewmodel/PreferencesViewModel";
 
-	import MoodTestInit from "src/app/screens/home/MoodTestInit.vue";
-	import MoodTestOptions from "src/app/screens/home/MoodTestOptions.vue";
-	import CreativityTestInit from "src/app/screens/home/CreativityTestInit.vue";
-	import CreativityTestOptions from "src/app/screens/home/CreativityTestOptions.vue";
+	import MoodTestInit from "src/view/screens/home/MoodTestInit.vue";
+	import MoodTestOptions from "src/view/screens/home/MoodTestOptions.vue";
+	import CreativityTestInit from "src/view/screens/home/CreativityTestInit.vue";
+	import CreativityTestOptions from "src/view/screens/home/CreativityTestOptions.vue";
 
 	@Component({components: {MoodTestInit, MoodTestOptions, CreativityTestInit, CreativityTestOptions}})
 	export default class HomeScreen extends Vue {

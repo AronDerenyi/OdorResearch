@@ -2,7 +2,7 @@
 	import {Vue, Component, Watch, Prop} from "vue-property-decorator";
 	import {MoodTestViewModel} from "src/viewmodel/MoodTestViewModel"
 
-	import ImgSvg from "src/app/components/ImgSvg.vue"
+	import ImgSvg from "src/view/components/ImgSvg.vue"
 
 	@Component({components: {ImgSvg}})
 	export default class IapsQuestionView extends Vue {

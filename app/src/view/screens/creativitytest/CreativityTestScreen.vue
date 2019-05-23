@@ -1,5 +1,5 @@
 <script>
-	import Progress from "src/app/components/Progress.vue";
+	import Progress from "src/view/components/Progress.vue";
 
 	export default {
 		components: {Progress},

@@ -1,7 +1,7 @@
 <script lang="ts">
 	import {Vue, Component} from "vue-property-decorator";
 
-	import ImgSvg from "src/app/components/ImgSvg.vue";
+	import ImgSvg from "src/view/components/ImgSvg.vue";
 
 	@Component({components: {ImgSvg}})
 	export default class MoodTestInit extends Vue {

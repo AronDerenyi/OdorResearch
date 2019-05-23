@@ -3,10 +3,10 @@
 	import Electron from "electron";
 	import {PreferencesViewModel} from "src/viewmodel/PreferencesViewModel";
 
-	import ImgSvg from "src/app/components/ImgSvg.vue";
-	import HomeScreen from "src/app/screens/home/HomeScreen.vue";
-	import MoodTestScreen from "src/app/screens/moodtest/MoodTestScreen.vue";
-	import CreativityTestScreen from "src/app/screens/creativitytest/CreativityTestScreen.vue";
+	import ImgSvg from "src/view/components/ImgSvg.vue";
+	import HomeScreen from "src/view/screens/home/HomeScreen.vue";
+	import MoodTestScreen from "src/view/screens/moodtest/MoodTestScreen.vue";
+	import CreativityTestScreen from "src/view/screens/creativitytest/CreativityTestScreen.vue";
 
 	@Component({components: {ImgSvg}})
 	export default class App extends Vue {

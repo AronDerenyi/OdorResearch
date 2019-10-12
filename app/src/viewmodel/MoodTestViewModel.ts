@@ -1,6 +1,6 @@
 import Vue from "vue";
 import {ViewModelProvider} from "src/util/ViewModelProvider";
-import {Event} from "src/util/Event";
+import {Event} from "src/viewmodel/ViewModel";
 import {MoodTest} from "src/model/moodtest/MoodTest";
 import {MoodTestSession} from "src/model/moodtest/MoodTestSession";
 import {IapsQuestion} from "src/model/moodtest/questions/IapsQuestion";

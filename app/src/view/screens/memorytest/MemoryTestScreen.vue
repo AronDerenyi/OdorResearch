@@ -14,7 +14,7 @@
 	import {Vue, Component} from "vue-property-decorator";
 
 	@Component
-	export default class CreativityTestScreen extends Vue {
+	export default class MemoryTestScreen extends Vue {
 
 	};
 </script>

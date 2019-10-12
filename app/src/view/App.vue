@@ -1,85 +1,3 @@
-<script lang="ts">
-	import {Vue, Component, Watch} from "vue-property-decorator";
-	import Electron from "electron";
-	import {PreferencesViewModel} from "src/viewmodel/PreferencesViewModel";
-
-	import ImgSvg from "src/view/components/ImgSvg.vue";
-	import HomeScreen from "src/view/screens/home/HomeScreen.vue";
-	import MoodTestScreen from "src/view/screens/moodtest/MoodTestScreen.vue";
-	import CreativityTestScreen from "src/view/screens/creativitytest/CreativityTestScreen.vue";
-
-	@Component({components: {ImgSvg}})
-	export default class App extends Vue {
-
-		// noinspection TypeScriptUnresolvedVariable
-		private platform: string = process.platform;
-		private window = Electron.remote.getCurrentWindow();
-
-		preferencesViewModel = PreferencesViewModel.requireInstance();
-
-		showWindowControls = this.platform != "darwin";
-		showResizeRegion = this.platform == "win32";
-		isMaximized = false;
-
-		created() {
-			this.$router.addRoutes([
-				{
-					path: "/",
-					redirect: "/home"
-				},
-				{
-					path: "/home",
-					name: "Home",
-					component: HomeScreen
-				},
-				{
-					path: "/test/mood",
-					name: "Mood Test",
-					component: MoodTestScreen
-				},
-				{
-					path: "/test/creativity",
-					name: "Creativity Test",
-					component: CreativityTestScreen
-				}
-			]);
-
-			this.isMaximized = this.window.isMaximized();
-
-			this.window.on("maximize", () => this.isMaximized = true);
-			this.window.on("unmaximize", () => this.isMaximized = false);
-			this.window.on("resize", () => this.isMaximized = false);
-
-			this.$resources.updateLocale(this.preferencesViewModel.locale);
-		}
-
-		destroyed() {
-			PreferencesViewModel.releaseInstance();
-		}
-
-		@Watch("preferencesViewModel.locale")
-		onLocaleChanged(locale: string) {
-			this.$resources.updateLocale(locale);
-		}
-
-		closeWindow() {
-			this.window.close();
-		}
-
-		maximizeWindow() {
-			this.window.maximize();
-		}
-
-		unmaximizeWindow() {
-			this.window.unmaximize();
-		}
-
-		minimizeWindow() {
-			this.window.minimize();
-		}
-	};
-</script>
-
 <template>
 	<div class="container" style="
 		position: relative;
@@ -115,3 +33,83 @@
 
 	</div>
 </template>
+
+<script lang="ts">
+	import {Vue, Component} from "vue-property-decorator";
+	import Electron from "electron";
+
+	import ImgSvg from "src/view/components/ImgSvg.vue";
+
+	import HomeScreen from "src/view/screens/home/HomeScreen.vue";
+
+	import CreativityTestScreen from "src/view/screens/creativitytest/CreativityTestScreen.vue";
+	import MemoryTestScreen from "src/view/screens/memorytest/MemoryTestScreen.vue";
+	import MoodTestScreen from "src/view/screens/moodtest/MoodTestScreen.vue";
+
+	@Component({components: {ImgSvg}})
+	export default class App extends Vue {
+
+		// noinspection TypeScriptUnresolvedVariable
+		private platform: string = process.platform;
+		private window = Electron.remote.getCurrentWindow();
+
+		showWindowControls = this.platform != "darwin";
+		showResizeRegion = this.platform == "win32";
+		isMaximized = false;
+
+		created() {
+			this.$router.addRoutes([
+				{
+					path: "/",
+					redirect: "/home"
+				},
+				{
+					path: "/home",
+					name: "Home",
+					component: HomeScreen
+				},
+				{
+					path: "/creativity_test",
+					name: "Creativity Test",
+					component: CreativityTestScreen
+				},
+				{
+					path: "/memory_test",
+					name: "Memory Test",
+					component: MemoryTestScreen
+				},
+				{
+					path: "/mood_test",
+					name: "Mood Test",
+					component: MoodTestScreen
+				}
+			]);
+
+			this.isMaximized = this.window.isMaximized();
+
+			this.window.on("maximize", () => this.isMaximized = true);
+			this.window.on("unmaximize", () => this.isMaximized = false);
+			this.window.on("resize", () => this.isMaximized = false);
+		}
+
+		closeWindow() {
+			this.window.close();
+		}
+
+		maximizeWindow() {
+			this.window.maximize();
+		}
+
+		unmaximizeWindow() {
+			this.window.unmaximize();
+		}
+
+		minimizeWindow() {
+			this.window.minimize();
+		}
+	};
+</script>
+
+<style scoped>
+
+</style>

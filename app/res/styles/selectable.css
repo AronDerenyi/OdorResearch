@@ -1,6 +1,8 @@
 .selectable {
 	position: relative;
 
+	--highlight-color: var(--color_primary);
+
 	user-select: none;
 	-webkit-app-region: no-drag;
 }
@@ -14,15 +16,13 @@
 	top: 0;
 	bottom: 0;
 
-	transition: all 0.2s;
-	pointer-events: none;
-}
-
-/* Colors */
-
-.selectable::before {
-	background: var(--color_primary);
+	background: var(--highlight-color);
 	opacity: 0;
+
+	border-radius: inherit;
+
+	transition: opacity 0.2s;
+	pointer-events: none;
 }
 
 .selectable:hover::before {

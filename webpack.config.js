@@ -4,9 +4,9 @@ const CopyPlugin = require("copy-webpack-plugin");
 const VueLoaderPlugin = require("vue-loader/lib/plugin");
 
 module.exports = {
+	// mode: "production",
 	mode: "development",
 	devtool: "inline-source-map",
-	// mode: "production",
 	target: "electron-renderer",
 	node: {
 		__dirname: false,

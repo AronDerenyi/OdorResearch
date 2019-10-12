@@ -1,114 +1,137 @@
+<template>
+	<div class="home_screen">
+		<div class="home_cards">
+			<TestCard
+					class="selectable home_card"
+					:title="viewModel.creativityTestTitle"
+					:description="viewModel.creativityTestDescription"
+					@click="viewModel.selectCreativityTest()"/>
+			<TestCard
+					class="selectable home_card"
+					:title="viewModel.memoryTestTitle"
+					:description="viewModel.memoryTestDescription"
+					@click="viewModel.selectMemoryTest()"/>
+			<TestCard
+					class="selectable home_card"
+					:title="viewModel.moodTestTitle"
+					:description="viewModel.moodTestDescription"
+					@click="viewModel.selectMoodTest()"/>
+		</div>
+
+		<transition name="modal">
+			<div class="home_terms_modal" v-if="viewModel.showTerms">
+				<TestTerms
+						class="home_terms"
+						:title="viewModel.termsTitle"
+						:content="viewModel.termsContent"
+						:accept="viewModel.acceptAndStart"
+						@accept="viewModel.startTest()"/>
+			</div>
+		</transition>
+
+		<HomeSettings
+				class="home_settings"
+				:huSelected="viewModel.huSelected"
+				:enSelected="viewModel.enSelected"
+				:showOptions="!viewModel.showTerms"
+				:showBack="viewModel.showTerms"
+				@selectHU="viewModel.setLanguageHU()"
+				@selectEN="viewModel.setLanguageEN()"
+				@back="viewModel.unselectTest()"/>
+	</div>
+</template>
+
 <script lang="ts">
-	import {Vue, Component} from "vue-property-decorator";
-	import {PreferencesViewModel} from "src/viewmodel/PreferencesViewModel";
+	import {Vue, Component, Watch} from "vue-property-decorator";
 
-	import MoodTestInit from "src/view/screens/home/MoodTestInit.vue";
-	import MoodTestOptions from "src/view/screens/home/MoodTestOptions.vue";
-	import CreativityTestInit from "src/view/screens/home/CreativityTestInit.vue";
-	import CreativityTestOptions from "src/view/screens/home/CreativityTestOptions.vue";
+	import ImgSvg from "src/view/components/ImgSvg.vue";
+	import FloatingActionButton from "src/view/components/FloatingActionButton.vue";
+	import TestCard from "src/view/screens/home/TestCard.vue";
+	import TestTerms from "src/view/screens/home/TestTerms.vue";
+	import HomeSettings from "src/view/screens/home/HomeSettings.vue";
 
-	@Component({components: {MoodTestInit, MoodTestOptions, CreativityTestInit, CreativityTestOptions}})
+	import HomeModel from "src/viewmodel/HomeModel";
+
+	@Component({components: {HomeSettings, ImgSvg, FloatingActionButton, TestCard, TestTerms}})
 	export default class HomeScreen extends Vue {
 
-		private selectedTab: number = 0;
-
-		preferencesViewModel = PreferencesViewModel.requireInstance();
+		private viewModel = new HomeModel();
 
 		destroyed() {
-			PreferencesViewModel.releaseInstance();
+			this.viewModel.dispose();
 		}
 
-		selectMoodTest() {
-			this.selectedTab = 0;
+		@Watch("viewModel.navigateToCreativityTest")
+		onNavigateToCreativityTest() {
+			// TODO: Implement
 		}
 
-		selectCreativityTest() {
-			this.selectedTab = 1;
+		@Watch("viewModel.navigateToMemoryTest")
+		onNavigateToMemoryTest() {
+			this.$router.push("/memory_test");
 		}
 
-		get isMoodTestSelected(): boolean {
-			return this.selectedTab == 0;
-		}
-
-		get isCreativityTestSelected(): boolean {
-			return this.selectedTab == 1;
+		@Watch("viewModel.navigateToMoodTest")
+		onNavigateToMoodTest() {
+			// TODO: Implement
 		}
 	};
 </script>
 
-<template>
-	<div class="container" style="
-		background: var(--color_surface);">
+<style scoped>
+	.home_screen {
+		display: flex;
 
-		<div class="toolbar" style="
-			height: 120px;
-			flex-grow: 0;
-			flex-shrink: 0;
-			display: flex;
-			flex-direction: row;
-			align-items: flex-end;
-			justify-content: center;">
+		flex-direction: column;
+		padding-bottom: var(--home_settings_height);
 
-			<div :selected="isMoodTestSelected" @click="selectMoodTest" class="tab">
+		background: var(--color_surface);
+	}
 
-				<div :selected="isMoodTestSelected" @click="selectMoodTest" class="tab_text">
+	.home_cards {
+		flex-grow: 1;
 
-					{{$strings.mood_test}}
+		display: flex;
 
-				</div>
+		flex-direction: row;
+		align-items: center;
+		justify-content: center;
+		padding: var(--home_cards_padding);
+	}
 
-			</div>
+	.home_cards > *:not(:first-child) {
+		margin-left: var(--home_cards_spacing);
+	}
 
-			<div :selected="isCreativityTestSelected" @click="selectCreativityTest" class="tab">
+	.home_card {
+		width: var(--home_card_width);
+		height: var(--home_card_height);
+		flex-shrink: 1;
+	}
 
-				<div :selected="isMoodTestSelected" @click="selectMoodTest" class="tab_text">
+	.home_terms_modal {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
 
-					{{$strings.creativity_test}}
+		overflow-x: hidden;
+		overflow-y: auto;
 
-				</div>
+		background: var(--color_surface);
 
-			</div>
+		box-shadow: 0 0 32px var(--color_shadow);
+	}
 
-		</div>
+	.home_terms {
+		margin-bottom: calc(var(--home_settings_height));
+	}
 
-		<div style="
-			flex-grow: 1;
-			flex-basis: 0;
-			display: flex;
-			flex-direction: row;">
-
-			<div style="
-				position: relative;
-				flex-grow: 1;
-				flex-basis: 0;
-				overflow: hidden;">
-
-				<transition name="fade">
-
-					<MoodTestInit v-if="isMoodTestSelected" class="overlay"/>
-					<CreativityTestInit v-if="isCreativityTestSelected" class="overlay"/>
-
-				</transition>
-
-			</div>
-
-			<div style="
-				position: relative;
-				width: var(--home_options_width);
-				flex-grow: 0;
-				flex-shrink: 0;
-				overflow: hidden;">
-
-				<transition name="fade">
-
-					<MoodTestOptions v-if="isMoodTestSelected" class="overlay"/>
-					<CreativityTestOptions v-if="isCreativityTestSelected" class="overlay"/>
-
-				</transition>
-
-			</div>
-
-		</div>
-
-	</div>
-</template>
+	.home_settings {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		right: 0;
+	}
+</style>

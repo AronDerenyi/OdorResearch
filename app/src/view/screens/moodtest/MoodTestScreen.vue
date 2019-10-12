@@ -1,6 +1,6 @@
 <script lang="ts">
 	import {Vue, Component, Watch} from "vue-property-decorator";
-	import {Event} from "src/util/Event";
+	import {Event} from "src/viewmodel/ViewModel";
 	import {MoodTestViewModel} from "src/viewmodel/MoodTestViewModel";
 
 	import Progress from "src/view/components/Progress.vue";

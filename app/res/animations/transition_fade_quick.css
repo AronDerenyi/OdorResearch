@@ -1,0 +1,9 @@
+.fade_quick-enter-active,
+.fade_quick-leave-active {
+	transition: all 0.1s;
+}
+
+.fade_quick-enter,
+.fade_quick-leave-to {
+	opacity: 0;
+}

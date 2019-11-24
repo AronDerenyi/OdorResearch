@@ -71,7 +71,7 @@
 		position: relative;
 		margin-top: var(--question_spacing);
 
-		width: var(--question_inputs_width);
+		width: var(--question_input_width);
 		max-width: 100%;
 
 		display: flex;

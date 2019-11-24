@@ -2,36 +2,33 @@ import Vue from "vue";
 import {ViewModel, Event} from "src/viewmodel/ViewModel";
 import {DescriptionModel} from "src/viewmodel/tests/subtests/DescriptionModel";
 import {Questions1Model} from "src/viewmodel/tests/subtests/Questions1Model";
-import {STMCapacityModel} from "src/viewmodel/tests/subtests/STMCapacityModel";
-import {NonWordRepetitionModel} from "src/viewmodel/tests/subtests/NonWordRepetitionModel";
-import {GottschalkModel} from "src/viewmodel/tests/subtests/GottschalkModel";
-
-import {NonWordProvider} from "src/providers/NonWordProvider";
-import {NumbersProvider} from "src/providers/NumbersProvider";
 import {QuestionsData} from "src/model/QuestionsData";
-import {MemoryTestSession} from "src/model/MemoryTestSession";
-import {GottschalkData} from "src/model/GottschalkData";
 import {Questions2Model} from "src/viewmodel/tests/subtests/Questions2Model";
 import {Questions3Model} from "src/viewmodel/tests/subtests/Questions3Model";
 import {AssociationModel} from "src/viewmodel/tests/subtests/AssociationModel";
 import {EndingModel} from "src/viewmodel/tests/subtests/EndingModel";
 import {CodeGeneratorModel} from "src/viewmodel/tests/subtests/CodeGeneratorModel";
 import {AssociationData} from "src/model/AssociationData";
-import {GroupCode} from "src/code/GroupCode";
-import {MemoryReturningTestSession} from "src/model/MemoryReturningTestSession";
-import {QuestionsTempData} from "src/model/QuestionsTempData";
-import {NonWordRecallingModel} from "src/viewmodel/tests/subtests/NonWordRecallingModel";
-import {QuestionsTempModel} from "src/viewmodel/tests/subtests/QuestionsTempModel";
 import {StorageInteractor} from "src/interactors/StorageInteractor";
+import {CreativityTestSession} from "src/model/CreativityTestSession";
+import {TellegenData} from "src/model/TellegenData";
+import {UnusualUseData} from "src/model/UnusualUseData";
+import {TellegenModel} from "src/viewmodel/tests/subtests/TellegenModel";
+import {UnusualUseModel} from "src/viewmodel/tests/subtests/UnusualUseModel";
+import {GroupCode} from "src/code/GroupCode";
+import {ValenceModel} from "src/viewmodel/tests/subtests/ValenceModel";
+import {ValenceData} from "src/model/ValenceData";
 
-export class MemoryTestModel extends ViewModel {
+export class CreativityTestModel extends ViewModel {
 
 	readonly subTest: ViewModel;
 
 	readonly navigateToHome: Event;
 
 	// internal
-	private readonly session: MemoryTestSession | MemoryReturningTestSession;
+	private static readonly FRAGRANCE_PASSCODE = /^odor$/;
+
+	private readonly session: CreativityTestSession;
 
 	constructor(groupCode: string) {
 		super();
@@ -41,19 +38,13 @@ export class MemoryTestModel extends ViewModel {
 			return;
 		}
 
-		if (GroupCode.isReturning(groupCode)) {
-			this.session = new MemoryReturningTestSession();
-			this.session.questions = new QuestionsTempData();
-			this.session.nonWordRecalling = [];
-			this.session.association = new AssociationData();
-		} else {
-			this.session = new MemoryTestSession();
-			this.session.questions = new QuestionsData();
-			this.session.stmCapacity = [];
-			this.session.nonWordRepetition = [];
-			this.session.gottschalk = new GottschalkData();
-			this.session.association = new AssociationData();
-		}
+		this.session = new CreativityTestSession();
+		this.session.questions = new QuestionsData();
+		this.session.tellegen = new TellegenData();
+		this.session.unusualUseBrick = new UnusualUseData();
+		this.session.unusualUseToothbrush = new UnusualUseData();
+		this.session.valence = new ValenceData();
+		this.session.association = new AssociationData();
 
 		this.session.groupCode = groupCode;
 	}
@@ -63,136 +54,115 @@ export class MemoryTestModel extends ViewModel {
 
 		this.session.startTime = Date.now();
 
-		// TODO
-		// this.startCodeGenerator();
 		this.startCodeGenerator();
 	}
 
 	private startCodeGenerator() {
 		const codeGenerator = new CodeGeneratorModel(this.session, () => {
 			codeGenerator.dispose();
-			if (GroupCode.isReturning(this.session.groupCode)) {
-				this.startQuestionsTemp();
-			} else {
-				this.startQuestions1();
-			}
+			this.startQuestions1();
 		});
 
 		Vue.set(this, "subTest", codeGenerator);
 	}
 
 	private startQuestions1() {
-		if (!(this.session instanceof MemoryTestSession)) return;
-
 		const questions1 = new Questions1Model(this.session.questions, () => {
 			questions1.dispose();
-			this.startSTMCapacity();
+			this.startTellegen();
 		});
 
 		Vue.set(this, "subTest", questions1);
 	}
 
-	private startQuestionsTemp() {
-		if (!(this.session instanceof MemoryReturningTestSession)) return;
-
-		const questionsTemp = new QuestionsTempModel(this.session.questions, () => {
-			questionsTemp.dispose();
-			this.startNonWordRecalling();
-		});
-
-		Vue.set(this, "subTest", questionsTemp);
-	}
-
-	private startSTMCapacity() {
-		if (!(this.session instanceof MemoryTestSession)) return;
-
-		const numbers = NumbersProvider.getAll();
-
-		const stmCapacity = new STMCapacityModel(numbers, this.session.stmCapacity, () => {
-			stmCapacity.dispose();
+	private startTellegen() {
+		const tellegen = new TellegenModel(this.session.tellegen, () => {
+			tellegen.dispose();
 			this.startQuestions2();
 		});
 
-		const stmCapacityDescription = new DescriptionModel("stm_capacity_description", null, () => {
-			stmCapacityDescription.dispose();
-			Vue.set(this, "subTest", stmCapacity);
+		const tellegenDescription = new DescriptionModel("tellegen_description", null, () => {
+			tellegenDescription.dispose();
+			Vue.set(this, "subTest", tellegen);
 		});
 
-		Vue.set(this, "subTest", stmCapacityDescription);
+		Vue.set(this, "subTest", tellegenDescription);
 	}
 
 	private startQuestions2() {
-		if (!(this.session instanceof MemoryTestSession)) return;
-
 		const questions2 = new Questions2Model(this.session.questions, () => {
 			questions2.dispose();
-			this.startNonWordRepetition();
+			this.startUnusualUseBrick();
 		});
 
 		Vue.set(this, "subTest", questions2);
 	}
 
-	private startNonWordRepetition() {
-		if (!(this.session instanceof MemoryTestSession)) return;
+	private startUnusualUseBrick() {
+		const unusualUseBrick = new UnusualUseModel("unusual_use_brick_title", this.session.unusualUseBrick, () => {
+			unusualUseBrick.dispose();
+			if (GroupCode.isControl(this.session.groupCode)) {
+				this.startQuestions3();
+			} else {
+				this.startFragrance();
+			}
+		});
 
-		const nonWords = NonWordProvider.get20();
+		const unusualUseBrickDescription = new DescriptionModel("unusual_use_description", null, () => {
+			unusualUseBrickDescription.dispose();
+			Vue.set(this, "subTest", unusualUseBrick);
+		});
 
-		const nonWordRepetition = new NonWordRepetitionModel(nonWords, this.session.nonWordRepetition, () => {
-			nonWordRepetition.dispose();
+		Vue.set(this, "subTest", unusualUseBrickDescription);
+	}
+
+	private startFragrance() {
+		const fragrance = new DescriptionModel("fragrance_description", CreativityTestModel.FRAGRANCE_PASSCODE, () => {
+			fragrance.dispose();
 			this.startQuestions3();
 		});
 
-		const nonWordRepetitionDescription = new DescriptionModel("non_word_repetition_description", null, () => {
-			nonWordRepetitionDescription.dispose();
-			Vue.set(this, "subTest", nonWordRepetition);
-		});
-
-		Vue.set(this, "subTest", nonWordRepetitionDescription);
-	}
-
-	private startNonWordRecalling() {
-		if (!(this.session instanceof MemoryReturningTestSession)) return;
-
-		const nonWords = NonWordProvider.get20();
-
-		const nonWordRecalling = new NonWordRecallingModel(nonWords, this.session.nonWordRecalling, () => {
-			nonWordRecalling.dispose();
-			this.startAssociation();
-		});
-
-		const nonWordRecallingDescription = new DescriptionModel("non_word_recalling_description", null, () => {
-			nonWordRecallingDescription.dispose();
-			Vue.set(this, "subTest", nonWordRecalling);
-		});
-
-		Vue.set(this, "subTest", nonWordRecallingDescription);
+		Vue.set(this, "subTest", fragrance);
 	}
 
 	private startQuestions3() {
-		if (!(this.session instanceof MemoryTestSession)) return;
-
 		const questions3 = new Questions3Model(this.session.questions, () => {
 			questions3.dispose();
-			this.startGottschalk();
+			if (GroupCode.isControl(this.session.groupCode)) {
+				this.startUnusualUseToothbrush();
+			} else {
+				this.startValence();
+			}
 		});
 
 		Vue.set(this, "subTest", questions3);
 	}
 
-	private startGottschalk() {
-		if (!(this.session instanceof MemoryTestSession)) return;
-
-		const gottschalk = new GottschalkModel(this.session.gottschalk, () => {
-			gottschalk.dispose();
-			this.startAssociation();
+	private startValence() {
+		const valence = new ValenceModel(this.session.valence, () => {
+			valence.dispose();
+			this.startUnusualUseToothbrush();
 		});
 
-		const gottschalkDescription = new DescriptionModel("gottschalk_description", null, () => {
-			gottschalkDescription.dispose();
-			Vue.set(this, "subTest", gottschalk);
+		Vue.set(this, "subTest", valence);
+	}
+
+	private startUnusualUseToothbrush() {
+		const unusualUseToothbrush = new UnusualUseModel("unusual_use_toothbrush_title", this.session.unusualUseToothbrush, () => {
+			unusualUseToothbrush.dispose();
+			if (GroupCode.isControl(this.session.groupCode)) {
+				this.startEnding();
+			} else {
+				this.startAssociation();
+			}
 		});
 
-		Vue.set(this, "subTest", gottschalkDescription);
+		const unusualUseToothbrushDescription = new DescriptionModel("unusual_use_description_short", null, () => {
+			unusualUseToothbrushDescription.dispose();
+			Vue.set(this, "subTest", unusualUseToothbrush);
+		});
+
+		Vue.set(this, "subTest", unusualUseToothbrushDescription);
 	}
 
 	private startAssociation() {

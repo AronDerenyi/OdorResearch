@@ -1,6 +1,6 @@
 import {EventData} from "src/model/EventData";
 
-export class PanasData {
+export class OsgoodData {
 
 	startTime: number;
 	events: EventData<{index: number, value: number}>[];

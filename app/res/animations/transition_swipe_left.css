@@ -1,11 +1,11 @@
-.swipe_right-enter-active,
-.swipe_right-leave-active {
+.swipe_left-enter-active,
+.swipe_left-leave-active {
 	transition: all 0.5s;
 }
 
-.swipe_right-enter {
+.swipe_left-enter {
 	transform: translateX(100%);
 }
-.swipe_right-leave-to {
+.swipe_left-leave-to {
 	transform: translateX(-100%);
 }

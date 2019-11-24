@@ -36,6 +36,7 @@
 				:showBack="viewModel.showModal"
 				@selectHU="viewModel.setLanguageHU()"
 				@selectEN="viewModel.setLanguageEN()"
+				@dashboard="$router.push({name: 'Dashboard'})"
 				@back="viewModel.back()"/>
 	</div>
 </template>
@@ -45,11 +46,12 @@
 
 	import ImgSvg from "src/view/components/ImgSvg.vue";
 	import FloatingActionButton from "src/view/components/FloatingActionButton.vue";
-	import HomeCard from "src/view/screens/home/HomeCard.vue";
-	import HomeModal from "src/view/screens/home/HomeModal.vue";
-	import HomeSettings from "src/view/screens/home/HomeSettings.vue";
+	import HomeCard from "src/view/home/HomeCard.vue";
+	import HomeModal from "src/view/home/HomeModal.vue";
+	import HomeSettings from "src/view/home/HomeSettings.vue";
 
 	import {HomeModel} from "src/viewmodel/home/HomeModel";
+	import {Event} from "src/viewmodel/ViewModel";
 
 	@Component({components: {ImgSvg, FloatingActionButton, HomeCard, HomeModal, HomeSettings}})
 	export default class HomeScreen extends Vue {
@@ -62,18 +64,18 @@
 		}
 
 		@Watch("viewModel.navigateToCreativityTest")
-		onNavigateToCreativityTest() {
-			// TODO: Implement
+		onNavigateToCreativityTest(event: Event<string>) {
+			this.$router.push({name: "Creativity Test", params: {groupCode: event.value}});
 		}
 
 		@Watch("viewModel.navigateToMemoryTest")
-		onNavigateToMemoryTest() {
-			this.$router.push("/memory_test");
+		onNavigateToMemoryTest(event: Event<string>) {
+			this.$router.push({name: "Memory Test", params: {groupCode: event.value}});
 		}
 
 		@Watch("viewModel.navigateToMoodTest")
-		onNavigateToMoodTest() {
-			// TODO: Implement
+		onNavigateToMoodTest(event: Event<string>) {
+			this.$router.push({name: "Mood Test", params: {groupCode: event.value}});
 		}
 	};
 </script>
@@ -81,6 +83,7 @@
 <style scoped>
 	.home_screen {
 		display: flex;
+		overflow: hidden;
 
 		flex-direction: column;
 		justify-content: center;
@@ -92,8 +95,6 @@
 	.home_cards {
 		display: flex;
 
-		flex-direction: row;
-		align-items: stretch;
 		justify-content: center;
 		padding: var(--home_cards_padding);
 	}
@@ -104,7 +105,6 @@
 
 	.home_card {
 		width: var(--home_card_width);
-		flex-shrink: 1;
 	}
 
 	.home_modal {

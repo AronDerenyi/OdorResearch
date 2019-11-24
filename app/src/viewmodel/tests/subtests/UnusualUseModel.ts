@@ -1,23 +1,25 @@
 import {TimedViewModel} from "src/viewmodel/TimedViewModel";
-import {GottschalkData} from "src/model/GottschalkData";
+import {UnusualUseData} from "src/model/UnusualUseData";
 import {EventData} from "src/model/EventData";
 
-export class GottschalkModel extends TimedViewModel {
+export class UnusualUseModel extends TimedViewModel {
 
 	// internal
-	private static readonly MAX_LENGTH = 350;
-	private static readonly TIMER_MILLIS = 150000;
+	private static readonly TIMER_MILLIS = 120000;
 
-	private readonly data: GottschalkData;
+	private readonly titleStringId: string;
+	private readonly data: UnusualUseData;
 	private readonly finishCallback: () => void;
 	private internalInput: string = "";
 
 	constructor(
-		data: GottschalkData,
+		titleStringId: string,
+		data: UnusualUseData,
 		finishCallback: () => void
 	) {
 		super();
 
+		this.titleStringId = titleStringId;
 		this.data = data;
 		this.finishCallback = finishCallback;
 	}
@@ -26,13 +28,19 @@ export class GottschalkModel extends TimedViewModel {
 		this.data.startTime = Date.now();
 		this.data.events = [];
 
-		this.startTimer(GottschalkModel.TIMER_MILLIS, () => {
+		this.startTimer(UnusualUseModel.TIMER_MILLIS, () => {
 			this.data.input = this.input;
 			this.finishCallback();
 		});
 	}
 
-	get maxLength() { return GottschalkModel.MAX_LENGTH }
+	get title() {
+		return this.strings[this.titleStringId];
+	}
+
+	get hint() {
+		return this.strings["unusual_use_hint"];
+	}
 
 	get input() {
 		return this.internalInput;

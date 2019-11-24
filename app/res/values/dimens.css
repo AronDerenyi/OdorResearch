@@ -1,36 +1,106 @@
 body {
 
-	/* Home Screen */
+	/* Home */
 	--home_cards_padding: 36px;
 	--home_cards_spacing: 48px;
 
-	--home_card_width: 300px;
-	--home_card_height: 300px;
-	--home_card_text_size: 16px;
-	--home_card_title_size: 24px;
-	--home_card_padding: 16px;
-	--home_card_spacing: 12px;
+		/* Home Card */
+		--home_card_width: 300px;
+		--home_card_title_size: 24px;
+		--home_card_icon_size: 96px;
+		--home_card_padding: 16px;
+		--home_card_spacing: 24px;
 
-	--home_terms_max_width: 500px;
-	--home_terms_text_size: 16px;
-	--home_terms_title_size: 32px;
-	--home_terms_padding: 64px;
-	--home_terms_spacing: 32px;
+		/* Home Modal */
+		--home_modal_padding: 64px;
 
-	--home_settings_padding: 32px;
-	--home_settings_spacing: 24px;
-	--home_settings_height: 88px;
+		--home_modal_title_size: 32px;
 
-	/* Test Screen */
-	--test_padding: 32px;
-	--test_spacing: 32px;
+		--home_modal_help_size: 20px;
+		--home_modal_help_space: 4px;
 
-		/* Face Scale Question */
-		--face_scale_face_margin: 16px;
+		--home_modal_input_width: 300px;
+		--home_modal_input_space: 32px;
+		--home_modal_next_space: 8px;
 
-		/* IAPS Question */
-		--iaps_image_corner_radius: 8px;
-		--iaps_mood_select_width: 200px;
-		--iaps_mood_rating_margin: 8px;
-		--iaps_mood_rating_description_spacing: 24px;
+		--home_modal_terms_size: 16px;
+		--home_modal_terms_width: 500px;
+		--home_modal_terms_space: 64px;
+		--home_modal_accept_space: 32px;
+
+		/* Home Settings */
+		--home_settings_padding: 32px;
+		--home_settings_spacing: 24px;
+		--home_settings_height: 88px;
+
+	/* SubTest */
+	--subtest_padding: 56px;
+	--subtest_spacing: 36px;
+
+	--subtest_title_size: 32px;
+	--subtest_help_size: 24px;
+	--subtest_help_width: 700px;
+	--subtest_help_space: 6px;
+	--subtest_navigation_padding: 32px;
+
+	--subtest_timer_spacing: 4px;
+	--subtest_timer_text_size: 20px;
+	--subtest_timer_width: 500px;
+
+	--subtest_input_field_width: 500px;
+	--subtest_input_field_height: 200px;
+
+		/* Code Generator */
+		--code_generator_content_max_width: 800px;
+		--code_generator_code_size: 56px;
+		--code_generator_code_space: 8px;
+
+		/* Description */
+		--description_width: 500px;
+		--description_text_size: 20px;
+		--description_passcode_width: 300px;
+		--description_passcode_start_space: 8px;
+
+		/* Questions */
+		--question_max_width: 800px;
+		--question_spacing: 12px;
+		--question_help_space: 4px;
+
+		--question_title_size: 24px;
+		--question_help_size: 18px;
+
+		--question_input_width: 300px;
+		--question_input_spacing: 16px;
+		--question_option_width: 120px;
+		--question_dropdown_height: 250px;
+
+		/* Tellegen */
+		--tellegen_spacing: 64px;
+		--tellegen_max_width: 700px;
+
+		/* Panas */
+		--panas_spacing: 64px;
+		--panas_max_width: 700px;
+
+		/* Iaps */
+		--iaps_input_height: 56px;
+		--iaps_input_spacing: 16px;
+		--iaps_input_option_width: 200px;
+
+		/* STM Capacity */
+		--stm_capacity_number_spacing: 16px;
+		--stm_capacity_number_size: 48px;
+		--stm_capacity_input_width: 50px;
+		--stm_capacity_input_height: 70px;
+		--stm_capacity_input_radius: 12px;
+
+		/* Non-word */
+		--non_word_content_width: 400px;
+		--non_word_content_size: 40px;
+		--non_word_input_padding: 12px;
+		--non_word_input_radius: 12px;
+
+		/* Gottschalk */
+		--gottschalk_counter_space: 4px;
+		--gottschalk_counter_size: 14px;
 }

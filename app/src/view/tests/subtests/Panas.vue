@@ -1,19 +1,21 @@
 <template>
 	<div>
-		<div class="tellegen">
-			<div class="tellegen_content">
-				<OptionQuestion
-						class="tellegen_question"
+		<div class="panas">
+			<div class="panas_content">
+				<ScaleQuestion
+						class="panas_question"
 						v-for="index in viewModel.questionCount"
+						:key="index"
 						:title="viewModel.title(index - 1)"
-						:options="viewModel.options"
+						:min="viewModel.min"
+						:max="viewModel.max"
 						:selected="viewModel.selected(index - 1)"
 						@selected="viewModel.select(index - 1, $event)"/>
 			</div>
 		</div>
 		<transition name="fade">
 			<FloatingActionButton
-					class="light tellegen_finish"
+					class="light panas_finish"
 					:icon="require('res/drawable/ic_arrow_forward_24px.svg')"
 					v-if="viewModel.showFinish"
 					@click="viewModel.finish()"/>
@@ -23,16 +25,14 @@
 
 <script lang="ts">
 	import {Vue, Component, Prop} from "vue-property-decorator";
-
 	import FloatingActionButton from "src/view/components/FloatingActionButton.vue";
-	import OptionQuestion from "src/view/tests/subtests/components/OptionQuestion.vue";
+	import {PanasModel} from "src/viewmodel/tests/subtests/PanasModel";
+	import ScaleQuestion from "src/view/tests/subtests/components/ScaleQuestion.vue";
 
-	import {TellegenModel} from "src/viewmodel/tests/subtests/TellegenModel";
+	@Component({components: {FloatingActionButton, ScaleQuestion}})
+	export default class Panas extends Vue {
 
-	@Component({components: {FloatingActionButton, OptionQuestion}})
-	export default class Tellegen extends Vue {
-
-		@Prop() readonly viewModel: TellegenModel;
+		@Prop() readonly viewModel: PanasModel;
 
 		mounted() {
 			this.viewModel.start();
@@ -41,7 +41,7 @@
 </script>
 
 <style scoped>
-	.tellegen {
+	.panas {
 		position: absolute;
 		top: 0;
 		bottom: 0;
@@ -54,7 +54,7 @@
 		flex-direction: column;
 	}
 
-	.tellegen_content {
+	.panas_content {
 		flex-grow: 1;
 
 		display: flex;
@@ -67,16 +67,16 @@
 		background: var(--color_surface);
 	}
 
-	.tellegen_content > *:not(:first-child) {
-		margin-top: var(--tellegen_spacing);
+	.panas_content > *:not(:first-child) {
+		margin-top: var(--panas_spacing);
 	}
 
-	.tellegen_question {
-		max-width: var(--tellegen_max_width);
+	.panas_question {
+		max-width: var(--panas_max_width);
 		flex-shrink: 0;
 	}
 
-	.tellegen_finish {
+	.panas_finish {
 		position: absolute;
 		bottom: var(--subtest_navigation_padding);
 		right: var(--subtest_navigation_padding);

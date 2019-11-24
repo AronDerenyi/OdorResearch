@@ -15,8 +15,9 @@
 		<transition name="fade">
 			<FloatingActionButton
 					class="light home_settings_options"
-					:icon="require('res/drawable/ic_apps_24px.svg')"
-					v-if="showOptions"/>
+					:icon="require('res/drawable/ic_dashboard_24px.svg')"
+					v-if="showOptions"
+					@click="$emit('dashboard')"/>
 		</transition>
 		<transition name="fade">
 			<FloatingActionButton
@@ -47,7 +48,6 @@
 	.home_settings {
 		display: flex;
 
-		flex-direction: row;
 		align-items: center;
 		justify-content: center;
 

@@ -1,8 +1,8 @@
 import {EventData} from "src/model/EventData";
 
-export class AssociationData {
+export class TellegenData {
 
 	startTime: number;
-	events: EventData<string>[];
-	input: string;
+	events: EventData<{index: number, value: boolean}>[];
+	values: boolean[];
 }

@@ -1,14 +1,8 @@
 import {EventData} from "src/model/EventData";
 
-export class ValenceData {
+export class FaceScaleData {
 
 	startTime: number;
-
-	pleasantnessEvents: EventData<number>[];
-	impactEvents: EventData<number>[];
-	expectationEvents: EventData<string>[];
-
-	pleasantness: number;
-	impact: number;
-	expectation: string;
+	events: EventData<number>[];
+	value: number;
 }

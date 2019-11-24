@@ -1,42 +1,6 @@
 <template>
-	<div class="home_screen">
-		<div class="home_cards">
-			<HomeCard
-					class="home_card"
-					:title="viewModel.creativityTestTitle"
-					:icon="require('res/drawable/ic_creativity_24px.svg')"
-					:select="viewModel.select"
-					@select="viewModel.selectCreativityTest()"/>
-			<HomeCard
-					class="home_card"
-					:title="viewModel.memoryTestTitle"
-					:icon="require('res/drawable/ic_memory_24px.svg')"
-					:select="viewModel.select"
-					@select="viewModel.selectMemoryTest()"/>
-			<HomeCard
-					class="home_card"
-					:title="viewModel.moodTestTitle"
-					:icon="require('res/drawable/ic_mood_24px.svg')"
-					:select="viewModel.select"
-					@select="viewModel.selectMoodTest()"/>
-		</div>
+	<div class="dashboard_screen">
 
-		<transition name="pop_up">
-			<HomeModal
-					class="home_modal"
-					v-if="viewModel.showModal"
-					:viewModel="viewModel.modalModel"/>
-		</transition>
-
-		<HomeSettings
-				class="home_settings"
-				:huSelected="viewModel.huSelected"
-				:enSelected="viewModel.enSelected"
-				:showOptions="!viewModel.showModal"
-				:showBack="viewModel.showModal"
-				@selectHU="viewModel.setLanguageHU()"
-				@selectEN="viewModel.setLanguageEN()"
-				@back="viewModel.back()"/>
 	</div>
 </template>
 
@@ -52,8 +16,8 @@
 	import {HomeModel} from "src/viewmodel/home/HomeModel";
 	import {Event} from "src/viewmodel/ViewModel";
 
-	@Component({components: {ImgSvg, FloatingActionButton, HomeCard, HomeModal, HomeSettings}})
-	export default class HomeScreen extends Vue {
+	@Component({components: {ImgSvg, FloatingActionButton}})
+	export default class DashboardScreen extends Vue {
 
 		private viewModel = new HomeModel();
 
@@ -61,31 +25,15 @@
 			this.viewModel.dispose();
 			this.viewModel = null;
 		}
-
-		@Watch("viewModel.navigateToCreativityTest")
-		onNavigateToCreativityTest(event: Event<string>) {
-			this.$router.push({name: "Creativity Test", params: {groupCode: event.value}});
-		}
-
-		@Watch("viewModel.navigateToMemoryTest")
-		onNavigateToMemoryTest(event: Event<string>) {
-			this.$router.push({name: "Memory Test", params: {groupCode: event.value}});
-		}
-
-		@Watch("viewModel.navigateToMoodTest")
-		onNavigateToMoodTest(event: Event<string>) {
-			this.$router.push({name: "Mood Test", params: {groupCode: event.value}});
-		}
 	};
 </script>
 
 <style scoped>
 	.home_screen {
 		display: flex;
-		overflow: hidden;
+		overflow: hidden auto;
 
 		flex-direction: column;
-		justify-content: center;
 		padding-bottom: var(--home_settings_height);
 
 		background: var(--color_surface);

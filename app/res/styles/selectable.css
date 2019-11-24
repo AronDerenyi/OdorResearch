@@ -1,6 +1,4 @@
 .selectable {
-	position: relative;
-
 	--highlight-color: var(--color_primary);
 
 	user-select: none;

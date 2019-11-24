@@ -1,19 +1,16 @@
 import {ViewModel} from "src/viewmodel/ViewModel";
-import {QuestionsData} from "src/model/QuestionsData";
-import {GottschalkData} from "src/model/GottschalkData";
 import {EventData} from "src/model/EventData";
-import {ValenceData} from "src/model/ValenceData";
-import {FaceScaleData} from "src/model/FaceScaleData";
+import {ColorData} from "src/model/ColorData";
 
-export class FaceScaleModel extends ViewModel {
+export class ColorModel extends ViewModel {
 
 	// internal
-	private readonly data: FaceScaleData;
+	private readonly data: ColorData;
 	private readonly finishCallback: () => void;
-	private internalValue: number = null;
+	private internalValue: string = null;
 
 	constructor(
-		data: FaceScaleData,
+		data: ColorData,
 		finishCallback: () => void
 	) {
 		super();
@@ -34,14 +31,15 @@ export class FaceScaleModel extends ViewModel {
 	finish() {
 		this.data.value = this.value;
 		this.finishCallback();
+		console.log(this.data);
 	}
 
-	get title() { return this.strings["face_scale_title"] }
+	get title() { return this.strings["color_title"] }
 	get value() {
 		return this.internalValue;
 	}
-	set value(input) {
-		this.data.events.push(new EventData(Date.now() - this.data.startTime, input));
-		this.internalValue = input;
+	set value(value) {
+		this.data.events.push(new EventData(Date.now() - this.data.startTime, value));
+		this.internalValue = value;
 	}
 }

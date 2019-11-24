@@ -2,7 +2,7 @@ import {ViewModel} from "src/viewmodel/ViewModel";
 import Vue from "vue";
 import {QuestionsData} from "src/model/QuestionsData";
 
-export class SecondQuestionsModel extends ViewModel {
+export class Questions2Model extends ViewModel {
 
 	readonly group: number;
 
@@ -18,6 +18,8 @@ export class SecondQuestionsModel extends ViewModel {
 	allergyFood: boolean = false;
 	allergyOther: boolean = false;
 	maturedAge: number = null;
+	menstruating: number = null;
+	contraceptive: number = null;
 
 	// Third group
 	mood: number = null;
@@ -55,7 +57,9 @@ export class SecondQuestionsModel extends ViewModel {
 				return this.ecoFamily != null &&
 					this.ecoSelf != null;
 			case 1:
-				return this.maturedAge != null;
+				return this.maturedAge != null &&
+					this.menstruating != null &&
+					this.contraceptive != null;
 			case 2:
 				return this.mood != null &&
 					this.stressGeneral != null &&
@@ -80,7 +84,9 @@ export class SecondQuestionsModel extends ViewModel {
 				this.data.allergyDrug = this.allergyDrug;
 				this.data.allergyFood = this.allergyFood;
 				this.data.allergyOther = this.allergyOther;
-				this.data.maturedAge = SecondQuestionsModel.MIN_MATURE_AGE - 1 + this.maturedAge;
+				this.data.maturedAge = Questions2Model.MIN_MATURE_AGE - 1 + this.maturedAge;
+				this.data.menstruating = this.menstruating > 0;
+				this.data.contraceptive = this.contraceptive > 0;
 
 				Vue.set(this, "group", 2);
 				break;
@@ -98,8 +104,8 @@ export class SecondQuestionsModel extends ViewModel {
 	get ecoFamilyTitle() { return this.strings["eco_family_title"] }
 	get ecoSelfTitle() { return this.strings["eco_self_title"] }
 	get ecoHelp() { return this.strings["eco_help"] }
-	get minEco() { return SecondQuestionsModel.MIN_ECONOMIC_STATUS }
-	get maxEco() { return SecondQuestionsModel.MAX_ECONOMIC_STATUS }
+	get minEco() { return Questions2Model.MIN_ECONOMIC_STATUS }
+	get maxEco() { return Questions2Model.MAX_ECONOMIC_STATUS }
 
 	// Second group
 	get allergyTitle() { return this.strings["allergy_title"] }
@@ -116,19 +122,29 @@ export class SecondQuestionsModel extends ViewModel {
 
 		maturedAgeOptions.push(
 			this.strings["matured_age_younger_than"]
-				.replace("$0", SecondQuestionsModel.MIN_MATURE_AGE.toString())
+				.replace("$0", Questions2Model.MIN_MATURE_AGE.toString())
 		);
 
-		for (let i = SecondQuestionsModel.MIN_MATURE_AGE; i <= SecondQuestionsModel.MAX_MATURE_AGE; i++) {
+		for (let i = Questions2Model.MIN_MATURE_AGE; i <= Questions2Model.MAX_MATURE_AGE; i++) {
 			maturedAgeOptions.push(i.toString());
 		}
 
 		maturedAgeOptions.push(
 			this.strings["matured_age_older_than"]
-				.replace("$0", SecondQuestionsModel.MAX_MATURE_AGE.toString())
+				.replace("$0", Questions2Model.MAX_MATURE_AGE.toString())
 		);
 
 		return maturedAgeOptions;
+	}
+
+	get menstruatingTitle() { return this.strings["menstruating_title"] }
+	get menstruatingOptions(): ReadonlyArray<string> {
+		return [this.strings["no"], this.strings["yes"]];
+	}
+
+	get contraceptiveTitle() { return this.strings["contraceptive_title"] }
+	get contraceptiveOptions(): ReadonlyArray<string> {
+		return [this.strings["no"], this.strings["yes"]];
 	}
 
 	// Third group
@@ -136,19 +152,19 @@ export class SecondQuestionsModel extends ViewModel {
 	get moodTitle() { return this.strings["mood_title"] }
 	get moodHelp() {
 		return this.strings["mood_help"]
-			.replace("$0", SecondQuestionsModel.MIN_MOOD.toString())
-			.replace("$1", SecondQuestionsModel.MAX_MOOD.toString())
+			.replace("$0", Questions2Model.MIN_MOOD.toString())
+			.replace("$1", Questions2Model.MAX_MOOD.toString())
 	}
-	get minMood() { return SecondQuestionsModel.MIN_MOOD }
-	get maxMood() { return SecondQuestionsModel.MAX_MOOD }
+	get minMood() { return Questions2Model.MIN_MOOD }
+	get maxMood() { return Questions2Model.MAX_MOOD }
 
 	get stressGeneralTitle() { return this.strings["stress_general_title"] }
 	get stressTodayTitle() { return this.strings["stress_today_title"] }
 	get stressHelp() {
 		return this.strings["stress_help"]
-			.replace("$0", SecondQuestionsModel.MIN_STRESS.toString())
-			.replace("$1", SecondQuestionsModel.MAX_STRESS.toString())
+			.replace("$0", Questions2Model.MIN_STRESS.toString())
+			.replace("$1", Questions2Model.MAX_STRESS.toString())
 	}
-	get minStress() { return SecondQuestionsModel.MIN_STRESS }
-	get maxStress() { return SecondQuestionsModel.MAX_STRESS }
+	get minStress() { return Questions2Model.MIN_STRESS }
+	get maxStress() { return Questions2Model.MAX_STRESS }
 }

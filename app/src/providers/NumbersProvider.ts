@@ -1,27 +1,20 @@
-import {Dictionary, ReadonlyDictionary} from "src/util/Collections";
-import {Disposable} from "src/util/Disposable";
 import $ from 'jquery'
 import {NonWord} from "src/model/NonWord";
 
-export class StringProvider {
+export class NumbersProvider {
 
-	static getNonWords(): NonWord[] {
-		const nonWords: NonWord[] = [];
+	static getMemory(): number[][] {
+		let numbers: number[][];
 
 		// noinspection JSIgnoredPromiseFromCall
 		$.ajax({
 			async: false,
-			url: "assets/nonwords/default.json",
+			url: "assets/numbers/memory.json",
 			success: (result) => {
-				JSON.parse(result).foreach((nonWord: any) => {
-					nonWords.push(new NonWord(
-						nonWord["nonWord"],
-						nonWord["meaningStringId"]
-					));
-				});
+				numbers = result;
 			}
 		});
 
-		return nonWords;
+		return numbers;
 	}
 }

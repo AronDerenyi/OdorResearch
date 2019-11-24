@@ -3,18 +3,21 @@ import Vue from "vue";
 import {EventData} from "src/model/EventData";
 import {TellegenData} from "src/model/TellegenData";
 import {StringProvider} from "src/providers/StringProvider";
+import {PanasData} from "src/model/PanasData";
 
-export class TellegenModel extends ViewModel {
+export class PanasModel extends ViewModel {
 
 	// internal
-	private static readonly QUESTION_COUNT = 34;
+	private static readonly QUESTION_COUNT = 20;
+	private static readonly MIN_VALUE = 1;
+	private static readonly MAX_VALUE = 5;
 
-	private readonly data: TellegenData;
+	private readonly data: PanasData;
 	private readonly finishCallback: () => void;
-	private values: boolean[] = [];
+	private values: number[] = [];
 
 	constructor(
-		data: TellegenData,
+		data: PanasData,
 		finishCallback: () => void
 	) {
 		super();
@@ -33,31 +36,28 @@ export class TellegenModel extends ViewModel {
 		this.finishCallback();
 	}
 
-	get questionCount() { return TellegenModel.QUESTION_COUNT }
+	get questionCount() { return PanasModel.QUESTION_COUNT }
 
 	get showFinish() {
-		for (let index = 0; index < TellegenModel.QUESTION_COUNT; index++) {
+		for (let index = 0; index < PanasModel.QUESTION_COUNT; index++) {
 			if (this.values[index] == null) return false;
 		}
 		return true;
 	}
 
 	title(index: number) {
-		return this.strings["tellegen_" + (index + 1)];
+		return this.strings["panas_" + index];
 	}
 
-	get options(): ReadonlyArray<string> {
-		return [this.strings["yes"], this.strings["no"]];
-	}
+	get min() { return PanasModel.MIN_VALUE }
+	get max() { return PanasModel.MAX_VALUE }
 
 	selected(index: number) {
-		const value = this.values[index];
-		return value == null ? null : value ? 0 : 1;
+		return this.values[index];
 	}
 
 	select(index: number, selected: number) {
-		const value = selected === 0;
-		this.data.events.push(new EventData(Date.now() - this.data.startTime, {index, value}));
-		Vue.set(this.values, index, value);
+		this.data.events.push(new EventData(Date.now() - this.data.startTime, {index, value: selected}));
+		Vue.set(this.values, index, selected);
 	}
 }

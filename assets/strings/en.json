@@ -5,15 +5,317 @@
 
 	"select": "Select",
 	"enter_group_code": "Please enter your group's code below",
-	"group_code": "Group code",
+	"group_code_hint": "Group code",
 
-	"creativity_test_terms": "Tájékoztató és beleegyező nyilatkozat<br><br><b>Mi a kutatás célja?</b><br>A jelen vizsgálat egy olyan kísérletsorozat része, amely során az környezeti ingerek hatását vizsgáljuk a különböző kognitív, illetve affektív jelenségekre. A vizsgálat célja a különböző ingerek mentális folyamatokra gyakorolt hatásának feltárása és a kiváltott hatások közötti eltérések összehasonlítása. A kutatás további célja ezen ingerek alkalmazása a tanulásban, reklámiparban és a terápiás helyzetekben. Feltételezésünk szerint a különböző környezeti ingerek hozzájárulhatnak a kreatív készségek fejlesztéséhez, illetve segíthetik a különböző affektusok befolyásolását és megélését.<br><br><b>Mi történik a kutatási projekt során?</b><br>Ön a kutatásban való részvételhez való hozzájárulásával beleegyezik, hogy egy körülbelül 20-30 perces kísérletben vegyen részt, amely során egy standardizált, rövidített Big 5 személyiségtesztet, illetve egy ú.n. mindsetet mérő tesztet kell majd kitöltenie. Ezek után a feladata egy abszorpciós, és egy divergens (szokatlan használat teszt) teszttel fog folytatódni. Ezt követően pedig az utóbbi teszt megismétlése fog megtörténni, e 20-30 perc alatt mindenki kapni fog egy fejre illeszthető ingerbemutató eszközt, Ön ezen keresztül fogja a különböző, kis koncentrációban jelen lévő illóolajok illatát érezni. Az eljárás teljes mértékben fájdalommentes, és semmilyen kellemetlen érzéssel nem jár. A vizsgálat egy csöndes, nyugodt szobában történik.<br><br><b>Ki vehet részt a vizsgálatban?</b>Abban az esetben nem tudjuk Önt bevonni, ha bármilyen pszichológiai vagy neurológiai rendellenességgel diagnosztizálták.<br><br><b>Önkéntesség</b><br>A részvétel teljes mértékben önkéntes alapon történik, így Ön kutatás bármelyik szakaszában jelezheti kilépési szándékát. Ebben az esetben az addig felvett adatok is törlésre kerülnek.<br><br><b>Adatvédelem</b><br>A kutatáshoz az ELTE-PPK Kutatásetikai Bizottságától engedélyt kaptunk. Minden, a vizsgálat segítségével nyert információt szigorúan bizalmasan kezelünk, mely biztosítja az Ön anonimitását. A kutatás kezdetétől egy kóddal azonosítjuk, melyet a későbbiekben minden Önre vonatkozó adatnál használunk. A későbbi tudományos publikálásra kerülő tanulmányokban vagy bármilyen beszámolóban megjelenő eredmények tekintetében szintén garantáljuk anonimitását. Az adatokról csoportszinten készítünk elemzéseket, melyeket kérésére megosztjuk Önnel.",
-	"memory_test_terms": "Tájékoztató és beleegyező nyilatkozat<br><br><b>Mi a kutatás célja?</b><br>A jelen vizsgálat egy olyan kísérletsorozat része, amely során az környezeti ingerek hatását vizsgáljuk a különböző kognitív, illetve affektív jelenségekre. A vizsgálat célja a különböző ingerek mentális folyamatokra gyakorolt hatásának feltárása és a kiváltott hatások közötti eltérések összehasonlítása. A kutatás további célja ezen ingerek alkalmazása a tanulásban, reklámiparban és a terápiás helyzetekben. Feltételezésünk szerint a különböző környezeti ingerek hozzájárulhatnak a kreatív készségek fejlesztéséhez, illetve segíthetik a különböző affektusok befolyásolását és megélését.<br><br><b>Mi történik a kutatási projekt során?</b><br>Ön a kutatásban való részvételhez való hozzájárulásával beleegyezik, hogy egy körülbelül 20-30 perces kísérletben vegyen részt, amely során egy standardizált, rövidített Big 5 személyiségtesztet, illetve egy ú.n. mindsetet mérő tesztet kell majd kitöltenie. Ezek után a feladata egy abszorpciós, és egy divergens (szokatlan használat teszt) teszttel fog folytatódni. Ezt követően pedig az utóbbi teszt megismétlése fog megtörténni, e 20-30 perc alatt mindenki kapni fog egy fejre illeszthető ingerbemutató eszközt, Ön ezen keresztül fogja a különböző, kis koncentrációban jelen lévő illóolajok illatát érezni. Az eljárás teljes mértékben fájdalommentes, és semmilyen kellemetlen érzéssel nem jár. A vizsgálat egy csöndes, nyugodt szobában történik.<br><br><b>Ki vehet részt a vizsgálatban?</b>Abban az esetben nem tudjuk Önt bevonni, ha bármilyen pszichológiai vagy neurológiai rendellenességgel diagnosztizálták.<br><br><b>Önkéntesség</b><br>A részvétel teljes mértékben önkéntes alapon történik, így Ön kutatás bármelyik szakaszában jelezheti kilépési szándékát. Ebben az esetben az addig felvett adatok is törlésre kerülnek.<br><br><b>Adatvédelem</b><br>A kutatáshoz az ELTE-PPK Kutatásetikai Bizottságától engedélyt kaptunk. Minden, a vizsgálat segítségével nyert információt szigorúan bizalmasan kezelünk, mely biztosítja az Ön anonimitását. A kutatás kezdetétől egy kóddal azonosítjuk, melyet a későbbiekben minden Önre vonatkozó adatnál használunk. A későbbi tudományos publikálásra kerülő tanulmányokban vagy bármilyen beszámolóban megjelenő eredmények tekintetében szintén garantáljuk anonimitását. Az adatokról csoportszinten készítünk elemzéseket, melyeket kérésére megosztjuk Önnel.",
-	"mood_test_terms": "Tájékoztató és beleegyező nyilatkozat<br><br><b>Mi a kutatás célja?</b><br>A jelen vizsgálat egy olyan kísérletsorozat része, amely során az környezeti ingerek hatását vizsgáljuk a különböző kognitív, illetve affektív jelenségekre. A vizsgálat célja a különböző ingerek mentális folyamatokra gyakorolt hatásának feltárása és a kiváltott hatások közötti eltérések összehasonlítása. A kutatás további célja ezen ingerek alkalmazása a tanulásban, reklámiparban és a terápiás helyzetekben. Feltételezésünk szerint a különböző környezeti ingerek hozzájárulhatnak a kreatív készségek fejlesztéséhez, illetve segíthetik a különböző affektusok befolyásolását és megélését.<br><br><b>Mi történik a kutatási projekt során?</b><br>Ön a kutatásban való részvételhez való hozzájárulásával beleegyezik, hogy egy körülbelül 20-30 perces kísérletben vegyen részt, amely során egy standardizált, rövidített Big 5 személyiségtesztet, illetve egy ú.n. mindsetet mérő tesztet kell majd kitöltenie. Ezek után a feladata egy abszorpciós, és egy divergens (szokatlan használat teszt) teszttel fog folytatódni. Ezt követően pedig az utóbbi teszt megismétlése fog megtörténni, e 20-30 perc alatt mindenki kapni fog egy fejre illeszthető ingerbemutató eszközt, Ön ezen keresztül fogja a különböző, kis koncentrációban jelen lévő illóolajok illatát érezni. Az eljárás teljes mértékben fájdalommentes, és semmilyen kellemetlen érzéssel nem jár. A vizsgálat egy csöndes, nyugodt szobában történik.<br><br><b>Ki vehet részt a vizsgálatban?</b>Abban az esetben nem tudjuk Önt bevonni, ha bármilyen pszichológiai vagy neurológiai rendellenességgel diagnosztizálták.<br><br><b>Önkéntesség</b><br>A részvétel teljes mértékben önkéntes alapon történik, így Ön kutatás bármelyik szakaszában jelezheti kilépési szándékát. Ebben az esetben az addig felvett adatok is törlésre kerülnek.<br><br><b>Adatvédelem</b><br>A kutatáshoz az ELTE-PPK Kutatásetikai Bizottságától engedélyt kaptunk. Minden, a vizsgálat segítségével nyert információt szigorúan bizalmasan kezelünk, mely biztosítja az Ön anonimitását. A kutatás kezdetétől egy kóddal azonosítjuk, melyet a későbbiekben minden Önre vonatkozó adatnál használunk. A későbbi tudományos publikálásra kerülő tanulmányokban vagy bármilyen beszámolóban megjelenő eredmények tekintetében szintén garantáljuk anonimitását. Az adatokról csoportszinten készítünk elemzéseket, melyeket kérésére megosztjuk Önnel.",
+	"creativity_test_terms": "Consent<br><br><b>What is the purpose of the research?</b><br>The present study is part of a series of experiments examining the effects of environmental stimuli on various cognitive and affective phenomena. The aim of the study is to explore the effects of different stimuli - mainly fragrances and scents - on mental processes and to compare differences between the triggered effects. A further aim of the research is to apply these stimuli in learning, advertising and therapeutic situations. We believe that a variety of environmental stimuli can contribute to the development of creative skills and influence and influence different effects.<br><br><b>What happens during the research project?</b><br>By consenting to participate in this research, you agree to pass an approximately 45-minute experiment in which you should fill out standardized psychological and performance tests. In the meantime, you will smell various essential oils in low concentration. The research will be carried out through a computer program. The procedure is completely painless and does not cause any discomfort. The examination takes place in a quiet, peaceful room.<br><br><b>Who can participate in the investigation?</b><br>We cannot involve you if you have been diagnosed with any psychological or neurological disorder.<br><br><b>Volunteering</b><br>Participation is entirely voluntary so you can indicate your intention to leave at any stage of the research. In this case, the data recorded so far will also be deleted.<br><br><b>Data protection</b><br>We have received permission from the ELTE-PPK Research Ethics Committee. All information obtained through this investigation will be kept strictly confidential to ensure your anonymity. During the experiment, the data will be stored with a unique code, which will be generated from your name, birth month and day, while the data will not be stored. The code generating process is one-way, and the data provided cannot be retrieved from it, in accordance with GDPR principles. We also guarantee anonymity in case of the results would be published in later scientific publications or any report. We do group-level data analysis and share it with you on request.<br><br><br><br>Eszter Balogh - research assistant<br>ba.eszti@gmail.com<br>Áron Derényi - research assistant<br>aron.derenyi@gmail.com<br>Fábián Kamilla - research assistant<br>kamillafabian@gmail.com<br>Gellért Fodor - research assistant<br>fodorgellert97@gmail.com<br>Róbert Kállai - research assistant<br>kallair9@gmail.com<br>Varga Flower Research Assistant<br>vargav0815@gmail.com",
+	"creativity_test_control_terms": "Consent<br><br><b>What is the purpose of the research?</b><br>The present study is part of a series of experiments examining the effects of environmental stimuli on various cognitive and affective phenomena. The aim of the study is to explore the effects of different stimuli - mainly fragrances and scents - on mental processes and to compare differences between the triggered effects. A further aim of the research is to apply these stimuli in learning, advertising and therapeutic situations. We believe that a variety of environmental stimuli can contribute to the development of creative skills and influence and influence different effects.<br><br><b>What happens during the research project?</b><br>By consenting to participate in this research, you agree to pass an approximately 45-minute experiment in which you should fill out standardized psychological and performance tests. The research will be carried out through a computer program. The procedure is completely painless and does not cause any discomfort. The examination takes place in a quiet, peaceful room.<br><br><b>Who can participate in the investigation?</b><br>We cannot involve you if you have been diagnosed with any psychological or neurological disorder.<br><br><b>Volunteering</b><br>Participation is entirely voluntary so you can indicate your intention to leave at any stage of the research. In this case, the data recorded so far will also be deleted.<br><br><b>Data protection</b><br>We have received permission from the ELTE-PPK Research Ethics Committee. All information obtained through this investigation will be kept strictly confidential to ensure your anonymity. During the experiment, the data will be stored with a unique code, which will be generated from your name, birth month and day, while the data will not be stored. The code generating process is one-way, and the data provided cannot be retrieved from it, in accordance with GDPR principles. We also guarantee anonymity in case of the results would be published in later scientific publications or any report. We do group-level data analysis and share it with you on request.<br><br><br><br>Eszter Balogh - research assistant<br>ba.eszti@gmail.com<br>Áron Derényi - research assistant<br>aron.derenyi@gmail.com<br>Fábián Kamilla - research assistant<br>kamillafabian@gmail.com<br>Gellért Fodor - research assistant<br>fodorgellert97@gmail.com<br>Róbert Kállai - research assistant<br>kallair9@gmail.com<br>Varga Flower Research Assistant<br>vargav0815@gmail.com",
+	"memory_test_terms": "Consent<br><br><b>What is the purpose of the research?</b><br>The present study is part of a series of experiments examining the effects of environmental stimuli on various cognitive and affective phenomena. The aim of the study is to explore the effects of different stimuli - mainly fragrances and scents - on mental processes and to compare differences between the triggered effects. A further aim of the research is to apply these stimuli in learning, advertising and therapeutic situations. We believe that a variety of environmental stimuli can contribute to the development of creative skills and influence and influence different effects.<br><br><b>What happens during the research project?</b><br>By consenting to participate in this research, you agree to pass an approximately 45-minute experiment in which you should fill out standardized psychological and performance tests. In the meantime, you will smell various essential oils in low concentration. The research will be carried out through a computer program. The procedure is completely painless and does not cause any discomfort. The examination takes place in a quiet, peaceful room.<br><br><b>Who can participate in the investigation?</b><br>We cannot involve you if you have been diagnosed with any psychological or neurological disorder.<br><br><b>Volunteering</b><br>Participation is entirely voluntary so you can indicate your intention to leave at any stage of the research. In this case, the data recorded so far will also be deleted.<br><br><b>Data protection</b><br>We have received permission from the ELTE-PPK Research Ethics Committee. All information obtained through this investigation will be kept strictly confidential to ensure your anonymity. During the experiment, the data will be stored with a unique code, which will be generated from your name, birth month and day, while the data will not be stored. The code generating process is one-way, and the data provided cannot be retrieved from it, in accordance with GDPR principles. We also guarantee anonymity in case of the results would be published in later scientific publications or any report. We do group-level data analysis and share it with you on request.<br><br><br><br>Eszter Balogh - research assistant<br>ba.eszti@gmail.com<br>Áron Derényi - research assistant<br>aron.derenyi@gmail.com<br>Fábián Kamilla - research assistant<br>kamillafabian@gmail.com<br>Gellért Fodor - research assistant<br>fodorgellert97@gmail.com<br>Róbert Kállai - research assistant<br>kallair9@gmail.com<br>Varga Flower Research Assistant<br>vargav0815@gmail.com",
+	"memory_test_control_terms": "Consent<br><br><b>What is the purpose of the research?</b><br>The present study is part of a series of experiments examining the effects of environmental stimuli on various cognitive and affective phenomena. The aim of the study is to explore the effects of different stimuli - mainly fragrances and scents - on mental processes and to compare differences between the triggered effects. A further aim of the research is to apply these stimuli in learning, advertising and therapeutic situations. We believe that a variety of environmental stimuli can contribute to the development of creative skills and influence and influence different effects.<br><br><b>What happens during the research project?</b><br>By consenting to participate in this research, you agree to pass an approximately 45-minute experiment in which you should fill out standardized psychological and performance tests. The research will be carried out through a computer program. The procedure is completely painless and does not cause any discomfort. The examination takes place in a quiet, peaceful room.<br><br><b>Who can participate in the investigation?</b><br>We cannot involve you if you have been diagnosed with any psychological or neurological disorder.<br><br><b>Volunteering</b><br>Participation is entirely voluntary so you can indicate your intention to leave at any stage of the research. In this case, the data recorded so far will also be deleted.<br><br><b>Data protection</b><br>We have received permission from the ELTE-PPK Research Ethics Committee. All information obtained through this investigation will be kept strictly confidential to ensure your anonymity. During the experiment, the data will be stored with a unique code, which will be generated from your name, birth month and day, while the data will not be stored. The code generating process is one-way, and the data provided cannot be retrieved from it, in accordance with GDPR principles. We also guarantee anonymity in case of the results would be published in later scientific publications or any report. We do group-level data analysis and share it with you on request.<br><br><br><br>Eszter Balogh - research assistant<br>ba.eszti@gmail.com<br>Áron Derényi - research assistant<br>aron.derenyi@gmail.com<br>Fábián Kamilla - research assistant<br>kamillafabian@gmail.com<br>Gellért Fodor - research assistant<br>fodorgellert97@gmail.com<br>Róbert Kállai - research assistant<br>kallair9@gmail.com<br>Varga Flower Research Assistant<br>vargav0815@gmail.com",
+	"memory_returning_test_terms": "Consent<br><br><b>What is the purpose of the research?</b><br>The present study is part of a series of experiments examining the effects of environmental stimuli on various cognitive and affective phenomena. The aim of the study is to explore the effects of different stimuli - mainly fragrances and scents - on mental processes and to compare differences between the triggered effects. A further aim of the research is to apply these stimuli in learning, advertising and therapeutic situations. We believe that a variety of environmental stimuli can contribute to the development of creative skills and influence and influence different effects.<br><br><b>What happens during the research project?</b><br>By consenting to participate in this research, you agree to pass an approximately 15-minute experiment in which you should fill out standardized psychological and performance tests. In the meantime, you will smell various essential oils in low concentration. The research will be carried out through a computer program. The procedure is completely painless and does not cause any discomfort. The examination takes place in a quiet, peaceful room.<br><br><b>Who can participate in the investigation?</b><br>We cannot involve you if you have been diagnosed with any psychological or neurological disorder.<br><br><b>Volunteering</b><br>Participation is entirely voluntary so you can indicate your intention to leave at any stage of the research. In this case, the data recorded so far will also be deleted.<br><br><b>Data protection</b><br>We have received permission from the ELTE-PPK Research Ethics Committee. All information obtained through this investigation will be kept strictly confidential to ensure your anonymity. During the experiment, the data will be stored with a unique code, which will be generated from your name, birth month and day, while the data will not be stored. The code generating process is one-way, and the data provided cannot be retrieved from it, in accordance with GDPR principles. We also guarantee anonymity in case of the results would be published in later scientific publications or any report. We do group-level data analysis and share it with you on request.<br><br><br><br>Eszter Balogh - research assistant<br>ba.eszti@gmail.com<br>Áron Derényi - research assistant<br>aron.derenyi@gmail.com<br>Fábián Kamilla - research assistant<br>kamillafabian@gmail.com<br>Gellért Fodor - research assistant<br>fodorgellert97@gmail.com<br>Róbert Kállai - research assistant<br>kallair9@gmail.com<br>Varga Flower Research Assistant<br>vargav0815@gmail.com",
+	"memory_returning_test_control_terms": "Consent<br><br><b>What is the purpose of the research?</b><br>The present study is part of a series of experiments examining the effects of environmental stimuli on various cognitive and affective phenomena. The aim of the study is to explore the effects of different stimuli - mainly fragrances and scents - on mental processes and to compare differences between the triggered effects. A further aim of the research is to apply these stimuli in learning, advertising and therapeutic situations. We believe that a variety of environmental stimuli can contribute to the development of creative skills and influence and influence different effects.<br><br><b>What happens during the research project?</b><br>By consenting to participate in this research, you agree to pass an approximately 15-minute experiment in which you should fill out standardized psychological and performance tests. The research will be carried out through a computer program. The procedure is completely painless and does not cause any discomfort. The examination takes place in a quiet, peaceful room.<br><br><b>Who can participate in the investigation?</b><br>We cannot involve you if you have been diagnosed with any psychological or neurological disorder.<br><br><b>Volunteering</b><br>Participation is entirely voluntary so you can indicate your intention to leave at any stage of the research. In this case, the data recorded so far will also be deleted.<br><br><b>Data protection</b><br>We have received permission from the ELTE-PPK Research Ethics Committee. All information obtained through this investigation will be kept strictly confidential to ensure your anonymity. During the experiment, the data will be stored with a unique code, which will be generated from your name, birth month and day, while the data will not be stored. The code generating process is one-way, and the data provided cannot be retrieved from it, in accordance with GDPR principles. We also guarantee anonymity in case of the results would be published in later scientific publications or any report. We do group-level data analysis and share it with you on request.<br><br><br><br>Eszter Balogh - research assistant<br>ba.eszti@gmail.com<br>Áron Derényi - research assistant<br>aron.derenyi@gmail.com<br>Fábián Kamilla - research assistant<br>kamillafabian@gmail.com<br>Gellért Fodor - research assistant<br>fodorgellert97@gmail.com<br>Róbert Kállai - research assistant<br>kallair9@gmail.com<br>Varga Flower Research Assistant<br>vargav0815@gmail.com",
+	"mood_test_terms": "Consent<br><br><b>What is the purpose of the research?</b><br>The present study is part of a series of experiments examining the effects of environmental stimuli on various cognitive and affective phenomena. The aim of the study is to explore the effects of different stimuli - mainly fragrances and scents - on mental processes and to compare differences between the triggered effects. A further aim of the research is to apply these stimuli in learning, advertising and therapeutic situations. We believe that a variety of environmental stimuli can contribute to the development of creative skills and influence and influence different effects.<br><br><b>What happens during the research project?</b><br>By consenting to participate in this research, you agree to pass an approximately 45-minute experiment in which you should fill out standardized psychological and performance tests. In the meantime, you will smell various essential oils in low concentration. The research will be carried out through a computer program. The procedure is completely painless and does not cause any discomfort. The examination takes place in a quiet, peaceful room.<br><br><b>Who can participate in the investigation?</b><br>We cannot involve you if you have been diagnosed with any psychological or neurological disorder.<br><br><b>Volunteering</b><br>Participation is entirely voluntary so you can indicate your intention to leave at any stage of the research. In this case, the data recorded so far will also be deleted.<br><br><b>Data protection</b><br>We have received permission from the ELTE-PPK Research Ethics Committee. All information obtained through this investigation will be kept strictly confidential to ensure your anonymity. During the experiment, the data will be stored with a unique code, which will be generated from your name, birth month and day, while the data will not be stored. The code generating process is one-way, and the data provided cannot be retrieved from it, in accordance with GDPR principles. We also guarantee anonymity in case of the results would be published in later scientific publications or any report. We do group-level data analysis and share it with you on request.<br><br><br><br>Eszter Balogh - research assistant<br>ba.eszti@gmail.com<br>Áron Derényi - research assistant<br>aron.derenyi@gmail.com<br>Fábián Kamilla - research assistant<br>kamillafabian@gmail.com<br>Gellért Fodor - research assistant<br>fodorgellert97@gmail.com<br>Róbert Kállai - research assistant<br>kallair9@gmail.com<br>Varga Flower Research Assistant<br>vargav0815@gmail.com",
+	"mood_test_control_terms": "Consent<br><br><b>What is the purpose of the research?</b><br>The present study is part of a series of experiments examining the effects of environmental stimuli on various cognitive and affective phenomena. The aim of the study is to explore the effects of different stimuli - mainly fragrances and scents - on mental processes and to compare differences between the triggered effects. A further aim of the research is to apply these stimuli in learning, advertising and therapeutic situations. We believe that a variety of environmental stimuli can contribute to the development of creative skills and influence and influence different effects.<br><br><b>What happens during the research project?</b><br>By consenting to participate in this research, you agree to pass an approximately 45-minute experiment in which you should fill out standardized psychological and performance tests. The research will be carried out through a computer program. The procedure is completely painless and does not cause any discomfort. The examination takes place in a quiet, peaceful room.<br><br><b>Who can participate in the investigation?</b><br>We cannot involve you if you have been diagnosed with any psychological or neurological disorder.<br><br><b>Volunteering</b><br>Participation is entirely voluntary so you can indicate your intention to leave at any stage of the research. In this case, the data recorded so far will also be deleted.<br><br><b>Data protection</b><br>We have received permission from the ELTE-PPK Research Ethics Committee. All information obtained through this investigation will be kept strictly confidential to ensure your anonymity. During the experiment, the data will be stored with a unique code, which will be generated from your name, birth month and day, while the data will not be stored. The code generating process is one-way, and the data provided cannot be retrieved from it, in accordance with GDPR principles. We also guarantee anonymity in case of the results would be published in later scientific publications or any report. We do group-level data analysis and share it with you on request.<br><br><br><br>Eszter Balogh - research assistant<br>ba.eszti@gmail.com<br>Áron Derényi - research assistant<br>aron.derenyi@gmail.com<br>Fábián Kamilla - research assistant<br>kamillafabian@gmail.com<br>Gellért Fodor - research assistant<br>fodorgellert97@gmail.com<br>Róbert Kállai - research assistant<br>kallair9@gmail.com<br>Varga Flower Research Assistant<br>vargav0815@gmail.com",
 
 	"accept_terms": "Accept and start the test",
-	"start": "Start",
 
-	"gottschalk_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-	"gottschalk_help": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod"
+
+
+
+	"stm_capacity_description": "Next, there will be an STM Capacity test. Please read and memorize the sequences with increasing elements of digits carefully. After the digits disappear, please type the numbers in the correct order in the boxes that appear. You have no chance to delete or correct it. Please pay attention and do the best you can!",
+	"non_word_repetition_description": "In the followings, a word learning test will turn up. Please read carefully the following Swahili and English word pairs. You will have 10 seconds to memorize Swahili words and 5 seconds to type back missing Swahili words. Please pay attention and do the best you can!",
+	"non_word_recalling_description": "In the following, we will retest your knowledge about the Swahili words you learned last week. You have 15 seconds to recall the English meaning of the Swahili words. Please try to do your best.",
+	"gottschalk_description": "In the next task, you should write down, in a maximum of 350 characters, what kind of life event comes to your mind at this moment, taking into account the stimuli you are now experiencing! Please make sure to describe your first association in the most detailed way as it is possible!",
+	"tellegen_description": "Read the statements below and evaluate which one you find characteristic of yourself. Please answer every question, even if you are not entirely sure of the answer. Read the statements carefully, but don't think too much about the answer.",
+	"fragrance_description": "Please note the experiment leader that you have reached this point in the fill in by raising your hand! Please be patient until the fragrance sample became handed over. You will only be able to continue the test after you have inserted the fragrance paper into your mask!",
+	"unusual_use_description": "The unusual use test was designed by Guilford to measure creativity, the degree of divergent thinking, and the ability to break away from the usual. During the examination, you will need to look at certain objects differently and describe your ideas for using them for purposes other than those for which they were created. You have 2 minutes to complete this task.",
+	"unusual_use_description_short": "In the following unusual use test will come again. For filling out you will have 2 minutes.",
+	"osgood_description": "Please decide, how would you place the fragrance between the two options upon the following conditions. Please mark the appropriate round with a click.",
+	"panas_description": "You will see statements below. Please indicate, on a scale of five, how much you consider these statements to be true to you at this moment.",
+	"iaps_description": "Please evaluate whether the following pictures are pleasant or unpleasant for you! After please note in a 1-5 scale, how pleasant or unpleasant they are.",
+	"start": "Start",
+	"passcode_hint": "Passcode",
+
+
+
+
+	"yes": "Yes",
+	"no": "No",
+
+	"positive": "Positive",
+	"negative": "Negative",
+
+	"month_jan": "January",
+	"month_feb": "February",
+	"month_mar": "March",
+	"month_apr": "April",
+	"month_may": "May",
+	"month_jun": "June",
+	"month_jul": "July",
+	"month_aug": "August",
+	"month_sep": "September",
+	"month_oct": "October",
+	"month_nov": "November",
+	"month_dec": "December",
+
+
+
+
+	"full_name_title": "Please enter your full name",
+	"full_name_hint": "Your full name",
+	"birthday_title": "Please enter your birthday",
+	"birthday_month_hint": "Month",
+	"birthday_day_hint": "Day",
+	"code_description": "This information is only used to generate the following code and will not be stored and cannot be decrypted from the generated code.",
+
+
+
+
+	"gender_title": "Select your gender",
+	"gender_male": "Male",
+	"gender_female": "Female",
+	"gender_other": "Other",
+
+	"birth_title": "Select your date of birth",
+
+	"residence_title": "Select where you live",
+	"residence_capital": "Capital",
+	"residence_county_seat": "County Seat",
+	"residence_town": "Town",
+	"residence_village": "Village",
+
+	"bookshelves_title": "How many bookshelves full of books are there in your home?",
+	"bookshelves_more_than": "More than $0",
+
+	"foreign_languages_title": "How many foreign languages do you speak?",
+	"foreign_languages_more_than": "More than $0",
+
+	"education_title": "What is your highest level of academic education?",
+	"education_mother_title": "What is your mother's highest level of academic education?",
+	"education_father_title": "What is your father's highest level of academic education?",
+	"education_primary_school": "Primary School",
+	"education_high_school": "High School",
+	"education_polytechnic": "Polytechnic",
+	"education_college": "College",
+	"education_bachelor": "University BSc / BA",
+	"education_master": "University MSc / MA",
+	"education_doctoral": "PhD",
+
+	"hours_slept_title": "How many hours have you slept the previous night?",
+	"hours_slept_more_than": "More than $0",
+	"consumed_coffee_title": "Have you consumed coffee in the last 12 hours",
+	"consumed_cigarette_title": "Have you smoked in the last three hours?",
+
+	"smoking_title": "How long have you been smoking?",
+	"smoking_not_smoking": "I don't smoke",
+	"smoking_months": "$0 months",
+	"smoking_years": "$0 years",
+	"smoking_years_more_than": "More than $0 years",
+
+
+	"eco_family_title": "Rate your family's economic status",
+	"eco_self_title": "Rate your economic status",
+	"eco_help": "0 is the average",
+
+	"allergy_title": "Select your allergies",
+	"allergy_pollen": "Pollen",
+	"allergy_fur": "Fur",
+	"allergy_dust": "Dust",
+	"allergy_drug": "Drug",
+	"allergy_food": "Food",
+	"allergy_other": "Other",
+	"matured_age_title": "About how old were you when you had your first menstrual period or ejaculation?",
+	"matured_age_younger_than": "Younger than $0",
+	"matured_age_older_than": "Older than $0",
+	"menstruating_title": "Do you have your period now?",
+	"contraceptive_title": "Do you use contraceptive now?",
+
+	"mood_title": "How would you describe your mood in the last period?",
+	"mood_help": "$0 is extremely bad, $1 is extremely good",
+	"stress_general_title": "How much stress do you usually have in your daily life?",
+	"stress_today_title": "How much stress do you have today?",
+	"stress_help": "$0 is not that much, $1 is quite a lot",
+
+
+	"methods_title": "How useful do you think the following methods are?",
+	"methods_help": "$0 is you haven't heard of it, $1 is not useful, $2 is very useful",
+	"hypnosis_title": "Hypnosis",
+	"meditation_title": "Meditation",
+	"mindfulness_title": "Mindfulness",
+
+	"in_love_title": "How much in love do you feel yourself?",
+	"in_love_help": "$0 is not in love, $1 is very much in love",
+	"smell_refinement_title": "How refined do you think your smelling is?",
+	"smell_refinement_help": "$0 is not refined, $1 is very refined",
+	"smell_sensitivity_title": "Evaluate your sensitivity towards fragrances!",
+	"smell_sensitivity_help": "$0 is I am totally resistant, $1 is I am very sensitive",
+
+	"use_title": "Do you use any of the followings?",
+	"use_deodorant_title": "Deodorant",
+	"use_perfume_title": "Perfume",
+	"use_oils_title": "Essential oils",
+
+
+
+
+	"meaning_dog": "dog",
+	"meaning_pearl": "pearl",
+	"meaning_cloud": "cloud",
+	"meaning_economy": "economy",
+	"meaning_knee": "knee",
+	"meaning_egg": "egg",
+	"meaning_beer": "beer",
+	"meaning_mattress": "mattress",
+	"meaning_broom": "broom",
+	"meaning_doctor": "doctor",
+	"meaning_maggot": "maggot",
+	"meaning_bucket": "bucket",
+	"meaning_tomato": "tomato",
+	"meaning_poison": "poison",
+	"meaning_soul": "soul",
+	"meaning_food": "food",
+	"meaning_crab": "crab",
+	"meaning_corpse": "corpse",
+	"meaning_horse": "horse",
+	"meaning_scarf": "scarf",
+	"meaning_silk": "silk",
+	"meaning_queen": "queen",
+	"meaning_ornament": "ornament",
+	"meaning_carpet": "carpet",
+	"meaning_barrel": "barrel",
+	"meaning_rumor": "rumor",
+	"meaning_curtain": "curtain",
+	"meaning_snow": "snow",
+	"meaning_monkey": "monkey",
+
+
+
+
+	"tellegen_0": "Sometimes I feel and experience things like when I was a kid.",
+	"tellegen_1": "Beautiful poetic words have a great effect on me.",
+	"tellegen_2": "When I watch a movie, TV or a play, I am so immersed in it that I completely forget about myself and my surroundings and experience the story as if it were real and involved.",
+	"tellegen_3": "When I look at a picture rigidly and then turn my eyes, sometimes I see the picture in front of me, almost as if I always look at it.",
+	"tellegen_4": "Sometimes I feel like my thoughts are engulfing the whole world.",
+	"tellegen_5": "I love watching the shape of the clouds changing in the sky.",
+	"tellegen_6": "If I want, I can imagine things so sharply in front of me that it catches my attention like a good movie or story.",
+	"tellegen_7": "I think I know what people mean by mystical experiences.",
+	"tellegen_8": "Sometimes I step out of my normal self and experience a completely different state of being.",
+	"tellegen_9": "The materials - eg. wool, sand, wood - sometimes reminiscent of colors or music.",
+	"tellegen_10": "Sometimes I experience things as if they had two realities.",
+	"tellegen_11": "When I listen to music, I am so immersed in it that I don't notice anything else.",
+	"tellegen_12": "If I want, I can imagine my body being so heavy that I would be unable to move it if I wanted to.",
+	"tellegen_13": "Sometimes I can somehow sense another person's presence before I actually see or hear him.",
+	"tellegen_14": "The flame and the crackling of the burning torch start my imagination.",
+	"tellegen_15": "Sometimes I am so immersed in nature or art that I feel as though my whole consciousness would have changed for a while.",
+	"tellegen_16": "Different colors have different meanings to me.",
+	"tellegen_17": "I am able to get so distracted while doing a routine task and think in my mind that I forget that I am doing the task and then, after a few minutes, notice that I have finished.",
+	"tellegen_18": "Sometimes I can recall my old experiences so clearly and clearly that I feel as if I am experiencing it again.",
+	"tellegen_19": "I am often impressed by things that are insignificant to others.",
+	"tellegen_20": "If I were to play it in one piece, I think I would really feel the feelings of the character and completely identify with it, forgetting myself and the audience.",
+	"tellegen_21": "My thoughts sometimes come not in words but in pictures.",
+	"tellegen_22": "Sometimes I admire small things like a star shape in the middle of a cut apple, or the thin wall, color of a soap bubble.",
+	"tellegen_23": "When I listen to organ music or other powerful music, I sometimes feel like I'm getting up in the air.",
+	"tellegen_24": "Sometimes when I listen to noises, I can find music in them.",
+	"tellegen_25": "Some of my very vivid memories are evoked by scents and smells.",
+	"tellegen_26": "Certain pieces of music resemble pictures or moving spots of color.",
+	"tellegen_27": "I often know what someone is going to say before they speak.",
+	"tellegen_28": "I often have \"physical memories\", e.g. after swimming I sometimes feel like I'm in the water.",
+	"tellegen_29": "The human voice can be so wonderful to me that I would sometimes listen to it forever.",
+	"tellegen_30": "Sometimes I feel the presence of someone who is not physically present.",
+	"tellegen_31": "Thoughts, pictures sometimes emerge in my mind without the slightest effort.",
+	"tellegen_32": "I feel different smells have different colors.",
+	"tellegen_33": "The sunset has a big impact on me.",
+
+
+
+
+	"panas_0": "interested",
+	"panas_1": "distressed",
+	"panas_2": "excited",
+	"panas_3": "upset",
+	"panas_4": "strong",
+	"panas_5": "guilty",
+	"panas_6": "scared",
+	"panas_7": "hostile",
+	"panas_8": "enthusiastic",
+	"panas_9": "proud",
+	"panas_10": "irritable",
+	"panas_11": "alert",
+	"panas_12": "ashamed",
+	"panas_13": "inspired",
+	"panas_14": "nervous",
+	"panas_15": "determined",
+	"panas_16": "attentive",
+	"panas_17": "jittery",
+	"panas_18": "active",
+	"panas_19": "afraid",
+
+
+
+
+	"osgood_0_left": "unsatisfied",
+	"osgood_0_right": "satisfied",
+	"osgood_1_left": "melancholic",
+	"osgood_1_right": "contented",
+	"osgood_2_left": "despairing",
+	"osgood_2_right": "hopeful",
+	"osgood_3_left": "relaxed",
+	"osgood_3_right": "stimulated",
+	"osgood_4_left": "tranquil",
+	"osgood_4_right": "delighted",
+	"osgood_5_left": "unaroused",
+	"osgood_5_right": "aroused",
+	"osgood_6_left": "calm",
+	"osgood_6_right": "excited",
+	"osgood_7_left": "peaceful",
+	"osgood_7_right": "high",
+	"osgood_8_left": "sleepy",
+	"osgood_8_right": "wide awake",
+	"osgood_9_left": "dull",
+	"osgood_9_right": "jittery",
+	"osgood_10_left": "controlled",
+	"osgood_10_right": "controlling",
+	"osgood_11_left": "influenced",
+	"osgood_11_right": "influential",
+	"osgood_12_left": "cared for",
+	"osgood_12_right": "in control",
+	"osgood_13_left": "awed",
+	"osgood_13_right": "important",
+	"osgood_14_left": "submissive",
+	"osgood_14_right": "dominant",
+	"osgood_15_left": "guided",
+	"osgood_15_right": "autonomous",
+	"osgood_16_left": "happy",
+	"osgood_16_right": "unhappy",
+	"osgood_17_left": "annoyed",
+	"osgood_17_right": "pleased",
+
+
+
+
+	"pleasantness_title": "How much do you feel the scent pleasant?",
+	"impact_title": "How strong do you think the scent will have an impact on you?",
+	"expectation_title": "What do you expect, how the scent will affect you?",
+	"expectation_hint": "Expectation",
+
+
+
+
+	"face_scale_title": "Please choose that face icon which reflects your percieved mood the most.",
+	"effect_title": "Please write down, how the smell affected you in the past 30 minutes. Please write down everything, that comes into your mind. E.g. what did you feel, did anything change?",
+	"color_title": "Please choose a color, which you feel the most connected to the scent you feel, which you can associate with this fragrance.",
+	"association_title": "Please summarize what comes to your mind in connection with the scent you feel!",
+
+
+
+
+	"unusual_use_brick_title": "Please describe as many uses OF A BRICK as you can! Please use commas to separate the corresponding items of your answer.",
+	"unusual_use_toothbrush_title": "Please describe as many uses OF A TOOTHBRUSH as you can! Please use commas to separate the corresponding items of your answer.",
+	"unusual_use_hint": "Uses",
+
+
+
+
+	"thank_you": "You have reached the end of the questionnaire. Thank you for taking the time to complete it for us!",
+	"response_hint": "If you have any insights on the research, please let us know!",
+	"submit": "Submit"
 }

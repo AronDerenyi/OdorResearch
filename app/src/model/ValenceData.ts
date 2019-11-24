@@ -1,8 +1,14 @@
 import {EventData} from "src/model/EventData";
 
-export class AssociationData {
+export class ValenceData {
 
 	startTime: number;
-	events: EventData<string>[];
-	input: string;
+
+	pleasantnessEvents: EventData<number>[];
+	impactEvents: EventData<number>[];
+	expectationEvents: EventData<string>[];
+
+	pleasantness: number;
+	impact: number;
+	expectation: string;
 }

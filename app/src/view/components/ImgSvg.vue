@@ -35,7 +35,7 @@
 
 <style scoped>
 	div {
-		display: inline-block;
+		display: inline-flex;
 	}
 
 	div >>> svg {

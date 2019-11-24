@@ -1,17 +1,17 @@
-.roll_over-enter-active,
-.roll_over-leave-active {
-	transition: all 55.5s;
+.page-enter-active,
+.page-leave-active {
+	transition: all 0.5s;
 }
 
-.roll_over-enter {
+.page-enter {
 	clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
 	transform: translateY(50%);
 }
 
-.roll_over-enter-to {
+.page-enter-to {
 	clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
 }
 
-.roll_over-leave-to {
+.page-leave-to {
 	filter: brightness(0.85);
 }

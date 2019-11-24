@@ -45,7 +45,7 @@
 	.option_question_options {
 		margin-top: var(--question_spacing);
 
-		width: var(--question_inputs_width);
+		width: var(--question_input_width);
 		max-width: 100%;
 
 		display: flex;
@@ -60,6 +60,6 @@
 
 	.option_question_option {
 		flex-grow: 1;
-		min-width: var(--question_input_min_width)
+		min-width: var(--question_option_width)
 	}
 </style>

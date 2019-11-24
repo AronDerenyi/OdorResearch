@@ -7,12 +7,10 @@
 
 <script lang="ts">
 	import {Vue, Component, Prop} from "vue-property-decorator";
-
 	import ImgSvg from "src/view/components/ImgSvg.vue";
 
 	@Component({components: {ImgSvg}})
 	export default class FloatingActionButton extends Vue {
-
 		@Prop(String) readonly icon: string;
 		@Prop(String) readonly text: string;
 	}
@@ -40,7 +38,7 @@
 		box-shadow: 0 4px 20px var(--color_shadow);
 	}
 
-	.floating_action_button > .floating_action_button_icon {
+	.floating_action_button_icon {
 		width: 24px;
 		height: 24px;
 
@@ -49,7 +47,7 @@
 		fill: currentColor;
 	}
 
-	.floating_action_button > .floating_action_button_text {
+	.floating_action_button_text {
 		overflow: hidden;
 
 		font-size: 20px;

@@ -3,11 +3,11 @@
 		<transition :name="viewModel.showTerms ? 'swipe_left' : 'swipe_right'">
 			<div class="home_modal_code_content" v-if="!viewModel.showTerms" key="code">
 				<p class="home_modal_title">{{viewModel.title}}</p>
-				<p class="home_modal_hint">{{viewModel.groupCodeHint}}</p>
+				<p class="home_modal_help">{{viewModel.groupCodeHelp}}</p>
 				<div class="home_modal_input_holder">
 					<EditText
 							class="home_modal_input"
-							:placeholder="viewModel.groupCodePlaceholder"
+							:placeholder="viewModel.groupCodeHint"
 							v-model="viewModel.groupCode"/>
 
 					<transition name="fade">
@@ -63,13 +63,12 @@
 
 		display: flex;
 
+		flex-direction: column;
+		align-items: center;
 		padding:
 				var(--home_modal_padding)
 				var(--home_modal_padding)
 				calc(var(--home_settings_height) + var(--home_modal_padding));
-
-		flex-direction: column;
-		align-items: center;
 	}
 
 	.home_modal_code_content {
@@ -90,23 +89,23 @@
 		font-size: var(--home_modal_title_size);
 	}
 
-	.home_modal_hint {
-		margin-top: var(--home_modal_hint_space);
+	.home_modal_help {
+		margin-top: var(--home_modal_help_space);
 		flex-shrink: 0;
 
 		color: var(--color_on_surface_variant);
 		text-align: center;
-		font-size: var(--home_modal_hint_size);
+		font-size: var(--home_modal_help_size);
 	}
 
 	.home_modal_input_holder {
 		position: relative;
 		margin-top: var(--home_modal_input_space);
+
 		flex-shrink: 0;
 		width: var(--home_modal_input_width);
 
 		display: flex;
-		flex-direction: column;
 	}
 
 	.home_modal_input {
@@ -121,9 +120,8 @@
 	}
 
 	.home_modal_terms {
-		flex-shrink: 0;
-
 		margin-top: var(--home_modal_terms_space);
+		flex-shrink: 0;
 		width: var(--home_modal_terms_width);
 
 		text-align: justify;

@@ -1,8 +1,8 @@
 import {EventData} from "src/model/EventData";
 
-export class TellegenData {
+export class PanasData {
 
 	startTime: number;
-	events: EventData<{index: number, value: boolean}>[];
-	values: boolean[];
+	events: EventData<{index: number, value: number}>[];
+	values: number[];
 }

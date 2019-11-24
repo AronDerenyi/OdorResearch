@@ -4,20 +4,20 @@ import {EventData} from "src/model/EventData";
 import {TellegenData} from "src/model/TellegenData";
 import {StringProvider} from "src/providers/StringProvider";
 import {PanasData} from "src/model/PanasData";
+import {OsgoodData} from "src/model/OsgoodData";
 
-export class PanasModel extends ViewModel {
+export class OsgoodModel extends ViewModel {
 
 	// internal
-	private static readonly QUESTION_COUNT = 20;
-	private static readonly MIN_VALUE = 1;
-	private static readonly MAX_VALUE = 5;
+	private static readonly QUESTION_COUNT = 18;
+	private static readonly OPTION_COUNT = 5;
 
-	private readonly data: PanasData;
+	private readonly data: OsgoodData;
 	private readonly finishCallback: () => void;
 	private values: number[] = [];
 
 	constructor(
-		data: PanasData,
+		data: OsgoodData,
 		finishCallback: () => void
 	) {
 		super();
@@ -36,21 +36,24 @@ export class PanasModel extends ViewModel {
 		this.finishCallback();
 	}
 
-	get questionCount() { return PanasModel.QUESTION_COUNT }
+	get questionCount() { return OsgoodModel.QUESTION_COUNT }
 
 	get showFinish() {
-		for (let index = 0; index < PanasModel.QUESTION_COUNT; index++) {
+		for (let index = 0; index < OsgoodModel.QUESTION_COUNT; index++) {
 			if (this.values[index] == null) return false;
 		}
 		return true;
 	}
 
-	title(index: number) {
-		return this.strings["panas_" + index];
+	left(index: number) {
+		return this.strings["osgood_" + index + "_left"];
 	}
 
-	get min() { return PanasModel.MIN_VALUE }
-	get max() { return PanasModel.MAX_VALUE }
+	right(index: number) {
+		return this.strings["osgood_" + index + "_right"];
+	}
+
+	get optionCount() { return OsgoodModel.OPTION_COUNT }
 
 	selected(index: number) {
 		return this.values[index];

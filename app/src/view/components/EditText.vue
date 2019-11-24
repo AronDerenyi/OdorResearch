@@ -1,86 +1,149 @@
 <template>
-	<div class="selectable extended_floating_action_button" v-on="$listeners">
-		<ImgSvg class="extended_floating_action_button_icon" v-if="icon" :src="icon"/>
-		<p class="extended_floating_action_button_text">{{text}}</p>
+	<div
+			class="edit_text"
+			:class="{
+				'edit_text_readonly': readonly,
+				'edit_text_with_icon': icon && !area
+			}">
+
+		<input
+				class="edit_text_input"
+				size="1"
+				v-if="!area"
+				:placeholder="placeholder"
+				:readonly="readonly"
+				:maxlength="maxlength"
+				:value="value"
+				v-on="$listeners"
+				@input="$emit('value', $event.target.value)"/>
+
+		<textarea
+				class="edit_text_input"
+				v-if="area"
+				:placeholder="placeholder"
+				:readonly="readonly"
+				:maxlength="maxlength"
+				:value="value"
+				v-on="$listeners"
+				@input="$emit('value', $event.target.value)"></textarea>
+
+		<ImgSvg
+				class="edit_text_icon"
+				v-if="icon && !area"
+				:src="icon"/>
 	</div>
 </template>
 
 <script lang="ts">
-	import {Vue, Component, Prop} from "vue-property-decorator";
+	import {Vue, Component, Prop, Model, Watch} from "vue-property-decorator";
 
 	import ImgSvg from "src/view/components/ImgSvg.vue";
 
 	@Component({components: {ImgSvg}})
 	export default class ExtendedFloatingActionButton extends Vue {
-
+		@Model("value", {type: String}) readonly value: string;
+		@Prop(Boolean) readonly area: boolean;
+		@Prop(String) readonly placeholder: boolean;
+		@Prop(Boolean) readonly readonly: boolean;
+		@Prop(Number) readonly maxlength: number;
 		@Prop(String) readonly icon: string;
-		@Prop(String) readonly text: string;
 	}
 </script>
 
 <style scoped>
-	.extended_floating_action_button {
-		position: relative;
-
-		min-width: 48px;
-		height: 48px;
-
+	.edit_text {
 		display: flex;
 		overflow: hidden;
 
 		flex-direction: row;
-		align-items: center;
-		justify-content: center;
+		align-items: stretch;
+		justify-content: flex-start;
 
-		padding-left: 10px;
-		padding-right: 10px;
+		border-style: none;
 
-		background: var(--color_primary);
-		color: var(--color_on_primary);
-		--highlight-color: var(--color_on_primary);
+		color: var(--color_on_surface);
+		--highlight-color: var(--color_primary);
 
-		border-radius: 24px;
-		box-shadow: 0 4px 20px var(--color_shadow);
+		transition: border 0.2s;
+		-webkit-app-region: no-drag;
 	}
 
-	.extended_floating_action_button > .extended_floating_action_button_icon {
-		margin-left: 2px;
-		margin-right: 2px;
+	.edit_text::after {
+		content: "";
 
-		flex-shrink: 0;
-		flex-grow: 0;
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: 0;
+		bottom: 0;
+
+		opacity: 0.5;
+		border-radius: 5px;
+		border: currentColor solid 2px;
+
+		pointer-events: none;
+		transition: all 0.2s;
+	}
+
+	.edit_text:active::after,
+	.edit_text:focus-within::after {
+		opacity: 1;
+		border-color: var(--highlight-color);
+	}
+
+	/* input */
+
+	.edit_text_input {
+		flex-grow: 1;
+		min-width: 0;
+		min-height: 56px;
+		resize: none;
+
+		padding: 14px;
+
+		font-size: 16px;
+		color: currentColor;
+
+		cursor: text;
+	}
+
+	.edit_text_readonly .edit_text_input {
+		cursor: default;
+	}
+
+	.edit_text_with_icon .edit_text_input {
+		padding-right: 48px;
+	}
+
+	/* placeholder */
+
+	.edit_text_input::placeholder {
+		opacity: 0.5;
+		color: currentColor;
+
+		transition: all 0.2s;
+	}
+
+	.edit_text_input:focus::placeholder {
+		opacity: 1;
+		color: var(--highlight-color);
+	}
+
+	/* icon */
+
+	.edit_text_icon {
+		position: absolute;
+		top: calc(50% - 12px);
+		bottom: calc(50% - 12px);
+		right: 16px;
 
 		width: 24px;
 		height: 24px;
 
+		opacity: 0.9;
 		fill: currentColor;
-	}
 
-	.extended_floating_action_button > .extended_floating_action_button_text {
-		margin-left: 10px;
-		margin-right: 10px;
-
-		flex-basis: 0;
-		flex-grow: 1;
-
-		overflow: hidden;
-
-		font-size: 16px;
-		font-weight: 500;
-		text-align: center;
-		white-space: nowrap;
-		text-overflow: ellipsis;
-
-		color: currentColor;
-	}
-
-	.extended_floating_action_button.light {
-		background: var(--color_on_primary);
-		color: var(--color_primary);
-		--highlight-color: var(--color_primary);
-	}
-
-	.extended_floating_action_button.flat {
-		box-shadow: none;
+		pointer-events: none;
+		transition: all 0.2s;
 	}
 </style>

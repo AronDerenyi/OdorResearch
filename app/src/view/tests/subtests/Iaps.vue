@@ -1,59 +1,58 @@
 <template>
-	<div class="description">
-		<div class="description_content">
-			<p class="description_text" v-html="viewModel.description"></p>
-
-			<ExtendedFloatingActionButton
-					class="flat description_start"
-					v-if="!viewModel.passcodeRequired"
-					:text="viewModel.startString"
-					@click="viewModel.start()"/>
-
-			<div class="description_passcode" v-if="viewModel.passcodeRequired">
-				<EditText
-						class="description_passcode_input"
-						:placeholder="viewModel.passcodeHint"
-						v-model="viewModel.passcode"/>
-
-				<transition name="fade">
-					<FloatingActionButton
-							class="flat light description_passcode_start"
-							v-if="viewModel.showStart"
-							:icon="require('res/drawable/ic_arrow_forward_24px.svg')"
-							@click="viewModel.start()"/>
-				</transition>
-			</div>
+	<div class="iaps">
+		<div class="iaps_image_holder">
+			<transition name="fade" mode="out-in">
+				<img class="iaps_image" :key="viewModel.imageSource" :src="viewModel.imageSource"/>
+			</transition>
 		</div>
+
+		<transition name="float" mode="out-in">
+			<div class="iaps_input" v-if="!viewModel.showRating" key="selection">
+				<ExtendedFloatingActionButton
+						class="iaps_selector negative"
+						:text="viewModel.negative"
+						@click="viewModel.selected = false"/>
+				<ExtendedFloatingActionButton
+						class="iaps_selector positive"
+						:text="viewModel.positive"
+						@click="viewModel.selected = true"/>
+			</div>
+			<div class="iaps_input" v-if="viewModel.showRating" key="rating">
+				<FloatingActionButton
+						class="light"
+						:class="{
+							'negative': !viewModel.selected,
+							'positive': viewModel.selected
+						}"
+						v-for="rating in viewModel.ratingCount"
+						:key="rating"
+						:text="rating.toString()"
+						@click="viewModel.rating = rating"/>
+			</div>
+		</transition>
 	</div>
 </template>
 
 <script lang="ts">
 	import {Vue, Component, Prop} from "vue-property-decorator";
-
 	import ExtendedFloatingActionButton from "src/view/components/ExtendedFloatingActionButton.vue";
 	import EditText from "src/view/components/EditText.vue";
 	import FloatingActionButton from "src/view/components/FloatingActionButton.vue";
-
-	import {DescriptionModel} from "src/viewmodel/tests/subtests/DescriptionModel";
+	import {IapsModel} from "src/viewmodel/tests/subtests/IapsModel";
 
 	@Component({components: {ExtendedFloatingActionButton, EditText, FloatingActionButton}})
-	export default class Description extends Vue {
+	export default class Iaps extends Vue {
 
-		@Prop() readonly viewModel: DescriptionModel;
+		@Prop() readonly viewModel: IapsModel;
+
+		mounted() {
+			this.viewModel.start();
+		}
 	};
 </script>
 
 <style scoped>
-	.description {
-		display: flex;
-		overflow: hidden auto;
-
-		flex-direction: column;
-	}
-
-	.description_content {
-		flex-grow: 1;
-
+	.iaps {
 		display: flex;
 
 		flex-direction: column;
@@ -64,36 +63,35 @@
 		background: var(--color_surface);
 	}
 
-	.description_text {
-		max-width: var(--description_width);
-		flex-shrink: 0;
-
-		text-align: justify;
-		font-size: var(--description_text_size);
-	}
-
-	.description_start {
-		margin-top: var(--subtest_spacing);
-		flex-shrink: 0;
-	}
-
-	.description_passcode {
-		margin-top: var(--subtest_spacing);
-
-		flex-shrink: 0;
-		width: var(--description_passcode_width);
-
-		display: flex;
-	}
-
-	.description_passcode_input {
+	.iaps_image_holder {
+		flex-basis: 0;
 		flex-grow: 1;
 	}
 
-	.description_passcode_start {
+	.iaps_image {
 		position: absolute;
-		top: 0;
-		bottom: 0;
-		left: calc(100% + var(--description_passcode_start_space));
+		height: 100%;
+
+		border-radius: 16px;
+
+		transform: translateX(-50%);
+	}
+
+	.iaps_input {
+		margin-top: var(--iaps_input_spacing);
+		flex-shrink: 0;
+		height: var(--iaps_input_height);
+
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.iaps_input > *:not(:first-child) {
+		margin-left: var(--iaps_input_spacing);
+	}
+
+	.iaps_selector {
+		width: var(--iaps_input_option_width);
 	}
 </style>

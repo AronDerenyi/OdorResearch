@@ -1,10 +1,13 @@
-export class Word {
+export class NonWord {
 
-	readonly word: string;
-	readonly meaningStringId: string;
+	nonWord: string;
+	meaningStringId: string;
 
-	constructor(word: string, meaningStringId: string) {
-		this.word = word;
+	constructor(
+		nonWord: string = "",
+		meaningStringId: string = ""
+	) {
+		this.nonWord = nonWord;
 		this.meaningStringId = meaningStringId;
 	}
 }

@@ -1,17 +1,17 @@
 <template>
 	<div>
-		<div class="association">
-			<div class="association_content">
-				<p class="association_title">{{viewModel.associationTitle}}</p>
+		<div class="effect">
+			<div class="effect_content">
+				<p class="effect_title">{{viewModel.effectTitle}}</p>
 				<EditText
 						area
-						class="association_input"
+						class="effect_input"
 						v-model="viewModel.input"/>
 			</div>
 		</div>
 		<transition name="fade">
 			<FloatingActionButton
-					class="light association_finish"
+					class="light effect_finish"
 					:icon="require('res/drawable/ic_arrow_forward_24px.svg')"
 					v-if="viewModel.showFinish"
 					@click="viewModel.finish()"/>
@@ -25,12 +25,12 @@
 	import EditText from "src/view/components/EditText.vue";
 	import FloatingActionButton from "src/view/components/FloatingActionButton.vue";
 
-	import {AssociationModel} from "src/viewmodel/tests/subtests/AssociationModel";
+	import {EffectModel} from "src/viewmodel/tests/subtests/EffectModel";
 
 	@Component({components: {EditText, FloatingActionButton}})
-	export default class Association extends Vue {
+	export default class Effect extends Vue {
 
-		@Prop() readonly viewModel: AssociationModel;
+		@Prop() readonly viewModel: EffectModel;
 
 		mounted() {
 			this.viewModel.start();
@@ -39,7 +39,7 @@
 </script>
 
 <style scoped>
-	.association {
+	.effect {
 		position: absolute;
 		top: 0;
 		bottom: 0;
@@ -52,7 +52,7 @@
 		flex-direction: column;
 	}
 
-	.association_content {
+	.effect_content {
 		flex-grow: 1;
 
 		display: flex;
@@ -65,19 +65,20 @@
 		background: var(--color_surface);
 	}
 
-	.association_title {
+	.effect_title {
+		max-width: var(--subtest_help_width);
 		font-size: var(--subtest_help_size);
 		text-align: center;
 	}
 
-	.association_input {
+	.effect_input {
 		margin-top: var(--subtest_spacing);
 
 		width: var(--subtest_input_field_width);
 		height: var(--subtest_input_field_height);
 	}
 
-	.association_finish {
+	.effect_finish {
 		position: absolute;
 		bottom: var(--subtest_navigation_padding);
 		right: var(--subtest_navigation_padding);

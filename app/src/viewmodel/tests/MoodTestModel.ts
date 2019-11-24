@@ -10,25 +10,33 @@ import {EndingModel} from "src/viewmodel/tests/subtests/EndingModel";
 import {CodeGeneratorModel} from "src/viewmodel/tests/subtests/CodeGeneratorModel";
 import {AssociationData} from "src/model/AssociationData";
 import {StorageInteractor} from "src/interactors/StorageInteractor";
-import {CreativityTestSession} from "src/model/CreativityTestSession";
-import {TellegenData} from "src/model/TellegenData";
-import {UnusualUseData} from "src/model/UnusualUseData";
-import {TellegenModel} from "src/viewmodel/tests/subtests/TellegenModel";
-import {UnusualUseModel} from "src/viewmodel/tests/subtests/UnusualUseModel";
 import {GroupCode} from "src/code/GroupCode";
 import {ValenceModel} from "src/viewmodel/tests/subtests/ValenceModel";
 import {ValenceData} from "src/model/ValenceData";
+import {MoodTestSession} from "src/model/MoodTestSession";
+import {FaceScaleData} from "src/model/FaceScaleData";
+import {PanasData} from "src/model/PanasData";
+import {OsgoodData} from "src/model/OsgoodData";
+import {EffectData} from "src/model/EffectData";
+import {FaceScaleModel} from "src/viewmodel/tests/subtests/FaceScaleModel";
+import {PanasModel} from "src/viewmodel/tests/subtests/PanasModel";
+import {OsgoodModel} from "src/viewmodel/tests/subtests/OsgoodModel";
+import {IapsModel} from "src/viewmodel/tests/subtests/IapsModel";
+import {ImageProvider} from "src/providers/ImageProvider";
+import {EffectModel} from "src/viewmodel/tests/subtests/EffectModel";
+import {ColorModel} from "src/viewmodel/tests/subtests/ColorModel";
+import {ColorData} from "src/model/ColorData";
 
-export class CreativityTestModel extends ViewModel {
+export class MoodTestModel extends ViewModel {
 
 	readonly subTest: ViewModel;
 
 	readonly navigateToHome: Event;
 
 	// internal
-	private static readonly FRAGRANCE_PASSCODE = /^odor$/; // TODO: proper passcode
+	private static readonly FRAGRANCE_PASSCODE = /^odor$/;
 
-	private readonly session: CreativityTestSession;
+	private readonly session: MoodTestSession;
 
 	constructor(groupCode: string) {
 		super();
@@ -38,12 +46,18 @@ export class CreativityTestModel extends ViewModel {
 			return;
 		}
 
-		this.session = new CreativityTestSession();
+		this.session = new MoodTestSession();
 		this.session.questions = new QuestionsData();
-		this.session.tellegen = new TellegenData();
-		this.session.unusualUseBrick = new UnusualUseData();
-		this.session.unusualUseToothbrush = new UnusualUseData();
+		this.session.faceScale1 = new FaceScaleData();
+		this.session.faceScale2 = new FaceScaleData();
+		this.session.panas1 = new PanasData();
+		this.session.panas2 = new PanasData();
+		this.session.iaps1 = [];
+		this.session.iaps2 = [];
+		this.session.osgood = new OsgoodData();
 		this.session.valence = new ValenceData();
+		this.session.effect = new EffectData();
+		this.session.color = new ColorData();
 		this.session.association = new AssociationData();
 
 		this.session.groupCode = groupCode;
@@ -60,109 +74,181 @@ export class CreativityTestModel extends ViewModel {
 	private startCodeGenerator() {
 		const codeGenerator = new CodeGeneratorModel(this.session, () => {
 			codeGenerator.dispose();
-			this.startQuestions1();
+			this.startFaceScale1();
 		});
 
 		Vue.set(this, "subTest", codeGenerator);
 	}
 
+	private startFaceScale1() {
+		const faceScale = new FaceScaleModel(this.session.faceScale1, () => {
+			faceScale.dispose();
+			this.startQuestions1();
+		});
+
+		Vue.set(this, "subTest", faceScale);
+	}
+
 	private startQuestions1() {
 		const questions1 = new Questions1Model(this.session.questions, () => {
 			questions1.dispose();
-			this.startTellegen();
+			this.startPanas1();
 		});
 
 		Vue.set(this, "subTest", questions1);
 	}
 
-	private startTellegen() {
-		const tellegen = new TellegenModel(this.session.tellegen, () => {
-			tellegen.dispose();
-			this.startQuestions2();
+	private startPanas1() {
+		const panas = new PanasModel(this.session.panas1, () => {
+			panas.dispose();
+			this.startIaps1();
 		});
 
-		const tellegenDescription = new DescriptionModel("tellegen_description", null, () => {
-			tellegenDescription.dispose();
-			Vue.set(this, "subTest", tellegen);
+		const panasDescription = new DescriptionModel("panas_description", null, () => {
+			panasDescription.dispose();
+			Vue.set(this, "subTest", panas);
 		});
 
-		Vue.set(this, "subTest", tellegenDescription);
+		Vue.set(this, "subTest", panasDescription);
 	}
 
-	private startQuestions2() {
-		const questions2 = new Questions2Model(this.session.questions, () => {
-			questions2.dispose();
-			this.startUnusualUseBrick();
-		});
+	private startIaps1() {
+		const images = ImageProvider.getMood1();
 
-		Vue.set(this, "subTest", questions2);
-	}
-
-	private startUnusualUseBrick() {
-		const unusualUseBrick = new UnusualUseModel("unusual_use_brick_title", this.session.unusualUseBrick, () => {
-			unusualUseBrick.dispose();
+		const iaps = new IapsModel(images, this.session.iaps1, () => {
+			iaps.dispose();
 			if (GroupCode.isControl(this.session.groupCode)) {
-				this.startQuestions3();
+				this.startQuestions2();
 			} else {
 				this.startFragrance();
 			}
 		});
 
-		const unusualUseBrickDescription = new DescriptionModel("unusual_use_description", null, () => {
-			unusualUseBrickDescription.dispose();
-			Vue.set(this, "subTest", unusualUseBrick);
+		const iapsDescription = new DescriptionModel("iaps_description", null, () => {
+			iapsDescription.dispose();
+			Vue.set(this, "subTest", iaps);
 		});
 
-		Vue.set(this, "subTest", unusualUseBrickDescription);
+		Vue.set(this, "subTest", iapsDescription);
 	}
 
 	private startFragrance() {
-		const fragrance = new DescriptionModel("fragrance_description", CreativityTestModel.FRAGRANCE_PASSCODE, () => {
+		const fragrance = new DescriptionModel("fragrance_description", MoodTestModel.FRAGRANCE_PASSCODE, () => {
 			fragrance.dispose();
-			this.startQuestions3();
+			this.startQuestions2();
 		});
 
 		Vue.set(this, "subTest", fragrance);
+	}
+
+	private startQuestions2() {
+		const questions2 = new Questions2Model(this.session.questions, () => {
+			questions2.dispose();
+			this.startFaceScale2();
+		});
+
+		Vue.set(this, "subTest", questions2);
+	}
+
+	private startFaceScale2() {
+		const faceScale = new FaceScaleModel(this.session.faceScale2, () => {
+			faceScale.dispose();
+			if (GroupCode.isControl(this.session.groupCode)) {
+				this.startPanas2();
+			} else {
+				this.startValence();
+			}
+		});
+
+		Vue.set(this, "subTest", faceScale);
+	}
+
+	private startValence() {
+		const valence = new ValenceModel(this.session.valence, () => {
+			valence.dispose();
+			this.startPanas2();
+		});
+
+		Vue.set(this, "subTest", valence);
+	}
+
+	private startPanas2() {
+		const panas = new PanasModel(this.session.panas2, () => {
+			panas.dispose();
+			if (GroupCode.isControl(this.session.groupCode)) {
+				this.startIaps2();
+			} else {
+				this.startOsgood();
+			}
+		});
+
+		const panasDescription = new DescriptionModel("panas_description", null, () => {
+			panasDescription.dispose();
+			Vue.set(this, "subTest", panas);
+		});
+
+		Vue.set(this, "subTest", panasDescription);
+	}
+
+	private startOsgood() {
+		const osgood = new OsgoodModel(this.session.osgood, () => {
+			osgood.dispose();
+			this.startIaps2();
+		});
+
+		const osgoodDescription = new DescriptionModel("osgood_description", null, () => {
+			osgoodDescription.dispose();
+			Vue.set(this, "subTest", osgood);
+		});
+
+		Vue.set(this, "subTest", osgoodDescription);
+	}
+
+	private startIaps2() {
+		const images = ImageProvider.getMood2();
+
+		const iaps = new IapsModel(images, this.session.iaps2, () => {
+			iaps.dispose();
+			this.startQuestions3();
+		});
+
+		const iapsDescription = new DescriptionModel("iaps_description", null, () => {
+			iapsDescription.dispose();
+			Vue.set(this, "subTest", iaps);
+		});
+
+		Vue.set(this, "subTest", iapsDescription);
 	}
 
 	private startQuestions3() {
 		const questions3 = new Questions3Model(this.session.questions, () => {
 			questions3.dispose();
 			if (GroupCode.isControl(this.session.groupCode)) {
-				this.startUnusualUseToothbrush();
+				this.startEnding();
 			} else {
-				this.startValence();
+				this.startEffect();
 			}
 		});
 
 		Vue.set(this, "subTest", questions3);
 	}
 
-	private startValence() {
-		const valence = new ValenceModel(this.session.valence, () => {
-			valence.dispose();
-			this.startUnusualUseToothbrush();
+	private startEffect() {
+		const effect = new EffectModel(this.session.effect, () => {
+			effect.dispose();
+			this.startColor();
 		});
 
-		Vue.set(this, "subTest", valence);
+		Vue.set(this, "subTest", effect);
 	}
 
-	private startUnusualUseToothbrush() {
-		const unusualUseToothbrush = new UnusualUseModel("unusual_use_toothbrush_title", this.session.unusualUseToothbrush, () => {
-			unusualUseToothbrush.dispose();
-			if (GroupCode.isControl(this.session.groupCode)) {
-				this.startEnding();
-			} else {
-				this.startAssociation();
-			}
+	private startColor() {
+		const color = new ColorModel(this.session.color, () => {
+			color.dispose();
+			this.startAssociation();
 		});
 
-		const unusualUseToothbrushDescription = new DescriptionModel("unusual_use_description_short", null, () => {
-			unusualUseToothbrushDescription.dispose();
-			Vue.set(this, "subTest", unusualUseToothbrush);
-		});
-
-		Vue.set(this, "subTest", unusualUseToothbrushDescription);
+		Vue.set(this, "subTest", color);
 	}
 
 	private startAssociation() {

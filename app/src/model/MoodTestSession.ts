@@ -1,19 +1,26 @@
 import {TestSession} from "src/model/TestSession";
 import {QuestionsData} from "src/model/QuestionsData";
-import {STMCapacityData} from "src/model/STMCapacityData";
-import {NonWordRepetitionData} from "src/model/NonWordRepetitionData";
-import {GottschalkData} from "src/model/GottschalkData";
 import {AssociationData} from "src/model/AssociationData";
 import {ValenceData} from "src/model/ValenceData";
-import {UnusualUseData} from "src/model/UnusualUseData";
-import {TellegenData} from "src/model/TellegenData";
+import {PanasData} from "src/model/PanasData";
+import {EffectData} from "src/model/EffectData";
+import {OsgoodData} from "src/model/OsgoodData";
+import {IapsData} from "src/model/IapsData";
+import {FaceScaleData} from "src/model/FaceScaleData";
+import {ColorData} from "src/model/ColorData";
 
-export class CreativityTestSession extends TestSession {
+export class MoodTestSession extends TestSession {
 
 	questions: QuestionsData;
-	tellegen: TellegenData;
-	unusualUseBrick: UnusualUseData;
-	unusualUseToothbrush: UnusualUseData;
+	faceScale1: FaceScaleData;
+	faceScale2: FaceScaleData;
+	panas1: PanasData;
+	panas2: PanasData;
+	iaps1: IapsData[];
+	iaps2: IapsData[];
+	osgood: OsgoodData;
 	valence: ValenceData;
+	effect: EffectData;
+	color: ColorData;
 	association: AssociationData;
 }

@@ -1,108 +1,99 @@
 <template>
-	<div class="gottschalk">
-		<div class="gottschalk_timer">
-			<p class="gottschalk_timer_text">{{viewModel.text.length}} : {{viewModel.textLimit}}</p>
-			<ProgressBar
-					class="gottschalk_timer_progress"
-					:progress="viewModel.text.length / viewModel.textLimit"/>
+	<div class="description">
+		<div class="description_content">
+			<p class="description_text" v-html="viewModel.description"></p>
+
+			<ExtendedFloatingActionButton
+					class="flat description_start"
+					v-if="!viewModel.passcodeRequired"
+					:text="viewModel.startString"
+					@click="viewModel.start()"/>
+
+			<div class="description_passcode" v-if="viewModel.passcodeRequired">
+				<EditText
+						class="description_passcode_input"
+						:placeholder="viewModel.passcodeHint"
+						v-model="viewModel.passcode"/>
+
+				<transition name="fade">
+					<FloatingActionButton
+							class="flat light description_passcode_start"
+							v-if="viewModel.showStart"
+							:icon="require('res/drawable/ic_arrow_forward_24px.svg')"
+							@click="viewModel.start()"/>
+				</transition>
+			</div>
 		</div>
-		<div class="gottschalk_content">
-			<p class="gottschalk_help">Type in something</p>
-			<EditText
-					area
-					class="gottschalk_input"
-					:maxlength="viewModel.textLimit"
-					v-model="viewModel.text"
-					ref="input"/>
-			<p class="gottschalk_counter">{{viewModel.text.length}} / {{viewModel.textLimit}}</p>
-		</div>
-		<transition name="fade">
-			<FloatingActionButton
-					class="light gottschalk_next"
-					:icon="require('res/drawable/ic_arrow_forward_24px.svg')"
-					v-if="viewModel.showNext"
-					@click="viewModel.next()"/>
-		</transition>
 	</div>
 </template>
 
 <script lang="ts">
 	import {Vue, Component, Prop} from "vue-property-decorator";
 
+	import ExtendedFloatingActionButton from "src/view/components/ExtendedFloatingActionButton.vue";
 	import EditText from "src/view/components/EditText.vue";
 	import FloatingActionButton from "src/view/components/FloatingActionButton.vue";
 
-	import {GottschalkModel} from "src/viewmodel/tests/subtests/GottschalkModel";
-	import ProgressBar from "src/view/components/ProgressBar.vue";
+	import {DescriptionModel} from "src/viewmodel/tests/subtests/DescriptionModel";
 
-	@Component({components: {ProgressBar, EditText, FloatingActionButton}})
-	export default class FirstQuestions extends Vue {
+	@Component({components: {ExtendedFloatingActionButton, EditText, FloatingActionButton}})
+	export default class Description extends Vue {
 
-		@Prop() readonly viewModel: GottschalkModel;
+		@Prop() readonly viewModel: DescriptionModel;
 	};
 </script>
 
 <style scoped>
-	.gottschalk {
+	.description {
+		display: flex;
+		overflow: hidden auto;
+
+		flex-direction: column;
+	}
+
+	.description_content {
+		flex-grow: 1;
+
 		display: flex;
 
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
-		padding: var(--gottschalk_padding);
+		padding: var(--subtest_padding);
 
 		background: var(--color_surface);
 	}
 
-	.gottschalk_timer {
-		width: var(--gottschalk_timer_width);
+	.description_text {
+		max-width: var(--description_width);
+		flex-shrink: 0;
+
+		text-align: justify;
+		font-size: var(--description_text_size);
+	}
+
+	.description_start {
+		margin-top: var(--subtest_spacing);
+		flex-shrink: 0;
+	}
+
+	.description_passcode {
+		margin-top: var(--subtest_spacing);
+
+		flex-shrink: 0;
+		width: var(--description_passcode_width);
 
 		display: flex;
-		flex-direction: column;
 	}
 
-	.gottschalk_timer_text {
-		text-align: center;
-		font-size: var(--gottschalk_timer_text_size);
-		color: var(--color_on_surface_variant);
-	}
-
-	.gottschalk_timer_progress {
-		margin-top: var(--gottschalk_timer_spacing);
-	}
-
-	.gottschalk_content {
-		margin-top: var(--gottschalk_spacing);
+	.description_passcode_input {
 		flex-grow: 1;
-		width: var(--gottschalk_content_width);
-
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
 	}
 
-	.gottschalk_help {
-		margin-bottom: var(--gottschalk_help_space);
-
-		text-align: center;
-		font-size: var(--gottschalk_help_size);
-	}
-
-	.gottschalk_input {
-		height: var(--gottschalk_input_height);
-	}
-
-	.gottschalk_counter {
-		margin-top: var(--gottschalk_counter_space);
-
-		text-align: right;
-		font-size: var(--gottschalk_counter_size);
-		color: var(--color_on_surface_variant);
-	}
-
-	.gottschalk_next {
+	.description_passcode_start {
 		position: absolute;
-		bottom: var(--subtest_navigation_padding);
-		right: var(--subtest_navigation_padding);
+		top: 0;
+		bottom: 0;
+		left: calc(100% + var(--description_passcode_start_space));
 	}
 </style>

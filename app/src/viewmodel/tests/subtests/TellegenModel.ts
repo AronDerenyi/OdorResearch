@@ -1,19 +1,20 @@
 import {ViewModel} from "src/viewmodel/ViewModel";
-import {QuestionsData} from "src/model/QuestionsData";
-import {GottschalkData} from "src/model/GottschalkData";
+import Vue from "vue";
 import {EventData} from "src/model/EventData";
+import {TellegenData} from "src/model/TellegenData";
+import {StringProvider} from "src/providers/StringProvider";
 
-export class AssociationModel extends ViewModel {
-
-	association: string = "";
+export class TellegenModel extends ViewModel {
 
 	// internal
-	private readonly data: GottschalkData;
+	private static readonly QUESTION_COUNT = 34;
+
+	private readonly data: TellegenData;
 	private readonly finishCallback: () => void;
-	private internalInput: string = "";
+	private values: boolean[] = [];
 
 	constructor(
-		data: GottschalkData,
+		data: TellegenData,
 		finishCallback: () => void
 	) {
 		super();
@@ -22,25 +23,41 @@ export class AssociationModel extends ViewModel {
 		this.finishCallback = finishCallback;
 	}
 
-	finish() {
-		this.data.input = this.internalInput;
-		this.finishCallback();
-	}
-
 	start() {
 		this.data.startTime = Date.now();
 		this.data.events = [];
 	}
 
-	get associationTitle() { return this.strings["association_title"] }
-	get showFinish() { return this.association.length > 0 }
-
-	get input() {
-		return this.internalInput;
+	finish() {
+		this.data.values = this.values;
+		this.finishCallback();
 	}
 
-	set input(input) {
-		this.data.events.push(new EventData<string>(Date.now() - this.data.startTime, input));
-		this.internalInput = input;
+	get questionCount() { return TellegenModel.QUESTION_COUNT }
+
+	get showFinish() {
+		for (let index = 0; index < TellegenModel.QUESTION_COUNT; index++) {
+			if (this.values[index] == null) return false;
+		}
+		return true;
+	}
+
+	title(index: number) {
+		return this.strings["tellegen_" + index];
+	}
+
+	get options(): ReadonlyArray<string> {
+		return [this.strings["yes"], this.strings["no"]];
+	}
+
+	selected(index: number) {
+		const value = this.values[index];
+		return value == null ? null : value ? 0 : 1;
+	}
+
+	select(index: number, selected: number) {
+		const value = selected === 0;
+		this.data.events.push(new EventData(Date.now() - this.data.startTime, {index, value}));
+		Vue.set(this.values, index, value);
 	}
 }

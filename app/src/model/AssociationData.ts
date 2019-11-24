@@ -1,6 +1,6 @@
 import {EventData} from "src/model/EventData";
 
-export class GottschalkData {
+export class AssociationData {
 
 	startTime: number;
 	events: EventData<string>[];

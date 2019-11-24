@@ -1,13 +1,13 @@
-export class NonWord {
+export class Image {
 
-	nonWord: string;
-	meaningStringId: string;
+	image: string;
+	source: string;
 
 	constructor(
-		nonWord: string = "",
-		meaningStringId: string = ""
+		image: string = "",
+		source: string = ""
 	) {
-		this.nonWord = nonWord;
-		this.meaningStringId = meaningStringId;
+		this.image = image;
+		this.source = source;
 	}
 }

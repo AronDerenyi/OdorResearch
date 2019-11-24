@@ -1,12 +1,15 @@
-import {EventData} from "src/model/EventData";
+import {TestSession} from "src/model/TestSession";
+import {QuestionsData} from "src/model/QuestionsData";
+import {STMCapacityData} from "src/model/STMCapacityData";
+import {NonWordRepetitionData} from "src/model/NonWordRepetitionData";
+import {GottschalkData} from "src/model/GottschalkData";
+import {AssociationData} from "src/model/AssociationData";
 
-export class STMCapacityData {
+export class MemoryTestSession extends TestSession {
 
-	numbers: number[];
-	learningTimerLength: number;
-	repeatingTimerLength: number;
-
-	startTime: number;
-	events: EventData<number>[];
-	input: number[];
+	questions: QuestionsData;
+	stmCapacity: STMCapacityData[];
+	nonWordRepetition: NonWordRepetitionData[];
+	gottschalk: GottschalkData;
+	association: AssociationData;
 }

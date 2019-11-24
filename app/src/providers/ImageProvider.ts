@@ -1,45 +1,46 @@
 import $ from 'jquery'
 import {NonWord} from "src/model/NonWord";
+import {Image} from "src/model/Image";
 
-export class NonWordProvider {
+export class ImageProvider {
 
-	static getAll(): NonWord[] {
-		const nonWords: NonWord[] = [];
+	static getMood1(): Image[] {
+		const images: Image[] = [];
 
 		// noinspection JSIgnoredPromiseFromCall
 		$.ajax({
 			async: false,
-			url: "assets/nonwords/all.json",
+			url: "assets/images/mood1.json",
 			success: (result) => {
-				result.forEach((nonWord: any) => {
-					nonWords.push(new NonWord(
-						nonWord["nonWord"],
-						nonWord["meaningStringId"]
+				result.forEach((image: any) => {
+					images.push(new Image(
+						image,
+						"assets/images/" + image
 					));
 				});
 			}
 		});
 
-		return nonWords;
+		return images;
 	}
 
-	static get20(): NonWord[] {
-		const nonWords: NonWord[] = [];
+	static getMood2(): Image[] {
+		const images: Image[] = [];
 
 		// noinspection JSIgnoredPromiseFromCall
 		$.ajax({
 			async: false,
-			url: "assets/nonwords/20.json",
+			url: "assets/images/mood2.json",
 			success: (result) => {
-				result.forEach((nonWord: any) => {
-					nonWords.push(new NonWord(
-						nonWord["nonWord"],
-						nonWord["meaningStringId"]
+				result.forEach((image: any) => {
+					images.push(new Image(
+						image,
+						"assets/images/" + image
 					));
 				});
 			}
 		});
 
-		return nonWords;
+		return images;
 	}
 }

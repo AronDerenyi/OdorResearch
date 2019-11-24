@@ -1,31 +1,35 @@
-import Vue from "vue";
-import {Locale} from "src/locale/Locale";
 import {ViewModel} from "src/viewmodel/ViewModel";
 
-export class GottschalkModel extends ViewModel {
+export class DescriptionModel extends ViewModel {
 
-	readonly showNext: boolean = true;
-
-	readonly textLimit: number = 350;
-	text: string = "";
+	passcode: string = null;
 
 	// internal
-	private readonly finishCallback: () => void;
+	private readonly descriptionStringId: string;
+	private readonly passcodeRegex: RegExp;
+	private readonly startCallback: () => void;
 
-	constructor(finishCallback: () => void) {
+	constructor(descriptionStringId: string, passcodeRegex: RegExp, startCallback: () => void) {
 		super();
 
-		this.finishCallback = finishCallback;
-
-		this.localeChanged(Locale.getLocale());
-		this.addDisposable(Locale.watchLocale((locale) => this.localeChanged(locale)));
+		this.descriptionStringId = descriptionStringId;
+		this.passcodeRegex = passcodeRegex;
+		this.startCallback = startCallback;
 	}
 
-	private localeChanged(locale: string) {
+	get description() { return this.strings[this.descriptionStringId] }
+	get startString() { return this.strings["start"] }
+	get passcodeHint() { return this.strings["passcode_hint"] }
 
+	get passcodeRequired() {
+		return this.passcodeRegex != null;
 	}
 
-	next() {
-		this.finishCallback();
+	get showStart() {
+		return this.passcodeRegex.test(this.passcode);
+	}
+
+	start() {
+		if (!this.passcodeRequired || this.showStart) this.startCallback();
 	}
 }

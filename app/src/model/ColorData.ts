@@ -1,8 +1,8 @@
 import {EventData} from "src/model/EventData";
 
-export class FaceScaleData {
+export class ColorData {
 
 	startTime: number;
-	events: EventData<number>[];
-	value: number;
+	events: EventData<string>[];
+	value: string;
 }

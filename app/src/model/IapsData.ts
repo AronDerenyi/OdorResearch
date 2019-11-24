@@ -1,8 +1,10 @@
 import {EventData} from "src/model/EventData";
 
-export class PanasData {
+export class IapsData {
 
 	startTime: number;
-	events: EventData<{index: number, value: number}>[];
-	values: number[];
+	image: string;
+	selectEvent: EventData<boolean>;
+	rateEvent: EventData<number>;
+	rating: number;
 }

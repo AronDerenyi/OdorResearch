@@ -2,16 +2,24 @@ import {ViewModel} from "src/viewmodel/ViewModel";
 import {QuestionsData} from "src/model/QuestionsData";
 import {GottschalkData} from "src/model/GottschalkData";
 import {EventData} from "src/model/EventData";
+import {ValenceData} from "src/model/ValenceData";
 
-export class AssociationModel extends ViewModel {
+export class ValenceModel extends ViewModel {
 
 	// internal
-	private readonly data: GottschalkData;
+	private static readonly MIN_PLEASANTNESS = 1;
+	private static readonly MAX_PLEASANTNESS = 5;
+	private static readonly MIN_IMPACT = 1;
+	private static readonly MAX_IMPACT = 5;
+
+	private readonly data: ValenceData;
 	private readonly finishCallback: () => void;
-	private internalInput: string = "";
+	private internalPleasantness: number = null;
+	private internalImpact: number = null;
+	private internalExpectation: string = "";
 
 	constructor(
-		data: GottschalkData,
+		data: ValenceData,
 		finishCallback: () => void
 	) {
 		super();
@@ -20,25 +28,55 @@ export class AssociationModel extends ViewModel {
 		this.finishCallback = finishCallback;
 	}
 
+	start() {
+		this.data.startTime = Date.now();
+		this.data.pleasantnessEvents = [];
+		this.data.impactEvents = [];
+		this.data.expectationEvents = [];
+	}
+
+	get showFinish() {
+		return this.pleasantness != null &&
+			this.impact != null &&
+			this.expectation.length > 0;
+	}
+
 	finish() {
-		this.data.input = this.internalInput;
+		this.data.pleasantness = this.pleasantness;
+		this.data.impact = this.impact;
+		this.data.expectation = this.expectation;
 		this.finishCallback();
 	}
 
-	start() {
-		this.data.startTime = Date.now();
-		this.data.events = [];
+	get pleasantnessTitle() { return this.strings["pleasantness_title"] }
+	get minPleasantness() { return ValenceModel.MIN_PLEASANTNESS }
+	get maxPleasantness() { return ValenceModel.MAX_PLEASANTNESS }
+	get pleasantness() {
+		return this.internalPleasantness;
+	}
+	set pleasantness(pleasantness) {
+		this.data.pleasantnessEvents.push(new EventData(Date.now() - this.data.startTime, pleasantness));
+		this.internalPleasantness = pleasantness;
 	}
 
-	get associationTitle() { return this.strings["association_title"] }
-	get showFinish() { return this.association.length > 0 }
-
-	get association() {
-		return this.internalInput;
+	get impactTitle() { return this.strings["impact_title"] }
+	get minImpact() { return ValenceModel.MIN_IMPACT }
+	get maxImpact() { return ValenceModel.MAX_IMPACT }
+	get impact() {
+		return this.internalImpact;
+	}
+	set impact(impact) {
+		this.data.impactEvents.push(new EventData(Date.now() - this.data.startTime, impact));
+		this.internalImpact = impact;
 	}
 
-	set association(input) {
-		this.data.events.push(new EventData<string>(Date.now() - this.data.startTime, input));
-		this.internalInput = input;
+	get expectationTitle() { return this.strings["expectation_title"] }
+	get expectationHint() { return this.strings["expectation_hint"] }
+	get expectation() {
+		return this.internalExpectation;
+	}
+	set expectation(expectation) {
+		this.data.expectationEvents.push(new EventData(Date.now() - this.data.startTime, expectation));
+		this.internalExpectation = expectation;
 	}
 }

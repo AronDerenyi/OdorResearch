@@ -1,26 +1,24 @@
 import {TimedViewModel} from "src/viewmodel/TimedViewModel";
 import {NonWord} from "src/model/NonWord";
-import {NonWordRepetitionData} from "src/model/NonWordRepetitionData";
+import {NonWordRecallingData} from "src/model/NonWordRecallingData";
 import {EventData} from "src/model/EventData";
 
-export class NonWordRepetitionModel extends TimedViewModel {
+export class NonWordRecallingModel extends TimedViewModel {
 
 	// internal
-	private static readonly LEARNING_TIMER_MILLIS = 10000;
-	private static readonly REPEATING_TIMER_MILLIS = 5000;
+	private static readonly RECALLING_TIMER_MILLIS = 15000;
 
 	private readonly nonWords: NonWord[];
-	private readonly data: NonWordRepetitionData[];
+	private readonly data: NonWordRecallingData[];
 	private readonly finishCallback: () => void;
 
 	private index: number = null;
-	private currentData: NonWordRepetitionData = null;
-	private repeating: boolean = false;
+	private currentData: NonWordRecallingData = null;
 	private internalInput: string = "";
 
 	constructor(
 		nonWords: NonWord[],
-		data: NonWordRepetitionData[],
+		data: NonWordRecallingData[],
 		finishCallback: () => void
 	) {
 		super();
@@ -34,15 +32,6 @@ export class NonWordRepetitionModel extends TimedViewModel {
 		this.next();
 	}
 
-	get meaning() {
-		const nonWord = this.nonWords[this.index];
-		return this.strings[nonWord ? nonWord.meaningStringId : null];
-	}
-
-	get showNonWord() {
-		return !this.repeating;
-	}
-
 	get nonWord() {
 		const nonWord = this.nonWords[this.index];
 		return nonWord ? nonWord.nonWord : null;
@@ -53,13 +42,11 @@ export class NonWordRepetitionModel extends TimedViewModel {
 	}
 
 	set input(input) {
-		if (this.repeating) {
-			this.currentData.events.push(new EventData<string>(
-				Date.now() - this.currentData.startTime - NonWordRepetitionModel.LEARNING_TIMER_MILLIS,
-				input
-			));
-			this.internalInput = input;
-		}
+		this.currentData.events.push(new EventData<string>(
+			Date.now() - this.currentData.startTime,
+			input
+		));
+		this.internalInput = input;
 	}
 
 	private next() {
@@ -74,28 +61,15 @@ export class NonWordRepetitionModel extends TimedViewModel {
 			this.index++;
 		}
 
-		this.startLearning();
-	}
-
-	private startLearning() {
-		this.currentData = new NonWordRepetitionData();
-		this.repeating = false;
+		this.currentData = new NonWordRecallingData();
 		this.internalInput = "";
 
 		this.currentData.nonWord = this.nonWord;
+		this.currentData.meaning = this.strings[this.nonWords[this.index].meaningStringId];
 		this.currentData.startTime = Date.now();
 		this.currentData.events = [];
 
-		this.startTimer(NonWordRepetitionModel.LEARNING_TIMER_MILLIS, () => {
-			this.startRepeating();
-		});
-	}
-
-	private startRepeating() {
-		this.repeating = true;
-		this.internalInput = "";
-
-		this.startTimer(NonWordRepetitionModel.REPEATING_TIMER_MILLIS, () => {
+		this.startTimer(NonWordRecallingModel.RECALLING_TIMER_MILLIS, () => {
 			this.currentData.input = this.input;
 
 			this.data.push(this.currentData);

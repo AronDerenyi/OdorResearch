@@ -4,12 +4,16 @@ import {STMCapacityData} from "src/model/STMCapacityData";
 import {NonWordRepetitionData} from "src/model/NonWordRepetitionData";
 import {GottschalkData} from "src/model/GottschalkData";
 import {AssociationData} from "src/model/AssociationData";
+import {ValenceData} from "src/model/ValenceData";
+import {UnusualUseData} from "src/model/UnusualUseData";
+import {TellegenData} from "src/model/TellegenData";
 
-export class MemoryTestSession extends TestSession {
+export class CreativityTestSession extends TestSession {
 
 	questions: QuestionsData;
-	stmCapacity: STMCapacityData[];
-	nonWordRepetition: NonWordRepetitionData[];
-	gottschalk: GottschalkData;
+	tellegen: TellegenData;
+	unusualUseBrick: UnusualUseData;
+	unusualUseToothbrush: UnusualUseData;
+	valence: ValenceData;
 	association: AssociationData;
 }

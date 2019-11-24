@@ -1,29 +1,26 @@
-import {Disposable} from "src/util/Disposable";
+import {ViewModel} from "src/viewmodel/ViewModel";
+import Vue from "vue";
 
-export class ViewModel implements Disposable {
+export class TimedViewModel extends ViewModel {
 
-	private readonly disposables: Disposable[] = [];
+	readonly timerProgress: number = 0;
+	readonly timerMinutes: number = 0;
+	readonly timerSeconds: number = 0;
 
-	protected addDisposable(disposable: Disposable) {
-		this.disposables.push(disposable);
-	}
+	protected startTimer(lengthMillis: number, endCallback: () => void) {
+		const endMillis = Date.now() + lengthMillis;
+		const timer = setInterval(() => {
+			const remainingMillis = Math.max(0, endMillis - Date.now());
+			const remainingSeconds = remainingMillis / 1000;
 
-	dispose() {
-		this.disposables.forEach((disposable) => disposable.dispose());
-	}
-}
+			Vue.set(this, "timerProgress", remainingMillis / lengthMillis);
+			Vue.set(this, "timerMinutes", Math.floor(remainingSeconds / 60));
+			Vue.set(this, "timerSeconds", Math.floor(remainingSeconds % 60));
 
-export class Event<T = void> {
-
-	static handle<T>(newEvent: Event<T>, oldEvent: Event<T>, handle: (value: T) => void) {
-		if (newEvent != null && newEvent !== oldEvent) {
-			handle.call(this, newEvent.value);
-		}
-	}
-
-	readonly value: T;
-
-	constructor(value: T = null) {
-		this.value = value;
+			if (remainingMillis <= 0) {
+				clearInterval(timer);
+				endCallback();
+			}
+		});
 	}
 }

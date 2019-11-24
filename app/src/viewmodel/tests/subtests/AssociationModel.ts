@@ -1,27 +1,43 @@
 import {ViewModel} from "src/viewmodel/ViewModel";
-import {QuestionsData} from "src/model/QuestionsData";
+import {EventData} from "src/model/EventData";
+import {AssociationData} from "src/model/AssociationData";
 
-export class EndingModel extends ViewModel {
-
-	response: string = "";
+export class AssociationModel extends ViewModel {
 
 	// internal
-	private readonly submitCallback: (response: string) => void;
+	private readonly data: AssociationData;
+	private readonly finishCallback: () => void;
+	private internalInput: string = "";
 
 	constructor(
-		data: QuestionsData,
-		submitCallback: () => void
+		data: AssociationData,
+		finishCallback: () => void
 	) {
 		super();
 
-		this.submitCallback = submitCallback;
+		this.data = data;
+		this.finishCallback = finishCallback;
 	}
 
-	submit() {
-		this.submitCallback(this.response);
+	start() {
+		this.data.startTime = Date.now();
+		this.data.events = [];
 	}
 
-	get thankYou() { return this.strings["thank_you"] }
-	get responseTitle() { return this.strings["response_title"] }
-	get submitString() { return this.strings["submit"] }
+	finish() {
+		this.data.input = this.internalInput;
+		this.finishCallback();
+	}
+
+	get associationTitle() { return this.strings["association_title"] }
+	get showFinish() { return this.input.length > 0 }
+
+	get input() {
+		return this.internalInput;
+	}
+
+	set input(input) {
+		this.data.events.push(new EventData<string>(Date.now() - this.data.startTime, input));
+		this.internalInput = input;
+	}
 }

@@ -1,97 +1,111 @@
-import Vue from "vue";
-import {Locale} from "src/locale/Locale";
-import {ViewModel} from "src/viewmodel/ViewModel";
-import {Word} from "src/model/Word";
+import {TimedViewModel} from "src/viewmodel/TimedViewModel";
+import {STMCapacityData} from "src/model/STMCapacityData";
+import {EventData} from "src/model/EventData";
 
-export class WordLearningModel extends ViewModel {
-
-	readonly timerProgress: number = 1;
-	readonly timerMinutes: number = 0;
-	readonly timerSeconds: number = 0;
-
-	readonly meaning: string = "Meaning";
-	readonly word: string = "Word";
-	readonly showWord: boolean;
+export class STMCapacityModel extends TimedViewModel {
 
 	// internal
-	private readonly words: Word[];
-	private readonly learningLength: number;
-	private readonly repeatingLength: number;
+	private static readonly LEARNING_TIMER_PER_NUMBER_MILLIS = 1500;
+	private static readonly LEARNING_TIMER_EXTRA_MILLIS = 3000;
+	private static readonly REPEATING_TIMER_PER_NUMBER_MILLIS = 1000;
+	private static readonly REPEATING_TIMER_EXTRA_MILLIS = 3000;
+
+	private readonly numbersList: number[][];
+	private readonly data: STMCapacityData[];
 	private readonly finishCallback: () => void;
 
-	private index: number;
-	private internalInput: string = "";
+	private index: number = null;
+	private currentData: STMCapacityData = null;
+	private repeating: boolean = false;
+	private internalInput: number[];
 
-	constructor(words: Word[], learningLength: number, repeatingLength: number, finishCallback: () => void) {
+	constructor(
+		numbersList: number[][],
+		data: STMCapacityData[],
+		finishCallback: () => void
+	) {
 		super();
 
-		this.words = words;
-		this.learningLength = learningLength;
-		this.repeatingLength = repeatingLength;
+		this.numbersList = numbersList;
+		this.data = data;
 		this.finishCallback = finishCallback;
-
-		this.localeChanged();
-		this.addDisposable(Locale.watchLocale(() => this.localeChanged()));
-
-		this.nextWord();
 	}
 
-	get input(): string {
+	start() {
+		this.next();
+	}
+
+	get showNumbers() {
+		return !this.repeating;
+	}
+
+	get numbers() {
+		return this.numbersList[this.index];
+	}
+
+	get input() {
 		return this.internalInput;
 	}
 
-	set input(input: string) {
-		this.internalInput = input;
+	addInput(input: number) {
+		if (this.repeating && this.internalInput.length < this.numbers.length) {
+			this.currentData.events.push(new EventData<number>(
+				Date.now() - this.currentData.startTime -
+				this.numbers.length * STMCapacityModel.LEARNING_TIMER_PER_NUMBER_MILLIS -
+				STMCapacityModel.LEARNING_TIMER_EXTRA_MILLIS,
+				input
+			));
+			this.internalInput.push(input);
+		}
 	}
 
-	private nextWord() {
+	private next() {
+		if (this.index + 1 >= this.numbersList.length) {
+			this.finishCallback();
+			return;
+		}
+
 		if (this.index == null) {
 			this.index = 0;
 		} else {
 			this.index++;
 		}
 
-		if (this.index >= this.words.length) {
-			this.finishCallback();
-		} else {
-			this.updateMeaning();
-
-			Vue.set(this, "showWord", true);
-			Vue.set(this, "word", this.words[this.index].word);
-			Vue.set(this, "input", "");
-
-			this.startTimer(this.learningLength, () => {
-				Vue.set(this, "showWord", false);
-				this.startTimer(this.repeatingLength, () => {
-					this.nextWord();
-				});
-			});
-		}
+		this.startLearning();
 	}
 
-	private startTimer(length: number, endCallback: () => void) {
-		const end = Date.now() / 1000 + length;
-		const timer = setInterval(() => {
-			const remaining = Math.max(0, end - Date.now() / 1000);
+	private startLearning() {
+		this.currentData = new STMCapacityData();
+		this.repeating = false;
+		this.internalInput = [];
 
-			Vue.set(this, "timerProgress", remaining / length);
-			Vue.set(this, "timerMinutes", Math.floor(remaining / 60));
-			Vue.set(this, "timerSeconds", Math.floor(remaining % 60));
+		this.currentData.numbers = Object.assign([], this.numbers);
+		this.currentData.startTime = Date.now();
+		this.currentData.events = [];
 
-			if (remaining <= 0) {
-				clearInterval(timer);
-				endCallback();
+		this.startTimer(
+			this.numbers.length * STMCapacityModel.LEARNING_TIMER_PER_NUMBER_MILLIS +
+			STMCapacityModel.LEARNING_TIMER_EXTRA_MILLIS,
+			() => {
+				this.startRepeating();
 			}
-		});
+		);
 	}
 
-	private localeChanged() {
-		this.updateMeaning();
-	}
+	private startRepeating() {
+		this.repeating = true;
+		this.internalInput = [];
 
-	private updateMeaning() {
-		if (this.index != null) {
-			Vue.set(this, "meaning", Locale.getString(this.words[this.index].meaningStringId));
-		}
+		this.startTimer(
+			this.numbers.length * STMCapacityModel.REPEATING_TIMER_PER_NUMBER_MILLIS +
+			STMCapacityModel.REPEATING_TIMER_EXTRA_MILLIS,
+			() => {
+				this.currentData.input = Object.assign([], this.input);
+
+				this.data.push(this.currentData);
+				this.currentData = null;
+				this.next();
+			}
+		);
 	}
 }

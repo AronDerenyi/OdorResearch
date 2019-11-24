@@ -1,18 +1,12 @@
 import Vue from "vue";
-import {Locale} from "src/locale/Locale";
 import {ViewModel} from "src/viewmodel/ViewModel";
+import {GroupCode} from "src/code/GroupCode";
 
 export class HomeModalModel extends ViewModel {
 
-	readonly title: string;
-
-	readonly groupCodeHint: string;
-	readonly groupCodePlaceholder: string;
 	groupCode: string = "";
 
 	readonly showTerms: boolean;
-	readonly terms: string;
-	readonly acceptTerms: string;
 
 	// internal
 	private readonly selectedTest: string;
@@ -23,13 +17,53 @@ export class HomeModalModel extends ViewModel {
 
 		this.selectedTest = selectedTest;
 		this.acceptCallback = acceptCallback;
-
-		this.localeChanged(Locale.getLocale());
-		this.addDisposable(Locale.watchLocale((locale) => this.localeChanged(locale)));
 	}
 
-	get showNext(): boolean {
-		return this.groupCode == "test";
+	get title() {
+		switch (this.selectedTest) {
+			case "creativity":
+				return this.strings["creativity_test"];
+			case "memory":
+				return this.strings["memory_test"];
+			case "mood":
+				return this.strings["mood_test"];
+			default:
+				return "";
+		}
+	}
+
+	get terms() {
+		switch (this.selectedTest) {
+			case "creativity":
+				return GroupCode.isControl(this.groupCode) ?
+					this.strings["creativity_test_control_terms"] :
+					this.strings["creativity_test_terms"];
+			case "memory":
+				return GroupCode.isReturning(this.groupCode) ?
+					(GroupCode.isControl(this.groupCode) ?
+						this.strings["memory_returning_test_control_terms"] :
+						this.strings["memory_returning_test_terms"]) :
+					(GroupCode.isControl(this.groupCode) ?
+						this.strings["memory_test_control_terms"] :
+						this.strings["memory_test_terms"]);
+			case "mood":
+				return GroupCode.isControl(this.groupCode) ?
+					this.strings["mood_test_control_terms"] :
+					this.strings["mood_test_terms"];
+			default:
+				return "";
+		}
+	}
+
+	get groupCodeHelp() { return this.strings["enter_group_code"] }
+	get groupCodeHint() { return this.strings["group_code_hint"] }
+	get acceptTerms() { return this.strings["accept_terms"] }
+
+	get showNext() {
+		return GroupCode.verify(this.groupCode) && (
+			GroupCode.getTest(this.groupCode) == this.selectedTest ||
+			GroupCode.isDebug(this.groupCode)
+		);
 	}
 
 	back() {
@@ -42,29 +76,5 @@ export class HomeModalModel extends ViewModel {
 
 	accept() {
 		this.acceptCallback(this.groupCode);
-	}
-
-	private localeChanged(locale: string) {
-		Vue.set(this, "huSelected", locale == Locale.HU_LOCALE);
-		Vue.set(this, "enSelected", locale == Locale.EN_LOCALE);
-
-		Vue.set(this, "groupCodeHint", Locale.getString("enter_group_code"));
-		Vue.set(this, "groupCodePlaceholder", Locale.getString("group_code"));
-		Vue.set(this, "acceptTerms", Locale.getString("accept_terms"));
-
-		switch (this.selectedTest) {
-			case "creativity":
-				Vue.set(this, "title", Locale.getString("creativity_test"));
-				Vue.set(this, "terms", Locale.getString("creativity_test_terms"));
-				break;
-			case "memory":
-				Vue.set(this, "title", Locale.getString("memory_test"));
-				Vue.set(this, "terms", Locale.getString("memory_test_terms"));
-				break;
-			case "mood":
-				Vue.set(this, "title", Locale.getString("mood_test"));
-				Vue.set(this, "terms", Locale.getString("mood_test_terms"));
-				break;
-		}
 	}
 }

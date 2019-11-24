@@ -1,5 +1,13 @@
-export class GottschalkData {
+export class EventData<T> {
 
-	startTime: number;
+	time: number;
+	value: T;
 
+	constructor(
+		time: number = null,
+		value: T = null
+	) {
+		this.time = time;
+		this.value = value;
+	}
 }

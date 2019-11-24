@@ -1,20 +1,18 @@
 <template>
-	<div class="gottschalk">
-		<div class="gottschalk">
-			<Timer
-					class="gottschalk_timer"
-					:timer-minutes="viewModel.timerMinutes"
-					:timer-seconds="viewModel.timerSeconds"
-					:timer-progress="viewModel.timerProgress"/>
+	<div class="unusual_use">
+		<Timer
+				class="unusual_use_timer"
+				:timer-minutes="viewModel.timerMinutes"
+				:timer-seconds="viewModel.timerSeconds"
+				:timer-progress="viewModel.timerProgress"/>
 
-			<div class="gottschalk_content">
-				<EditText
-						area
-						class="gottschalk_input"
-						:maxlength="viewModel.maxLength"
-						v-model="viewModel.input"/>
-				<p class="gottschalk_counter" @click="focus()">{{viewModel.input.length}} / {{viewModel.maxLength}}</p>
-			</div>
+		<div class="unusual_use_content">
+			<p class="unusual_use_title">{{viewModel.title}}</p>
+			<EditText
+					area
+					class="unusual_use_input"
+					:placeholder="viewModel.hint"
+					v-model="viewModel.input"/>
 		</div>
 	</div>
 </template>
@@ -27,12 +25,12 @@
 	import FloatingActionButton from "src/view/components/FloatingActionButton.vue";
 	import Timer from "src/view/tests/subtests/components/Timer.vue";
 
-	import {GottschalkModel} from "src/viewmodel/tests/subtests/GottschalkModel";
+	import {UnusualUseModel} from "src/viewmodel/tests/subtests/UnusualUseModel";
 
 	@Component({components: {ProgressBar, EditText, FloatingActionButton, Timer}})
-	export default class Gottschalk extends Vue {
+	export default class UnusualUse extends Vue {
 
-		@Prop() readonly viewModel: GottschalkModel;
+		@Prop() readonly viewModel: UnusualUseModel;
 
 		mounted() {
 			this.viewModel.start();
@@ -41,7 +39,7 @@
 </script>
 
 <style scoped>
-	.gottschalk {
+	.unusual_use {
 		display: flex;
 		overflow: hidden auto;
 
@@ -52,11 +50,11 @@
 		background: var(--color_surface);
 	}
 
-	.gottschalk_timer {
+	.unusual_use_timer {
 		width: var(--subtest_timer_width);
 	}
 
-	.gottschalk_content {
+	.unusual_use_content {
 		margin-top: var(--subtest_spacing);
 		flex-grow: 1;
 		width: var(--subtest_input_field_width);
@@ -66,15 +64,15 @@
 		justify-content: center;
 	}
 
-	.gottschalk_input {
-		height: var(--subtest_input_field_height);
+	.unusual_use_title {
+		max-width: var(--subtest_help_width);
+		font-size: var(--subtest_help_size);
+		text-align: center;
 	}
 
-	.gottschalk_counter {
-		margin-top: var(--gottschalk_counter_space);
+	.unusual_use_input {
+		margin-top: var(--subtest_spacing);
 
-		text-align: right;
-		font-size: var(--gottschalk_counter_size);
-		color: var(--color_on_surface_variant);
+		height: var(--subtest_input_field_height);
 	}
 </style>

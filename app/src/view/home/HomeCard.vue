@@ -31,7 +31,6 @@
 		display: flex;
 
 		flex-direction: column;
-		align-items: stretch;
 		padding: var(--home_card_padding);
 	}
 

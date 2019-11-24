@@ -2,7 +2,7 @@ import {ViewModel} from "src/viewmodel/ViewModel";
 import Vue from "vue";
 import {QuestionsData} from "src/model/QuestionsData";
 
-export class FirstQuestionsModel extends ViewModel {
+export class Questions1Model extends ViewModel {
 
 	readonly group: number;
 
@@ -75,7 +75,7 @@ export class FirstQuestionsModel extends ViewModel {
 		switch (this.group) {
 			case 0:
 				this.data.gender = Object.values(QuestionsData.Gender)[this.gender];
-				this.data.birthYear = FirstQuestionsModel.MAX_BIRTH_YEARS - this.birthYear;
+				this.data.birthYear = Questions1Model.MAX_BIRTH_YEARS - this.birthYear;
 				this.data.birthMonth = Object.values(QuestionsData.Month)[this.birthMonth];
 				this.data.residence = Object.values(QuestionsData.Residence)[this.residence];
 
@@ -95,8 +95,8 @@ export class FirstQuestionsModel extends ViewModel {
 				this.data.consumedCoffee = this.consumedCoffee != 0;
 				this.data.consumedCigarette = this.consumedCigarette != 0;
 
-				const smokingMonths = FirstQuestionsModel.SMOKING_MONTHS;
-				const smokingYears = FirstQuestionsModel.SMOKING_YEARS;
+				const smokingMonths = Questions1Model.SMOKING_MONTHS;
+				const smokingYears = Questions1Model.SMOKING_YEARS;
 				if (this.smoking < 1) {
 					this.data.smoking = 0;
 				} else if (this.smoking - 1 < smokingMonths.length) {
@@ -122,14 +122,14 @@ export class FirstQuestionsModel extends ViewModel {
 	get birthYearOptions(): ReadonlyArray<string> {
 		const years: string[] = [];
 
-		for (let i = FirstQuestionsModel.MAX_BIRTH_YEARS; i >= FirstQuestionsModel.MIN_BIRTH_YEARS; i--) {
+		for (let i = Questions1Model.MAX_BIRTH_YEARS; i >= Questions1Model.MIN_BIRTH_YEARS; i--) {
 			years.push(i.toString());
 		}
 
 		return years;
 	}
 	get birthMonthOptions(): ReadonlyArray<string> {
-		return Object.values(QuestionsData.Month).map(val => this.strings["birth_month_" + val]);
+		return Object.values(QuestionsData.Month).map(val => this.strings["month_" + val]);
 	}
 
 	get residenceTitle() { return this.strings["residence_title"] }
@@ -142,13 +142,13 @@ export class FirstQuestionsModel extends ViewModel {
 	get bookshelvesOptions(): ReadonlyArray<string> {
 		const bookshelves: string[] = [];
 
-		for (let i = 0; i <= FirstQuestionsModel.MAX_BOOKSHELVES; i++) {
+		for (let i = 0; i <= Questions1Model.MAX_BOOKSHELVES; i++) {
 			bookshelves.push(i.toString());
 		}
 
 		bookshelves.push(
 			this.strings["bookshelves_more_than"]
-				.replace("$0", FirstQuestionsModel.MAX_BOOKSHELVES.toString())
+				.replace("$0", Questions1Model.MAX_BOOKSHELVES.toString())
 		);
 
 		return bookshelves;
@@ -158,13 +158,13 @@ export class FirstQuestionsModel extends ViewModel {
 	get foreignLanguagesOptions(): ReadonlyArray<string> {
 		const foreignLanguages: string[] = [];
 
-		for (let i = 0; i <= FirstQuestionsModel.MAX_FOREIGN_LANGUAGES; i++) {
+		for (let i = 0; i <= Questions1Model.MAX_FOREIGN_LANGUAGES; i++) {
 			foreignLanguages.push(i.toString());
 		}
 
 		foreignLanguages.push(
 			this.strings["foreign_languages_more_than"]
-				.replace("$0", FirstQuestionsModel.MAX_FOREIGN_LANGUAGES.toString())
+				.replace("$0", Questions1Model.MAX_FOREIGN_LANGUAGES.toString())
 		);
 
 		return foreignLanguages;
@@ -182,13 +182,13 @@ export class FirstQuestionsModel extends ViewModel {
 	get hoursSleptOptions(): ReadonlyArray<string> {
 		const sleepingHours: string[] = [];
 
-		for (let i = 0; i <= FirstQuestionsModel.MAX_SLEEPING_HOURS; i++) {
+		for (let i = 0; i <= Questions1Model.MAX_SLEEPING_HOURS; i++) {
 			sleepingHours.push(i.toString());
 		}
 
 		sleepingHours.push(
 			this.strings["hours_slept_more_than"]
-				.replace("$0", FirstQuestionsModel.MAX_SLEEPING_HOURS.toString())
+				.replace("$0", Questions1Model.MAX_SLEEPING_HOURS.toString())
 		);
 
 		return sleepingHours;
@@ -196,12 +196,12 @@ export class FirstQuestionsModel extends ViewModel {
 
 	get consumedCoffeeTitle() { return this.strings["consumed_coffee_title"] }
 	get consumedCoffeeOptions(): ReadonlyArray<string> {
-		return [this.strings["option_no"], this.strings["option_yes"]];
+		return [this.strings["no"], this.strings["yes"]];
 	}
 
 	get consumedCigaretteTitle() { return this.strings["consumed_cigarette_title"] }
 	get consumedCigaretteOptions(): ReadonlyArray<string> {
-		return [this.strings["option_no"], this.strings["option_yes"]];
+		return [this.strings["no"], this.strings["yes"]];
 	}
 
 	get smokingTitle() { return this.strings["smoking_title"] }
@@ -210,17 +210,17 @@ export class FirstQuestionsModel extends ViewModel {
 
 		smoking.push(this.strings["smoking_not_smoking"]);
 
-		FirstQuestionsModel.SMOKING_MONTHS.forEach(
+		Questions1Model.SMOKING_MONTHS.forEach(
 			(i) => smoking.push(this.strings["smoking_months"].replace("$0", i.toString()))
 		);
 
-		FirstQuestionsModel.SMOKING_YEARS.forEach(
+		Questions1Model.SMOKING_YEARS.forEach(
 			(i) => smoking.push(this.strings["smoking_years"].replace("$0", i.toString()))
 		);
 
 		smoking.push(
 			this.strings["smoking_years_more_than"]
-				.replace("$0", FirstQuestionsModel.SMOKING_YEARS[FirstQuestionsModel.SMOKING_YEARS.length - 1].toString())
+				.replace("$0", Questions1Model.SMOKING_YEARS[Questions1Model.SMOKING_YEARS.length - 1].toString())
 		);
 
 		return smoking;

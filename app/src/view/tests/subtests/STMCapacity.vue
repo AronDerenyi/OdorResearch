@@ -1,114 +1,129 @@
 <template>
-	<div class="non_word_repetition">
-		<div class="non_word_repetition_timer">
-			<p class="non_word_repetition_timer_text">
-				{{viewModel.timerMinutes}}:{{viewModel.timerSeconds.toString().padStart(2, "0")}}
-			</p>
-			<ProgressBar
-					class="word_learning_timer_progress"
-					:progress="viewModel.timerProgress"/>
-		</div>
-		<div class="non_word_repetition_content">
-			<transition name="fade" mode="out-in">
-				<p class="non_word_repetition_meaning" :key="viewModel.meaning">{{viewModel.meaning}}</p>
-			</transition>
-			<input
-					class="non_word_repetition_input"
-					ref="input"
-					:readonly="viewModel.showNonWord"
-					:value="viewModel.showNonWord ? viewModel.nonWord : viewModel.input"
-					@input="viewModel.input = $event.target.value"
-					@blur="focus()"/>
-		</div>
+	<div class="stm_capacity">
+		<Timer
+				class="stm_capacity_timer"
+				:timer-minutes="viewModel.timerMinutes"
+				:timer-seconds="viewModel.timerSeconds"
+				:timer-progress="viewModel.timerProgress"/>
+
+		<transition name="fade_quick" mode="out-in">
+			<div class="stm_capacity_numbers" :key="viewModel.numbers ? viewModel.numbers.toString() : ''">
+				<div
+						v-for="(number, index) in viewModel.numbers" :readonly="viewModel.showNumbers"
+						class="stm_capacity_input"
+						:class="{
+							'stm_capacity_input_readonly': viewModel.showNumbers,
+							'stm_capacity_input_focused': !viewModel.showNumbers && viewModel.input.length === index
+						}">
+					{{viewModel.showNumbers ? number : viewModel.input[index]}}
+				</div>
+			</div>
+		</transition>
 	</div>
 </template>
 
 <script lang="ts">
 	import {Vue, Component, Prop} from "vue-property-decorator";
 
-	import ProgressBar from "src/view/components/ProgressBar.vue";
-	import EditText from "src/view/components/EditText.vue";
-	import FloatingActionButton from "src/view/components/FloatingActionButton.vue";
+	import Timer from "src/view/tests/subtests/components/Timer.vue";
 
-	import {NonWordRepetitionModel} from "src/viewmodel/tests/subtests/NonWordRepetitionModel";
+	import {STMCapacityModel} from "src/viewmodel/tests/subtests/STMCapacityModel";
 
-	@Component({components: {ProgressBar, EditText, FloatingActionButton}})
-	export default class NonWordRepetition extends Vue {
+	@Component({components: {Timer}})
+	export default class STMCapacity extends Vue {
 
-		@Prop() readonly viewModel: NonWordRepetitionModel;
+		@Prop() readonly viewModel: STMCapacityModel;
+
+		private inputHandler: (event: KeyboardEvent) => void;
 
 		mounted() {
-			this.focus();
+			this.viewModel.start();
+
+			this.inputHandler = (event) => {
+				if (!this.viewModel.showNumbers) {
+					for (let i = 0; i <= 9; i++) {
+						if (event.key == i.toString()) {
+							this.viewModel.addInput(i);
+						}
+					}
+				}
+			};
+
+			window.addEventListener("keypress", this.inputHandler);
 		}
 
-		focus() {
-			(this.$refs.input as HTMLElement).focus()
+		destroyed() {
+			window.removeEventListener("keypress", this.inputHandler);
 		}
 	};
 </script>
 
 <style scoped>
-	.non_word_repetition {
+	.stm_capacity {
 		display: flex;
+		overflow: hidden auto;
 
 		flex-direction: column;
 		align-items: center;
-		justify-content: center;
-		padding: var(--non_word_repetition_padding);
+		padding: var(--subtest_padding);
 
 		background: var(--color_surface);
 	}
 
-	.non_word_repetition_timer {
-		width: var(--non_word_repetition_timer_width);
-
-		display: flex;
-		flex-direction: column;
+	.stm_capacity_timer {
+		width: var(--subtest_timer_width);
 	}
 
-	.non_word_repetition_timer_text {
-		text-align: center;
-		font-size: var(--non_word_repetition_timer_text_size);
-		font-variant-numeric: tabular-nums;
-		color: var(--color_on_surface_variant);
-	}
-
-	.word_learning_timer_progress {
-		margin-top: var(--non_word_repetition_timer_spacing);
-	}
-
-	.non_word_repetition_content {
-		margin-top: var(--non_word_repetition_spacing);
+	.stm_capacity_numbers {
+		margin-top: var(--subtest_spacing);
+		align-self: stretch;
 		flex-grow: 1;
-		width: var(--non_word_repetition_content_width);
 
 		display: flex;
-		flex-direction: column;
+		align-items: center;
 		justify-content: center;
 	}
 
-	.non_word_repetition_meaning {
-		text-align: center;
-		font-size: var(--non_word_repetition_meaning_size);
+	.stm_capacity_numbers > *:not(:first-child) {
+		margin-left: var(--stm_capacity_number_spacing);
 	}
 
-	.non_word_repetition_input {
-		margin-top: var(--non_word_repetition_content_spacing);
-		padding: var(--non_word_repetition_input_padding);
+	.stm_capacity_input {
+		position: relative;
+		width: var(--stm_capacity_input_width);
+		height: var(--stm_capacity_input_height);
+		flex-shrink: 0;
 
-		text-align: center;
-		font-size: var(--non_word_repetition_non_word_size);
-
-		border-radius: var(--non_word_repetition_input_radius);
-		border: var(--color_primary) solid 4px;
-
-		transition: color 0.2s, border-color 0.2s;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-size: var(--stm_capacity_number_size);
 	}
 
-	.non_word_repetition_input:read-only {
-		color: var(--color_on_surface_variant);
-		border-color: transparent;
+	.stm_capacity_input::after {
+		content: "";
 
-		cursor: default;
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+
+		border-radius: var(--stm_capacity_input_radius);
+		border: var(--color_on_surface) solid 4px;
+		opacity: 0.5;
+
+		transition: border-color 0.2s, opacity 0.2s;
+	}
+
+	.stm_capacity_input.stm_capacity_input_readonly::after {
+		opacity: 0;
+	}
+
+	.stm_capacity_input.stm_capacity_input_focused::after {
+		opacity: 1;
+		border-color: var(--color_primary);
+
+		transition: border-color 0.05s, opacity 0.05s;
 	}
 </style>

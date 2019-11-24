@@ -1,18 +1,16 @@
 <template>
-	<div class="gottschalk">
-		<Timer
-				class="gottschalk_timer"
-				:timer-minutes="viewModel.timerMinutes"
-				:timer-seconds="viewModel.timerSeconds"
-				:timer-progress="viewModel.timerProgress"/>
-
-		<div class="gottschalk_content">
+	<div class="ending">
+		<div class="ending_content">
+			<p class="ending_title">{{viewModel.thankYou}}</p>
 			<EditText
 					area
-					class="gottschalk_input"
-					:maxlength="viewModel.maxLength"
-					v-model="viewModel.input"/>
-			<p class="gottschalk_counter" @click="focus()">{{viewModel.input.length}} / {{viewModel.maxLength}}</p>
+					class="ending_response"
+					:placeholder="viewModel.responseHint"
+					v-model="viewModel.response"/>
+			<ExtendedFloatingActionButton
+					class="light"
+					:text="viewModel.submitString"
+					@click="viewModel.submit()"/>
 		</div>
 	</div>
 </template>
@@ -20,59 +18,50 @@
 <script lang="ts">
 	import {Vue, Component, Prop} from "vue-property-decorator";
 
-	import ProgressBar from "src/view/components/ProgressBar.vue";
 	import EditText from "src/view/components/EditText.vue";
-	import FloatingActionButton from "src/view/components/FloatingActionButton.vue";
-	import Timer from "src/view/tests/subtests/components/Timer.vue";
+	import ExtendedFloatingActionButton from "src/view/components/ExtendedFloatingActionButton.vue";
 
-	import {GottschalkModel} from "src/viewmodel/tests/subtests/GottschalkModel";
+	import {EndingModel} from "src/viewmodel/tests/subtests/EndingModel";
 
-	@Component({components: {ProgressBar, EditText, FloatingActionButton, Timer}})
-	export default class Gottschalk extends Vue {
+	@Component({components: {EditText, ExtendedFloatingActionButton}})
+	export default class Ending extends Vue {
 
-		@Prop() readonly viewModel: GottschalkModel;
-
-		mounted() {
-			this.viewModel.start();
-		}
+		@Prop() readonly viewModel: EndingModel;
 	};
 </script>
 
 <style scoped>
-	.gottschalk {
+	.ending {
+		display: flex;
+		overflow: hidden auto;
+
+		flex-direction: column;
+	}
+
+	.ending_content {
+		flex-grow: 1;
+
 		display: flex;
 
+		padding: var(--subtest_padding);
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
-		padding: var(--gottschalk_padding);
 
 		background: var(--color_surface);
 	}
 
-	.gottschalk_timer {
-		width: var(--subtest_timer_width);
+	.ending_content > *:not(:first-child){
+		margin-top: var(--subtest_spacing);
 	}
 
-	.gottschalk_content {
-		margin-top: var(--gottschalk_spacing);
-		flex-grow: 1;
-		width: var(--gottschalk_content_width);
-
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
+	.ending_title {
+		font-size: var(--subtest_title_size);
+		text-align: center;
 	}
 
-	.gottschalk_input {
-		height: var(--gottschalk_input_height);
-	}
-
-	.gottschalk_counter {
-		margin-top: var(--gottschalk_counter_space);
-
-		text-align: right;
-		font-size: var(--gottschalk_counter_size);
-		color: var(--color_on_surface_variant);
+	.ending_response {
+		width: var(--subtest_input_field_width);
+		height: var(--subtest_input_field_height);
 	}
 </style>

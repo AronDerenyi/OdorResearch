@@ -1,73 +1,48 @@
 <template>
-	<div class="selectable floating_action_button" v-on="$listeners">
-		<ImgSvg class="floating_action_button_icon" v-if="icon" :src="icon"/>
-		<p class="floating_action_button_text" v-else-if="text">{{text}}</p>
+	<div class="menu" v-on="$listeners">
+		<slot/>
 	</div>
 </template>
 
 <script lang="ts">
 	import {Vue, Component, Prop} from "vue-property-decorator";
-	import ImgSvg from "src/view/components/ImgSvg.vue";
 
-	@Component({components: {ImgSvg}})
-	export default class FloatingActionButton extends Vue {
+	@Component
+	export default class Menu extends Vue {
 		@Prop(String) readonly icon: string;
 		@Prop(String) readonly text: string;
 	}
 </script>
 
 <style scoped>
-	.floating_action_button {
-		position: relative;
-
-		width: 56px;
-		height: 56px;
-
+	.menu {
 		display: flex;
-		overflow: hidden;
+		overflow-x: hidden;
+		overflow-y: auto;
 
-		flex-direction: row;
-		align-items: center;
-		justify-content: center;
+		flex-direction: column;
+		align-items: stretch;
+		justify-content: start;
 
-		background: var(--color_primary);
-		color: var(--color_on_primary);
-		--highlight-color: var(--color_on_primary);
+		padding-top: 8px;
+		padding-bottom: 8px;
 
-		border-radius: 100%;
+		background: var(--color_surface);
+		color: var(--color_on_surface);
+
+		border-radius: 8px;
 		box-shadow: 0 4px 20px var(--color_shadow);
 	}
 
-	.floating_action_button_icon {
-		width: 24px;
-		height: 24px;
+	.menu > * {
+		flex-shrink: 0;
 
-		overflow: hidden;
+		padding: 12px 16px;
 
-		fill: currentColor;
-
-		transition: all 0.2s;
-	}
-
-	.floating_action_button_text {
-		overflow: hidden;
-
-		font-size: 20px;
-		font-weight: 500;
-		text-align: center;
+		font-size: 16px;
 		white-space: nowrap;
 		text-overflow: ellipsis;
-
 		color: currentColor;
-	}
-
-	.floating_action_button.light {
-		background: var(--color_on_primary);
-		color: var(--color_primary);
-		--highlight-color: var(--color_primary);
-	}
-
-	.floating_action_button.flat {
-		box-shadow: none;
+		fill: currentColor;
 	}
 </style>

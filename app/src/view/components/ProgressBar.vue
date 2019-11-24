@@ -1,6 +1,9 @@
 <template>
-	<div class="menu" v-on="$listeners">
-		<slot/>
+	<div class="progress_bar" v-on="$listeners">
+		<div class="progress_bar_container">
+			<div class="progress_bar_fill" :style="{width: `${progress * 100}%`}">
+			</div>
+		</div>
 	</div>
 </template>
 
@@ -8,41 +11,47 @@
 	import {Vue, Component, Prop} from "vue-property-decorator";
 
 	@Component
-	export default class Menu extends Vue {
-		@Prop(String) readonly icon: string;
-		@Prop(String) readonly text: string;
+	export default class ProgressBar extends Vue {
+		@Prop(Number) readonly progress: number;
 	}
 </script>
 
 <style scoped>
-	.menu {
+	.progress_bar {
 		display: flex;
-		overflow-x: hidden;
-		overflow-y: auto;
+		align-items: center;
 
-		flex-direction: column;
-		align-items: stretch;
-		justify-content: start;
-
-		padding-top: 8px;
-		padding-bottom: 8px;
-
-		background: var(--color_surface);
-		color: var(--color_on_surface);
-
-		border-radius: 8px;
-		box-shadow: 0 4px 20px var(--color_shadow);
+		--progress-color: var(--color_primary);
+		--progress-background: var(--color_on_surface);
 	}
 
-	.menu > * {
-		flex-shrink: 0;
+	.progress_bar_container {
+		position: relative;
+		flex-grow: 1;
+		height: 8px;
+	}
 
-		padding: 12px 16px;
+	.progress_bar_container::before {
+		content: "";
 
-		font-size: 16px;
-		white-space: nowrap;
-		text-overflow: ellipsis;
-		color: currentColor;
-		fill: currentColor;
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+
+		border-radius: 4px;
+		background: var(--color_on_surface);
+		opacity: 0.1;
+	}
+
+	.progress_bar_fill {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+
+		border-radius: 4px;
+		background: var(--progress-color);
 	}
 </style>

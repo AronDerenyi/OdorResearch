@@ -1,97 +1,106 @@
-import Vue from "vue";
-import {Locale} from "src/locale/Locale";
-import {ViewModel} from "src/viewmodel/ViewModel";
-import {Word} from "src/model/Word";
+import {TimedViewModel} from "src/viewmodel/TimedViewModel";
+import {NonWord} from "src/model/NonWord";
+import {NonWordRepetitionData} from "src/model/NonWordRepetitionData";
+import {EventData} from "src/model/EventData";
 
-export class WordLearningModel extends ViewModel {
-
-	readonly timerProgress: number = 1;
-	readonly timerMinutes: number = 0;
-	readonly timerSeconds: number = 0;
-
-	readonly meaning: string = "Meaning";
-	readonly word: string = "Word";
-	readonly showWord: boolean;
+export class NonWordRepetitionModel extends TimedViewModel {
 
 	// internal
-	private readonly words: Word[];
-	private readonly learningLength: number;
-	private readonly repeatingLength: number;
+	private static readonly LEARNING_TIMER_MILLIS = 10000;
+	private static readonly REPEATING_TIMER_MILLIS = 5000;
+
+	private readonly nonWords: NonWord[];
+	private readonly data: NonWordRepetitionData[];
 	private readonly finishCallback: () => void;
 
-	private index: number;
+	private index: number = null;
+	private currentData: NonWordRepetitionData = null;
+	private repeating: boolean = false;
 	private internalInput: string = "";
 
-	constructor(words: Word[], learningLength: number, repeatingLength: number, finishCallback: () => void) {
+	constructor(
+		nonWords: NonWord[],
+		data: NonWordRepetitionData[],
+		finishCallback: () => void
+	) {
 		super();
 
-		this.words = words;
-		this.learningLength = learningLength;
-		this.repeatingLength = repeatingLength;
+		this.nonWords = nonWords;
+		this.data = data;
 		this.finishCallback = finishCallback;
-
-		this.localeChanged();
-		this.addDisposable(Locale.watchLocale(() => this.localeChanged()));
-
-		this.nextWord();
 	}
 
-	get input(): string {
+	start() {
+		this.next();
+	}
+
+	get meaning() {
+		const nonWord = this.nonWords[this.index];
+		return this.strings[nonWord ? nonWord.meaningStringId : null];
+	}
+
+	get showNonWord() {
+		return !this.repeating;
+	}
+
+	get nonWord() {
+		const nonWord = this.nonWords[this.index];
+		return nonWord ? nonWord.nonWord : null;
+	}
+
+	get input() {
 		return this.internalInput;
 	}
 
-	set input(input: string) {
-		this.internalInput = input;
+	set input(input) {
+		if (this.repeating) {
+			this.currentData.events.push(new EventData<string>(
+				Date.now() - this.currentData.startTime - NonWordRepetitionModel.LEARNING_TIMER_MILLIS,
+				input
+			));
+			this.internalInput = input;
+		}
 	}
 
-	private nextWord() {
+	private next() {
+		if (this.index + 1 >= this.nonWords.length) {
+			this.finishCallback();
+			return;
+		}
+
 		if (this.index == null) {
 			this.index = 0;
 		} else {
 			this.index++;
 		}
 
-		if (this.index >= this.words.length) {
-			this.finishCallback();
-		} else {
-			this.updateMeaning();
-
-			Vue.set(this, "showWord", true);
-			Vue.set(this, "word", this.words[this.index].word);
-			Vue.set(this, "input", "");
-
-			this.startTimer(this.learningLength, () => {
-				Vue.set(this, "showWord", false);
-				this.startTimer(this.repeatingLength, () => {
-					this.nextWord();
-				});
-			});
-		}
+		this.startLearning();
 	}
 
-	private startTimer(length: number, endCallback: () => void) {
-		const end = Date.now() / 1000 + length;
-		const timer = setInterval(() => {
-			const remaining = Math.max(0, end - Date.now() / 1000);
+	private startLearning() {
+		this.currentData = new NonWordRepetitionData();
+		this.repeating = false;
+		this.internalInput = "";
 
-			Vue.set(this, "timerProgress", remaining / length);
-			Vue.set(this, "timerMinutes", Math.floor(remaining / 60));
-			Vue.set(this, "timerSeconds", Math.floor(remaining % 60));
+		this.currentData.nonWord = this.nonWord;
+		this.currentData.startTime = Date.now();
+		this.currentData.events = [];
 
-			if (remaining <= 0) {
-				clearInterval(timer);
-				endCallback();
-			}
+		this.startTimer(NonWordRepetitionModel.LEARNING_TIMER_MILLIS, () => {
+			this.startRepeating();
 		});
 	}
 
-	private localeChanged() {
-		this.updateMeaning();
-	}
+	private startRepeating() {
+		this.repeating = true;
+		this.internalInput = "";
 
-	private updateMeaning() {
-		if (this.index != null) {
-			Vue.set(this, "meaning", Locale.getString(this.words[this.index].meaningStringId));
-		}
+		this.startTimer(NonWordRepetitionModel.REPEATING_TIMER_MILLIS, () => {
+			this.currentData.input = this.input;
+
+			this.data.push(this.currentData);
+			this.currentData = null;
+			this.next();
+		});
 	}
 }

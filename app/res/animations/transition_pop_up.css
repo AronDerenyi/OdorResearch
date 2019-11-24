@@ -1,11 +1,9 @@
-.swipe_up-enter-active,
-.swipe_up-leave-active {
+.pop_up-enter-active,
+.pop_up-leave-active {
 	transition: all 0.5s;
 }
 
-.swipe_up-enter {
-	transform: translateY(-100%);
-}
-.swipe_up-leave-to {
+.pop_up-enter,
+.pop_up-leave-to {
 	transform: translateY(100%);
 }

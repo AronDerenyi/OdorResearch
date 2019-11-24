@@ -2,7 +2,7 @@ import {ViewModel} from "src/viewmodel/ViewModel";
 import Vue from "vue";
 import {QuestionsData} from "src/model/QuestionsData";
 
-export class ThirdQuestionsModel extends ViewModel {
+export class Questions3Model extends ViewModel {
 
 	readonly group: number;
 
@@ -92,56 +92,56 @@ export class ThirdQuestionsModel extends ViewModel {
 	get methodsTitle() { return this.strings["methods_title"] }
 	get methodsHelp() {
 		return this.strings["methods_help"]
-			.replace("$0", ThirdQuestionsModel.MIN_METHOD.toString())
-			.replace("$1", (ThirdQuestionsModel.MIN_METHOD + 1).toString())
-			.replace("$2", ThirdQuestionsModel.MAX_METHOD.toString())
+			.replace("$0", Questions3Model.MIN_METHOD.toString())
+			.replace("$1", (Questions3Model.MIN_METHOD + 1).toString())
+			.replace("$2", Questions3Model.MAX_METHOD.toString())
 	}
 	get hypnosisTitle() { return this.strings["hypnosis_title"] }
 	get meditationTitle() { return this.strings["meditation_title"] }
 	get mindfulnessTitle() { return this.strings["mindfulness_title"] }
-	get minMethod() { return ThirdQuestionsModel.MIN_METHOD }
-	get maxMethod() { return ThirdQuestionsModel.MAX_METHOD }
+	get minMethod() { return Questions3Model.MIN_METHOD }
+	get maxMethod() { return Questions3Model.MAX_METHOD }
 
 	// Second group
 	get inLoveTitle() { return this.strings["in_love_title"] }
 	get inLoveHelp() {
 		return this.strings["in_love_help"]
-			.replace("$0", ThirdQuestionsModel.MIN_IN_LOVE.toString())
-			.replace("$1", ThirdQuestionsModel.MAX_IN_LOVE.toString())
+			.replace("$0", Questions3Model.MIN_IN_LOVE.toString())
+			.replace("$1", Questions3Model.MAX_IN_LOVE.toString())
 	}
-	get minInLove() { return ThirdQuestionsModel.MIN_IN_LOVE }
-	get maxInLove() { return ThirdQuestionsModel.MAX_IN_LOVE }
+	get minInLove() { return Questions3Model.MIN_IN_LOVE }
+	get maxInLove() { return Questions3Model.MAX_IN_LOVE }
 
 	get smellRefinementTitle() { return this.strings["smell_refinement_title"] }
 	get smellRefinementHelp() {
 		return this.strings["smell_refinement_help"]
-			.replace("$0", ThirdQuestionsModel.MIN_REFINEMENT.toString())
-			.replace("$1", ThirdQuestionsModel.MAX_REFINEMENT.toString())
+			.replace("$0", Questions3Model.MIN_REFINEMENT.toString())
+			.replace("$1", Questions3Model.MAX_REFINEMENT.toString())
 	}
-	get minSmellRefinement() { return ThirdQuestionsModel.MIN_REFINEMENT }
-	get maxSmellRefinement() { return ThirdQuestionsModel.MAX_REFINEMENT }
+	get minSmellRefinement() { return Questions3Model.MIN_REFINEMENT }
+	get maxSmellRefinement() { return Questions3Model.MAX_REFINEMENT }
 
 	get smellSensitivityTitle() { return this.strings["smell_sensitivity_title"] }
 	get smellSensitivityHelp() {
 		return this.strings["smell_sensitivity_help"]
-			.replace("$0", ThirdQuestionsModel.MIN_SENSITIVITY.toString())
-			.replace("$1", ThirdQuestionsModel.MAX_SENSITIVITY.toString())
+			.replace("$0", Questions3Model.MIN_SENSITIVITY.toString())
+			.replace("$1", Questions3Model.MAX_SENSITIVITY.toString())
 	}
-	get minSmellSensitivity() { return ThirdQuestionsModel.MIN_SENSITIVITY }
-	get maxSmellSensitivity() { return ThirdQuestionsModel.MAX_SENSITIVITY }
+	get minSmellSensitivity() { return Questions3Model.MIN_SENSITIVITY }
+	get maxSmellSensitivity() { return Questions3Model.MAX_SENSITIVITY }
 
 	// Third group
 	get useTitle() { return this.strings["use_title"] }
 	get useDeodorantTitle() { return this.strings["use_deodorant_title"] }
 	get useDeodorantOptions() {
-		return [this.strings["option_no"], this.strings["option_yes"]];
+		return [this.strings["no"], this.strings["yes"]];
 	}
 	get usePerfumeTitle() { return this.strings["use_perfume_title"] }
 	get usePerfumeOptions() {
-		return [this.strings["option_no"], this.strings["option_yes"]];
+		return [this.strings["no"], this.strings["yes"]];
 	}
 	get useOilsTitle() { return this.strings["use_oils_title"] }
 	get useOilsOptions() {
-		return [this.strings["option_no"], this.strings["option_yes"]];
+		return [this.strings["no"], this.strings["yes"]];
 	}
 }

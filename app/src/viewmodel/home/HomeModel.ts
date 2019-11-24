@@ -1,24 +1,19 @@
 import Vue from "vue";
-import {Locale} from "src/locale/Locale";
+import {StringProvider} from "src/providers/StringProvider";
 import {ViewModel, Event} from "src/viewmodel/ViewModel";
-import {HomeModalModel} from "src/viewmodel/HomeModalModel";
+import {HomeModalModel} from "src/viewmodel/home/HomeModalModel";
 
 export class HomeModel extends ViewModel {
-
-	readonly creativityTestTitle: string;
-	readonly memoryTestTitle: string;
-	readonly moodTestTitle: string;
-	readonly select: string;
 
 	readonly showModal: boolean;
 	readonly modalModel: HomeModalModel;
 
-	readonly huSelected: boolean;
-	readonly enSelected: boolean;
+	readonly huSelected: boolean = StringProvider.getLanguage() == StringProvider.HU;
+	readonly enSelected: boolean = StringProvider.getLanguage() == StringProvider.EN;
 
-	readonly navigateToCreativityTest: Event = null;
-	readonly navigateToMemoryTest: Event = null;
-	readonly navigateToMoodTest: Event = null;
+	readonly navigateToCreativityTest: Event<string> = null;
+	readonly navigateToMemoryTest: Event<string> = null;
+	readonly navigateToMoodTest: Event<string> = null;
 
 	// internal
 	private selectedTest: ("creativity" | "memory" | "mood") = null;
@@ -26,13 +21,20 @@ export class HomeModel extends ViewModel {
 	constructor() {
 		super();
 
-		this.localeChanged(Locale.getLocale());
-		this.addDisposable(Locale.watchLocale((locale) => this.localeChanged(locale)));
+		this.addDisposable(StringProvider.watchLanguage((language) => {
+			Vue.set(this, "huSelected", language == StringProvider.HU);
+			Vue.set(this, "enSelected", language == StringProvider.EN);
+		}));
 	}
 
+	get creativityTestTitle() {return this.strings["creativity_test"]}
+	get memoryTestTitle() { return this.strings["memory_test"] }
+	get moodTestTitle() { return this.strings["mood_test"] }
+	get select() { return this.strings["select"] }
+
 	dispose() {
-		super.dispose();
 		if (this.modalModel != null) this.modalModel.dispose();
+		super.dispose();
 	}
 
 	back() {
@@ -66,37 +68,24 @@ export class HomeModel extends ViewModel {
 	}
 
 	setLanguageHU() {
-		Locale.setLocale(Locale.HU_LOCALE);
+		StringProvider.setLanguage(StringProvider.HU);
 	}
 
 	setLanguageEN() {
-		Locale.setLocale(Locale.EN_LOCALE);
+		StringProvider.setLanguage(StringProvider.EN);
 	}
 
 	private accept(groupCode: string) {
 		switch (this.selectedTest) {
 			case "creativity":
-				Vue.set(this, "navigateToCreativityTest", new Event());
+				Vue.set(this, "navigateToCreativityTest", new Event(groupCode));
 				break;
 			case "memory":
-				Vue.set(this, "navigateToMemoryTest", new Event());
+				Vue.set(this, "navigateToMemoryTest", new Event(groupCode));
 				break;
 			case "mood":
-				Vue.set(this, "navigateToMoodTest", new Event());
+				Vue.set(this, "navigateToMoodTest", new Event(groupCode));
 				break;
 		}
-	}
-
-	private localeChanged(locale: string) {
-		Vue.set(this, "huSelected", locale == Locale.HU_LOCALE);
-		Vue.set(this, "enSelected", locale == Locale.EN_LOCALE);
-
-		Vue.set(this, "creativityTestTitle", Locale.getString("creativity_test"));
-		Vue.set(this, "memoryTestTitle", Locale.getString("memory_test"));
-		Vue.set(this, "moodTestTitle", Locale.getString("mood_test"));
-		Vue.set(this, "select", Locale.getString("select"));
-
-		Vue.set(this, "modalSubTitle", Locale.getString("enter_group_code"));
-		Vue.set(this, "modalGroupCode", Locale.getString("group_code"));
 	}
 }

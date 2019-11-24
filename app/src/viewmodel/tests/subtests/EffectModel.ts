@@ -1,16 +1,17 @@
 import {ViewModel} from "src/viewmodel/ViewModel";
 import {EventData} from "src/model/EventData";
 import {AssociationData} from "src/model/AssociationData";
+import {EffectData} from "src/model/EffectData";
 
-export class AssociationModel extends ViewModel {
+export class EffectModel extends ViewModel {
 
 	// internal
-	private readonly data: AssociationData;
+	private readonly data: EffectData;
 	private readonly finishCallback: () => void;
 	private internalInput: string = "";
 
 	constructor(
-		data: AssociationData,
+		data: EffectData,
 		finishCallback: () => void
 	) {
 		super();
@@ -29,7 +30,7 @@ export class AssociationModel extends ViewModel {
 		this.finishCallback();
 	}
 
-	get associationTitle() { return this.strings["association_title"] }
+	get effectTitle() { return this.strings["effect_title"] }
 	get showFinish() { return this.input.length > 0 }
 
 	get input() {

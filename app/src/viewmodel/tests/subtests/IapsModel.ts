@@ -1,32 +1,32 @@
 import {TimedViewModel} from "src/viewmodel/TimedViewModel";
 import {STMCapacityData} from "src/model/STMCapacityData";
 import {EventData} from "src/model/EventData";
+import {IapsData} from "src/model/IapsData";
+import {NonWordRecallingData} from "src/model/NonWordRecallingData";
+import {Image} from "src/model/Image";
 
-export class STMCapacityModel extends TimedViewModel {
+export class IapsModel extends TimedViewModel {
 
 	// internal
-	private static readonly LEARNING_TIMER_PER_NUMBER_MILLIS = 1500;
-	private static readonly LEARNING_TIMER_EXTRA_MILLIS = 3000;
-	private static readonly REPEATING_TIMER_PER_NUMBER_MILLIS = 1000;
-	private static readonly REPEATING_TIMER_EXTRA_MILLIS = 3000;
+	private static readonly RATING_COUNT = 5;
 
-	private readonly numbersList: number[][];
-	private readonly data: STMCapacityData[];
+	private readonly images: Image[];
+	private readonly data: IapsData[];
 	private readonly finishCallback: () => void;
 
 	private index: number = null;
-	private currentData: STMCapacityData = null;
-	private repeating: boolean = false;
-	private internalInput: number[];
+	private currentData: IapsData = null;
+	private internalSelected: boolean = null;
+	private internalRating: number = null;
 
 	constructor(
-		numbersList: number[][],
-		data: STMCapacityData[],
+		images: Image[],
+		data: IapsData[],
 		finishCallback: () => void
 	) {
 		super();
 
-		this.numbersList = numbersList;
+		this.images = images;
 		this.data = data;
 		this.finishCallback = finishCallback;
 	}
@@ -35,32 +35,53 @@ export class STMCapacityModel extends TimedViewModel {
 		this.next();
 	}
 
-	get showNumbers() {
-		return !this.repeating;
+	get positive() { return this.strings["positive"] }
+	get negative() { return this.strings["negative"] }
+	get ratingCount() { return IapsModel.RATING_COUNT }
+
+	get imageSource() {
+		const image = this.images[this.index];
+		return image ? image.source : null;
 	}
 
-	get numbers() {
-		return this.numbersList[this.index];
+	get selected() {
+		return this.internalSelected;
 	}
 
-	get input() {
-		return this.internalInput;
+	set selected(selected) {
+		this.currentData.selectEvent = new EventData<boolean>(
+			Date.now() - this.currentData.startTime,
+			selected
+		);
+		this.internalSelected = selected;
 	}
 
-	addInput(input: number) {
-		if (this.repeating && this.internalInput.length < this.numbers.length) {
-			this.currentData.events.push(new EventData<number>(
-				Date.now() - this.currentData.startTime -
-				this.numbers.length * STMCapacityModel.LEARNING_TIMER_PER_NUMBER_MILLIS -
-				STMCapacityModel.LEARNING_TIMER_EXTRA_MILLIS,
-				input
-			));
-			this.internalInput.push(input);
-		}
+	get rating() {
+		return this.internalRating;
+	}
+
+	set rating(rating) {
+		this.currentData.rateEvent = new EventData<number>(
+			Date.now() - this.currentData.startTime,
+			rating
+		);
+		this.internalRating = rating;
+
+		this.currentData.rating = this.selected ? this.rating : -this.rating;
+		this.data.push(this.currentData);
+
+		this.internalSelected = null;
+		this.internalRating = null;
+		this.currentData = null;
+		this.next();
+	}
+
+	get showRating() {
+		return this.internalSelected !== null;
 	}
 
 	private next() {
-		if (this.index + 1 >= this.numbersList.length) {
+		if (this.index + 1 >= this.images.length) {
 			this.finishCallback();
 			return;
 		}
@@ -71,41 +92,8 @@ export class STMCapacityModel extends TimedViewModel {
 			this.index++;
 		}
 
-		this.startLearning();
-	}
-
-	private startLearning() {
-		this.currentData = new STMCapacityData();
-		this.repeating = false;
-		this.internalInput = [];
-
-		this.currentData.numbers = Object.assign([], this.numbers);
+		this.currentData = new IapsData();
+		this.currentData.image = this.images[this.index].image;
 		this.currentData.startTime = Date.now();
-		this.currentData.events = [];
-
-		this.startTimer(
-			this.numbers.length * STMCapacityModel.LEARNING_TIMER_PER_NUMBER_MILLIS +
-			STMCapacityModel.LEARNING_TIMER_EXTRA_MILLIS,
-			() => {
-				this.startRepeating();
-			}
-		);
-	}
-
-	private startRepeating() {
-		this.repeating = true;
-		this.internalInput = [];
-
-		this.startTimer(
-			this.numbers.length * STMCapacityModel.REPEATING_TIMER_PER_NUMBER_MILLIS +
-			STMCapacityModel.REPEATING_TIMER_EXTRA_MILLIS,
-			() => {
-				this.currentData.input = Object.assign([], this.input);
-
-				this.data.push(this.currentData);
-				this.currentData = null;
-				this.next();
-			}
-		);
 	}
 }

@@ -4,17 +4,14 @@ const CopyPlugin = require("copy-webpack-plugin");
 const VueLoaderPlugin = require("vue-loader/lib/plugin");
 
 module.exports = {
-	// mode: "production",
-	mode: "development",
+	mode: "development" /*"production"*/,
 	devtool: "inline-source-map",
-	target: "electron-renderer",
 	node: {
 		__dirname: false,
 		__filename: false
 	},
 	entry: {
-		run: Path.resolve(__dirname, "app/run.ts"),
-		index: Path.resolve(__dirname, "app/index.ts"),
+		index: Path.resolve(__dirname, "app/index.ts")
 	},
 	output: {
 		path: Path.resolve(__dirname, "build"),
@@ -28,9 +25,6 @@ module.exports = {
 			title: "Odor Research"
 		}),
 		new CopyPlugin([{
-			from: "app/package.json",
-			to: "package.json",
-		}, {
 			from: "assets",
 			to: "assets",
 			ignore: [".DS_Store"]

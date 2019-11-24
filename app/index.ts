@@ -1,16 +1,26 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import {VueWebpackResources} from "src/util/VueWebpackResources";
-
 import App from "src/view/App.vue";
 
-Vue.use(VueRouter);
-Vue.use(VueWebpackResources, {preRequire: /\.(css)$/});
+const agentRegex = /Chrome\/([0-9]*)\.([0-9]*)\.([0-9]*)\.([0-9]*)/;
+const agentSupported = agentRegex.test(navigator.userAgent);
 
-const vue = new Vue({
-	router: new VueRouter(),
-	render: createElement => createElement(App),
-});
+if (agentSupported) {
+	const styleContext = require.context("res", true, /\.css$/);
+	styleContext.keys().forEach(style => styleContext(style));
 
-document.write(`<div id="app">`);
-vue.$mount("#app");
+	Vue.use(VueRouter);
+	const vue = new Vue({
+		router: new VueRouter(),
+		render: createElement => createElement(App),
+	});
+
+	document.write(`<div id="app"></div>`);
+	vue.$mount("#app");
+} else {
+	document.write(`
+		<h1 style="padding: 56px; text-align: center; font-family: sans-serif;">
+			Your browser isn't supported.<br>Use Google Chrome instead.
+		</h1>
+	`);
+}

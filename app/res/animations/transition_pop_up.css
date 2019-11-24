@@ -1,0 +1,9 @@
+.pop_up-enter-active,
+.pop_up-leave-active {
+	transition: all 0.5s;
+}
+
+.pop_up-enter,
+.pop_up-leave-to {
+	transform: translateY(100%);
+}

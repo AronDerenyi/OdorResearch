@@ -1,0 +1,321 @@
+{
+	"creativity_test": "Kreativitás Teszt",
+	"memory_test": "Memória Teszt",
+	"mood_test": "Hangulat Teszt",
+
+	"select": "Kiválasztás",
+	"enter_group_code": "Kérem adja meg a csoportjának kódját",
+	"group_code_hint": "Csoportkód",
+
+	"creativity_test_terms": "Beleegyező nyilatkozat<br><br><b>Mi a kutatás célja?</b><br>A jelen vizsgálat egy olyan kísérletsorozat része, amely során az környezeti ingerek hatását vizsgáljuk a különböző kognitív, illetve affektív jelenségekre. A vizsgálat célja a különböző ingerek mentális folyamatokra gyakorolt hatásának feltárása és a kiváltott hatások közötti eltérések összehasonlítása. A kutatás további célja ezen ingerek alkalmazása a tanulásban, reklámiparban és a terápiás helyzetekben. Feltételezésünk szerint a különböző környezeti ingerek hozzájárulhatnak a kreatív készségek fejlesztéséhez, illetve segíthetik a különböző affektusok befolyásolását és megélését.<br><br><b>Mi történik a kutatási projekt során?</b><br>Ön a kutatásban való részvételhez való hozzájárulásával beleegyezik, hogy egy körülbelül 45 perces kísérletben vegyen részt, amely során egy standardizált, pszichológiai és teljesítményt mérő teszteket kell majd kitöltenie. Eközben Ön különböző, kis koncentrációban jelen lévő illóolajok illatát fogja érezni. A kutatás egy számítógépes programon keresztül fog megvalósulni. Az eljárás teljes mértékben fájdalommentes, és semmilyen kellemetlen érzéssel nem jár. A vizsgálat egy csöndes, nyugodt szobában történik.<br><br><b>Ki vehet részt a vizsgálatban?</b><br>Abban az esetben nem tudjuk Önt bevonni, ha bármilyen pszichológiai vagy neurológiai rendellenességgel diagnosztizálták.<br><br><b>Önkéntesség</b><br>A részvétel teljes mértékben önkéntes alapon történik, így Ön kutatás bármelyik szakaszában jelezheti kilépési szándékát. Ebben az esetben az addig felvett adatok is törlésre kerülnek.<br><br><b>Adatvédelem</b><br>A kutatáshoz az ELTE-PPK Kutatásetikai Bizottságától engedélyt kaptunk. Minden, a vizsgálat segítségével nyert információt szigorúan bizalmasan kezelünk, mely biztosítja az Ön anonimitását. A kísérlet során az adatokat egyéni kóddal fogjuk tárolni, amit a résztvevők nevéből, születési hónapjából és napjából fogunk generálni, úgy hogy eközben a program ezeket az adatokat nem tárolja. A kódgenerálás egyirányú, abból a megadott adatokat nem lehet visszanyerni, a GDPR alapelveknek megfelelő módon. A későbbi tudományos publikálásra kerülő tanulmányokban vagy bármilyen beszámolóban megjelenő eredmények tekintetében szintén garantáljuk anonimitását. Az adatokról csoportszinten készítünk elemzéseket, melyeket kérésére megosztjuk Önnel.<br><br><br><br>Balogh Eszter – kutató asszisztens<br>ba.eszti@gmail.com<br>Derényi Áron – kutató asszisztens<br>aron.derenyi@gmail.com<br>Fábián Kamilla – kutató asszisztens<br>kamillafabian@gmail.com<br>Fodor Gellért – kutató asszisztens<br>fodorgellert97@gmail.com<br>Kállai Róbert – kutató asszisztens<br>kallair9@gmail.com<br>Varga Virág – kutató asszisztens<br>vargav0815@gmail.com",
+	"creativity_test_control_terms": "Beleegyező nyilatkozat<br><br><b>Mi a kutatás célja?</b><br>A jelen vizsgálat egy olyan kísérletsorozat része, amely során az környezeti ingerek hatását vizsgáljuk a különböző kognitív, illetve affektív jelenségekre. A vizsgálat célja a különböző ingerek mentális folyamatokra gyakorolt hatásának feltárása és a kiváltott hatások közötti eltérések összehasonlítása. A kutatás további célja ezen ingerek alkalmazása a tanulásban, reklámiparban és a terápiás helyzetekben. Feltételezésünk szerint a különböző környezeti ingerek hozzájárulhatnak a kreatív készségek fejlesztéséhez, illetve segíthetik a különböző affektusok befolyásolását és megélését.<br><br><b>Mi történik a kutatási projekt során?</b><br>Ön a kutatásban való részvételhez való hozzájárulásával beleegyezik, hogy egy körülbelül 45 perces kísérletben vegyen részt, amely során egy standardizált, pszichológiai és teljesítményt mérő teszteket kell majd kitöltenie. A kutatás egy számítógépes programon keresztül fog megvalósulni. Az eljárás teljes mértékben fájdalommentes, és semmilyen kellemetlen érzéssel nem jár. A vizsgálat egy csöndes, nyugodt szobában történik.<br><br><b>Ki vehet részt a vizsgálatban?</b><br>Abban az esetben nem tudjuk Önt bevonni, ha bármilyen pszichológiai vagy neurológiai rendellenességgel diagnosztizálták.<br><br><b>Önkéntesség</b><br>A részvétel teljes mértékben önkéntes alapon történik, így Ön kutatás bármelyik szakaszában jelezheti kilépési szándékát. Ebben az esetben az addig felvett adatok is törlésre kerülnek.<br><br><b>Adatvédelem</b><br>A kutatáshoz az ELTE-PPK Kutatásetikai Bizottságától engedélyt kaptunk. Minden, a vizsgálat segítségével nyert információt szigorúan bizalmasan kezelünk, mely biztosítja az Ön anonimitását. A kísérlet során az adatokat egyéni kóddal fogjuk tárolni, amit a résztvevők nevéből, születési hónapjából és napjából fogunk generálni, úgy hogy eközben a program ezeket az adatokat nem tárolja. A kódgenerálás egyirányú, abból a megadott adatokat nem lehet visszanyerni, a GDPR alapelveknek megfelelő módon. A későbbi tudományos publikálásra kerülő tanulmányokban vagy bármilyen beszámolóban megjelenő eredmények tekintetében szintén garantáljuk anonimitását. Az adatokról csoportszinten készítünk elemzéseket, melyeket kérésére megosztjuk Önnel.<br><br><br><br>Balogh Eszter – kutató asszisztens<br>ba.eszti@gmail.com<br>Derényi Áron – kutató asszisztens<br>aron.derenyi@gmail.com<br>Fábián Kamilla – kutató asszisztens<br>kamillafabian@gmail.com<br>Fodor Gellért – kutató asszisztens<br>fodorgellert97@gmail.com<br>Kállai Róbert – kutató asszisztens<br>kallair9@gmail.com<br>Varga Virág – kutató asszisztens<br>vargav0815@gmail.com",
+	"memory_test_terms": "Beleegyező nyilatkozat<br><br><b>Mi a kutatás célja?</b><br>A jelen vizsgálat egy olyan kísérletsorozat része, amely során az környezeti ingerek hatását vizsgáljuk a különböző kognitív, illetve affektív jelenségekre. A vizsgálat célja a különböző ingerek mentális folyamatokra gyakorolt hatásának feltárása és a kiváltott hatások közötti eltérések összehasonlítása. A kutatás további célja ezen ingerek alkalmazása a tanulásban, reklámiparban és a terápiás helyzetekben. Feltételezésünk szerint a különböző környezeti ingerek hozzájárulhatnak a kreatív készségek fejlesztéséhez, illetve segíthetik a különböző affektusok befolyásolását és megélését.<br><br><b>Mi történik a kutatási projekt során?</b><br>Ön a kutatásban való részvételhez való hozzájárulásával beleegyezik, hogy egy körülbelül 45 perces kísérletben vegyen részt, amely során egy standardizált, pszichológiai és teljesítményt mérő teszteket kell majd kitöltenie. Eközben Ön különböző, kis koncentrációban jelen lévő illóolajok illatát fogja érezni. A kutatás egy számítógépes programon keresztül fog megvalósulni. Az eljárás teljes mértékben fájdalommentes, és semmilyen kellemetlen érzéssel nem jár. A vizsgálat egy csöndes, nyugodt szobában történik.<br><br><b>Ki vehet részt a vizsgálatban?</b><br>Abban az esetben nem tudjuk Önt bevonni, ha bármilyen pszichológiai vagy neurológiai rendellenességgel diagnosztizálták.<br><br><b>Önkéntesség</b><br>A részvétel teljes mértékben önkéntes alapon történik, így Ön kutatás bármelyik szakaszában jelezheti kilépési szándékát. Ebben az esetben az addig felvett adatok is törlésre kerülnek.<br><br><b>Adatvédelem</b><br>A kutatáshoz az ELTE-PPK Kutatásetikai Bizottságától engedélyt kaptunk. Minden, a vizsgálat segítségével nyert információt szigorúan bizalmasan kezelünk, mely biztosítja az Ön anonimitását. A kísérlet során az adatokat egyéni kóddal fogjuk tárolni, amit a résztvevők nevéből, születési hónapjából és napjából fogunk generálni, úgy hogy eközben a program ezeket az adatokat nem tárolja. A kódgenerálás egyirányú, abból a megadott adatokat nem lehet visszanyerni, a GDPR alapelveknek megfelelő módon. A későbbi tudományos publikálásra kerülő tanulmányokban vagy bármilyen beszámolóban megjelenő eredmények tekintetében szintén garantáljuk anonimitását. Az adatokról csoportszinten készítünk elemzéseket, melyeket kérésére megosztjuk Önnel.<br><br><br><br>Balogh Eszter – kutató asszisztens<br>ba.eszti@gmail.com<br>Derényi Áron – kutató asszisztens<br>aron.derenyi@gmail.com<br>Fábián Kamilla – kutató asszisztens<br>kamillafabian@gmail.com<br>Fodor Gellért – kutató asszisztens<br>fodorgellert97@gmail.com<br>Kállai Róbert – kutató asszisztens<br>kallair9@gmail.com<br>Varga Virág – kutató asszisztens<br>vargav0815@gmail.com",
+	"memory_test_control_terms": "Beleegyező nyilatkozat<br><br><b>Mi a kutatás célja?</b><br>A jelen vizsgálat egy olyan kísérletsorozat része, amely során az környezeti ingerek hatását vizsgáljuk a különböző kognitív, illetve affektív jelenségekre. A vizsgálat célja a különböző ingerek mentális folyamatokra gyakorolt hatásának feltárása és a kiváltott hatások közötti eltérések összehasonlítása. A kutatás további célja ezen ingerek alkalmazása a tanulásban, reklámiparban és a terápiás helyzetekben. Feltételezésünk szerint a különböző környezeti ingerek hozzájárulhatnak a kreatív készségek fejlesztéséhez, illetve segíthetik a különböző affektusok befolyásolását és megélését.<br><br><b>Mi történik a kutatási projekt során?</b><br>Ön a kutatásban való részvételhez való hozzájárulásával beleegyezik, hogy egy körülbelül 45 perces kísérletben vegyen részt, amely során egy standardizált, pszichológiai és teljesítményt mérő teszteket kell majd kitöltenie. A kutatás egy számítógépes programon keresztül fog megvalósulni. Az eljárás teljes mértékben fájdalommentes, és semmilyen kellemetlen érzéssel nem jár. A vizsgálat egy csöndes, nyugodt szobában történik.<br><br><b>Ki vehet részt a vizsgálatban?</b><br>Abban az esetben nem tudjuk Önt bevonni, ha bármilyen pszichológiai vagy neurológiai rendellenességgel diagnosztizálták.<br><br><b>Önkéntesség</b><br>A részvétel teljes mértékben önkéntes alapon történik, így Ön kutatás bármelyik szakaszában jelezheti kilépési szándékát. Ebben az esetben az addig felvett adatok is törlésre kerülnek.<br><br><b>Adatvédelem</b><br>A kutatáshoz az ELTE-PPK Kutatásetikai Bizottságától engedélyt kaptunk. Minden, a vizsgálat segítségével nyert információt szigorúan bizalmasan kezelünk, mely biztosítja az Ön anonimitását. A kísérlet során az adatokat egyéni kóddal fogjuk tárolni, amit a résztvevők nevéből, születési hónapjából és napjából fogunk generálni, úgy hogy eközben a program ezeket az adatokat nem tárolja. A kódgenerálás egyirányú, abból a megadott adatokat nem lehet visszanyerni, a GDPR alapelveknek megfelelő módon. A későbbi tudományos publikálásra kerülő tanulmányokban vagy bármilyen beszámolóban megjelenő eredmények tekintetében szintén garantáljuk anonimitását. Az adatokról csoportszinten készítünk elemzéseket, melyeket kérésére megosztjuk Önnel.<br><br><br><br>Balogh Eszter – kutató asszisztens<br>ba.eszti@gmail.com<br>Derényi Áron – kutató asszisztens<br>aron.derenyi@gmail.com<br>Fábián Kamilla – kutató asszisztens<br>kamillafabian@gmail.com<br>Fodor Gellért – kutató asszisztens<br>fodorgellert97@gmail.com<br>Kállai Róbert – kutató asszisztens<br>kallair9@gmail.com<br>Varga Virág – kutató asszisztens<br>vargav0815@gmail.com",
+	"memory_returning_test_terms": "Beleegyező nyilatkozat<br><br><b>Mi a kutatás célja?</b><br>A jelen vizsgálat egy olyan kísérletsorozat része, amely során az környezeti ingerek hatását vizsgáljuk a különböző kognitív, illetve affektív jelenségekre. A vizsgálat célja a különböző ingerek mentális folyamatokra gyakorolt hatásának feltárása és a kiváltott hatások közötti eltérések összehasonlítása. A kutatás további célja ezen ingerek alkalmazása a tanulásban, reklámiparban és a terápiás helyzetekben. Feltételezésünk szerint a különböző környezeti ingerek hozzájárulhatnak a kreatív készségek fejlesztéséhez, illetve segíthetik a különböző affektusok befolyásolását és megélését.<br><br><b>Mi történik a kutatási projekt során?</b><br>Ön a kutatásban való részvételhez való hozzájárulásával beleegyezik, hogy egy körülbelül 15 perces kísérletben vegyen részt, amely során egy standardizált, pszichológiai és teljesítményt mérő teszteket kell majd kitöltenie. Eközben Ön különböző, kis koncentrációban jelen lévő illóolajok illatát fogja érezni. A kutatás egy számítógépes programon keresztül fog megvalósulni. Az eljárás teljes mértékben fájdalommentes, és semmilyen kellemetlen érzéssel nem jár. A vizsgálat egy csöndes, nyugodt szobában történik.<br><br><b>Ki vehet részt a vizsgálatban?</b><br>Abban az esetben nem tudjuk Önt bevonni, ha bármilyen pszichológiai vagy neurológiai rendellenességgel diagnosztizálták.<br><br><b>Önkéntesség</b><br>A részvétel teljes mértékben önkéntes alapon történik, így Ön kutatás bármelyik szakaszában jelezheti kilépési szándékát. Ebben az esetben az addig felvett adatok is törlésre kerülnek.<br><br><b>Adatvédelem</b><br>A kutatáshoz az ELTE-PPK Kutatásetikai Bizottságától engedélyt kaptunk. Minden, a vizsgálat segítségével nyert információt szigorúan bizalmasan kezelünk, mely biztosítja az Ön anonimitását. A kísérlet során az adatokat egyéni kóddal fogjuk tárolni, amit a résztvevők nevéből, születési hónapjából és napjából fogunk generálni, úgy hogy eközben a program ezeket az adatokat nem tárolja. A kódgenerálás egyirányú, abból a megadott adatokat nem lehet visszanyerni, a GDPR alapelveknek megfelelő módon. A későbbi tudományos publikálásra kerülő tanulmányokban vagy bármilyen beszámolóban megjelenő eredmények tekintetében szintén garantáljuk anonimitását. Az adatokról csoportszinten készítünk elemzéseket, melyeket kérésére megosztjuk Önnel.<br><br><br><br>Balogh Eszter – kutató asszisztens<br>ba.eszti@gmail.com<br>Derényi Áron – kutató asszisztens<br>aron.derenyi@gmail.com<br>Fábián Kamilla – kutató asszisztens<br>kamillafabian@gmail.com<br>Fodor Gellért – kutató asszisztens<br>fodorgellert97@gmail.com<br>Kállai Róbert – kutató asszisztens<br>kallair9@gmail.com<br>Varga Virág – kutató asszisztens<br>vargav0815@gmail.com",
+	"memory_returning_test_control_terms": "Beleegyező nyilatkozat<br><br><b>Mi a kutatás célja?</b><br>A jelen vizsgálat egy olyan kísérletsorozat része, amely során az környezeti ingerek hatását vizsgáljuk a különböző kognitív, illetve affektív jelenségekre. A vizsgálat célja a különböző ingerek mentális folyamatokra gyakorolt hatásának feltárása és a kiváltott hatások közötti eltérések összehasonlítása. A kutatás további célja ezen ingerek alkalmazása a tanulásban, reklámiparban és a terápiás helyzetekben. Feltételezésünk szerint a különböző környezeti ingerek hozzájárulhatnak a kreatív készségek fejlesztéséhez, illetve segíthetik a különböző affektusok befolyásolását és megélését.<br><br><b>Mi történik a kutatási projekt során?</b><br>Ön a kutatásban való részvételhez való hozzájárulásával beleegyezik, hogy egy körülbelül 15 perces kísérletben vegyen részt, amely során egy standardizált, pszichológiai és teljesítményt mérő teszteket kell majd kitöltenie. A kutatás egy számítógépes programon keresztül fog megvalósulni. Az eljárás teljes mértékben fájdalommentes, és semmilyen kellemetlen érzéssel nem jár. A vizsgálat egy csöndes, nyugodt szobában történik.<br><br><b>Ki vehet részt a vizsgálatban?</b><br>Abban az esetben nem tudjuk Önt bevonni, ha bármilyen pszichológiai vagy neurológiai rendellenességgel diagnosztizálták.<br><br><b>Önkéntesség</b><br>A részvétel teljes mértékben önkéntes alapon történik, így Ön kutatás bármelyik szakaszában jelezheti kilépési szándékát. Ebben az esetben az addig felvett adatok is törlésre kerülnek.<br><br><b>Adatvédelem</b><br>A kutatáshoz az ELTE-PPK Kutatásetikai Bizottságától engedélyt kaptunk. Minden, a vizsgálat segítségével nyert információt szigorúan bizalmasan kezelünk, mely biztosítja az Ön anonimitását. A kísérlet során az adatokat egyéni kóddal fogjuk tárolni, amit a résztvevők nevéből, születési hónapjából és napjából fogunk generálni, úgy hogy eközben a program ezeket az adatokat nem tárolja. A kódgenerálás egyirányú, abból a megadott adatokat nem lehet visszanyerni, a GDPR alapelveknek megfelelő módon. A későbbi tudományos publikálásra kerülő tanulmányokban vagy bármilyen beszámolóban megjelenő eredmények tekintetében szintén garantáljuk anonimitását. Az adatokról csoportszinten készítünk elemzéseket, melyeket kérésére megosztjuk Önnel.<br><br><br><br>Balogh Eszter – kutató asszisztens<br>ba.eszti@gmail.com<br>Derényi Áron – kutató asszisztens<br>aron.derenyi@gmail.com<br>Fábián Kamilla – kutató asszisztens<br>kamillafabian@gmail.com<br>Fodor Gellért – kutató asszisztens<br>fodorgellert97@gmail.com<br>Kállai Róbert – kutató asszisztens<br>kallair9@gmail.com<br>Varga Virág – kutató asszisztens<br>vargav0815@gmail.com",
+	"mood_test_terms": "Beleegyező nyilatkozat<br><br><b>Mi a kutatás célja?</b><br>A jelen vizsgálat egy olyan kísérletsorozat része, amely során az környezeti ingerek hatását vizsgáljuk a különböző kognitív, illetve affektív jelenségekre. A vizsgálat célja a különböző ingerek mentális folyamatokra gyakorolt hatásának feltárása és a kiváltott hatások közötti eltérések összehasonlítása. A kutatás további célja ezen ingerek alkalmazása a tanulásban, reklámiparban és a terápiás helyzetekben. Feltételezésünk szerint a különböző környezeti ingerek hozzájárulhatnak a kreatív készségek fejlesztéséhez, illetve segíthetik a különböző affektusok befolyásolását és megélését.<br><br><b>Mi történik a kutatási projekt során?</b><br>Ön a kutatásban való részvételhez való hozzájárulásával beleegyezik, hogy egy körülbelül 45 perces kísérletben vegyen részt, amely során egy standardizált, pszichológiai és teljesítményt mérő teszteket kell majd kitöltenie. Eközben Ön különböző, kis koncentrációban jelen lévő illóolajok illatát fogja érezni. A kutatás egy számítógépes programon keresztül fog megvalósulni. Az eljárás teljes mértékben fájdalommentes, és semmilyen kellemetlen érzéssel nem jár. A vizsgálat egy csöndes, nyugodt szobában történik.<br><br><b>Ki vehet részt a vizsgálatban?</b><br>Abban az esetben nem tudjuk Önt bevonni, ha bármilyen pszichológiai vagy neurológiai rendellenességgel diagnosztizálták.<br><br><b>Önkéntesség</b><br>A részvétel teljes mértékben önkéntes alapon történik, így Ön kutatás bármelyik szakaszában jelezheti kilépési szándékát. Ebben az esetben az addig felvett adatok is törlésre kerülnek.<br><br><b>Adatvédelem</b><br>A kutatáshoz az ELTE-PPK Kutatásetikai Bizottságától engedélyt kaptunk. Minden, a vizsgálat segítségével nyert információt szigorúan bizalmasan kezelünk, mely biztosítja az Ön anonimitását. A kísérlet során az adatokat egyéni kóddal fogjuk tárolni, amit a résztvevők nevéből, születési hónapjából és napjából fogunk generálni, úgy hogy eközben a program ezeket az adatokat nem tárolja. A kódgenerálás egyirányú, abból a megadott adatokat nem lehet visszanyerni, a GDPR alapelveknek megfelelő módon. A későbbi tudományos publikálásra kerülő tanulmányokban vagy bármilyen beszámolóban megjelenő eredmények tekintetében szintén garantáljuk anonimitását. Az adatokról csoportszinten készítünk elemzéseket, melyeket kérésére megosztjuk Önnel.<br><br><br><br>Balogh Eszter – kutató asszisztens<br>ba.eszti@gmail.com<br>Derényi Áron – kutató asszisztens<br>aron.derenyi@gmail.com<br>Fábián Kamilla – kutató asszisztens<br>kamillafabian@gmail.com<br>Fodor Gellért – kutató asszisztens<br>fodorgellert97@gmail.com<br>Kállai Róbert – kutató asszisztens<br>kallair9@gmail.com<br>Varga Virág – kutató asszisztens<br>vargav0815@gmail.com",
+	"mood_test_control_terms": "Beleegyező nyilatkozat<br><br><b>Mi a kutatás célja?</b><br>A jelen vizsgálat egy olyan kísérletsorozat része, amely során az környezeti ingerek hatását vizsgáljuk a különböző kognitív, illetve affektív jelenségekre. A vizsgálat célja a különböző ingerek mentális folyamatokra gyakorolt hatásának feltárása és a kiváltott hatások közötti eltérések összehasonlítása. A kutatás további célja ezen ingerek alkalmazása a tanulásban, reklámiparban és a terápiás helyzetekben. Feltételezésünk szerint a különböző környezeti ingerek hozzájárulhatnak a kreatív készségek fejlesztéséhez, illetve segíthetik a különböző affektusok befolyásolását és megélését.<br><br><b>Mi történik a kutatási projekt során?</b><br>Ön a kutatásban való részvételhez való hozzájárulásával beleegyezik, hogy egy körülbelül 45 perces kísérletben vegyen részt, amely során egy standardizált, pszichológiai és teljesítményt mérő teszteket kell majd kitöltenie. A kutatás egy számítógépes programon keresztül fog megvalósulni. Az eljárás teljes mértékben fájdalommentes, és semmilyen kellemetlen érzéssel nem jár. A vizsgálat egy csöndes, nyugodt szobában történik.<br><br><b>Ki vehet részt a vizsgálatban?</b><br>Abban az esetben nem tudjuk Önt bevonni, ha bármilyen pszichológiai vagy neurológiai rendellenességgel diagnosztizálták.<br><br><b>Önkéntesség</b><br>A részvétel teljes mértékben önkéntes alapon történik, így Ön kutatás bármelyik szakaszában jelezheti kilépési szándékát. Ebben az esetben az addig felvett adatok is törlésre kerülnek.<br><br><b>Adatvédelem</b><br>A kutatáshoz az ELTE-PPK Kutatásetikai Bizottságától engedélyt kaptunk. Minden, a vizsgálat segítségével nyert információt szigorúan bizalmasan kezelünk, mely biztosítja az Ön anonimitását. A kísérlet során az adatokat egyéni kóddal fogjuk tárolni, amit a résztvevők nevéből, születési hónapjából és napjából fogunk generálni, úgy hogy eközben a program ezeket az adatokat nem tárolja. A kódgenerálás egyirányú, abból a megadott adatokat nem lehet visszanyerni, a GDPR alapelveknek megfelelő módon. A későbbi tudományos publikálásra kerülő tanulmányokban vagy bármilyen beszámolóban megjelenő eredmények tekintetében szintén garantáljuk anonimitását. Az adatokról csoportszinten készítünk elemzéseket, melyeket kérésére megosztjuk Önnel.<br><br><br><br>Balogh Eszter – kutató asszisztens<br>ba.eszti@gmail.com<br>Derényi Áron – kutató asszisztens<br>aron.derenyi@gmail.com<br>Fábián Kamilla – kutató asszisztens<br>kamillafabian@gmail.com<br>Fodor Gellért – kutató asszisztens<br>fodorgellert97@gmail.com<br>Kállai Róbert – kutató asszisztens<br>kallair9@gmail.com<br>Varga Virág – kutató asszisztens<br>vargav0815@gmail.com",
+
+	"accept_terms": "Elfogadás és a teszt indítása",
+
+
+
+
+	"stm_capacity_description": "A továbbhaladáskor számterjedelem teszt fog következni. Kérem figyelmesen olvassa el és memorizálja az egyre hosszabb számsorokat. A számsorok eltűnése után kérem gépelje vissza a megjelenő mezőkbe a számokat a helyes sorrendben. Egy próbálkozási lehetősége van, törölni, vagy javítani nem tud. Kérem figyeljen oda, a lehető legjobb tudása szerint végezze el a feladatot!",
+	"non_word_repetition_description": "A továbbhaladáskor szótanuló teszt fog következni. Kérem figyelmesen olvassa el az alábbi szuahéli és magyar szópárokat. 10 másodperc áll majd rendelkezésére a szuahéli szavak memorizálásához, illetve 5 másodperc az eltűnő szuahéli szavak begépeléséhez. Kérem figyeljen oda, a lehető legjobb tudása szerint végezze el a feladatot!",
+	"non_word_recalling_description": "A következők során a múlt héten tanult szuahéli szavakat fogjuk visszamérni. A szuahéli szavak magyar jelentésének előhívására 15 másodperc áll rendelkezésükre. Kérem dolgozzanak legjobb tudásuk szerint!",
+	"gottschalk_description": "Kérem a következő feladat során fogalmazza meg maximum 350 karakterben, hogy milyen életesemény jut eszébe ebben a pillanatban, figyelembe véve az Önt most érő ingereket! Kérem mindenképpen írja le azt, ami az első asszociációja, a lehető legrészletesebb módon!",
+	"tellegen_description": "Olvassa el a kijelentéseket és értékelje, hogy melyiket találja jellemzőnek magára! Kérem, hogy minden kijelentésre válaszoljon, még akkor is, ha nem teljesen biztos a válaszban! Olvassa el figyelmesen az állításokat, de ne gondolkozzon sokat a válaszon!",
+	"fragrance_description": "Kérem a keze felnyújtásával jelezze a kísérletvezetőnek, hogy eljutott idáig a kitöltésben! Kis türelmét kérjük az illatminta átadásáig. Csak azután tudja folytatni a kitöltést, hogy felhelyezte a maszkjába illeszthető illatpapírt!",
+	"unusual_use_description": "A szokatlan használat teszt megalkotója Guilford, mellyel magát a kreativitást, a divergens gondolkodás mértékét, valamint a szokásos, berögzött dolgoktól való elszakadás képességét kívánta mérni. A vizsgálat során bizonyos tárgyakra kell majd másként tekintenie, és ötleteit leírnia arról, hogy mi másra tudjuk felhasználni ezeket a tárgyakat azon kívül, mint amire megalkották őket. A feladat teljesítésére 2 perc áll rendelkezére.",
+	"unusual_use_description_short": "Ismét szokatlan használat teszt következik. A kitöltéshez 2 perc áll a rendelkezésére.",
+	"osgood_description": "Kérem helyezze el a következő két opció közötti skálákon az illatot, a megfelelő kör kiválasztásával!",
+	"panas_description": "A következőkben állításokat fog látni. Kérem jelölje az ötös skálán, hogy most ebben a pillanatban mennyire tartja ezeket az állításokat igaznak Önre!",
+	"iaps_description": "Kérem jelölje, hogy kellemesnek vagy kellemetlennek tartja-e a következő képeket, majd pedig értékelje egy ötös skálán, hogy mennyire tartja a képeket kellesnek vagy kellemetlennek!",
+	"start": "Indítás",
+	"passcode_hint": "Kód",
+
+
+
+
+	"yes": "Igen",
+	"no": "Nem",
+
+	"positive": "Pozitív",
+	"negative": "Negatív",
+
+	"month_jan": "Január",
+	"month_feb": "Február",
+	"month_mar": "Március",
+	"month_apr": "Április",
+	"month_may": "Május",
+	"month_jun": "Június",
+	"month_jul": "Július",
+	"month_aug": "Augusztus",
+	"month_sep": "Szeptember",
+	"month_oct": "Október",
+	"month_nov": "November",
+	"month_dec": "December",
+
+
+
+
+	"full_name_title": "Kérem adja meg a teljes nevét",
+	"full_name_hint": "Teljes név",
+	"birthday_title": "Kérem adja meg a születési dátumát",
+	"birthday_month_hint": "Hónap",
+	"birthday_day_hint": "Nap",
+	"code_description": "A fenti információkat csupán a következő kód generálására használja  a program. Ezeket később nem lehet visszafejteni a generált kódból és úgyszintén nem lesznek eltárolva sem.",
+
+
+
+
+	"gender_title": "Neme",
+	"gender_male": "Férfi",
+	"gender_female": "Nő",
+	"gender_other": "Egyéb",
+
+	"birth_title": "Születési ideje",
+
+	"residence_title": "Kérem válassza ki a lakhelyének típusát!",
+	"residence_capital": "Főváros",
+	"residence_county_seat": "Megyeszékhely",
+	"residence_town": "Város",
+	"residence_village": "Falu",
+
+	"bookshelves_title": "Körülbelül hány könyvvel teli polc van az otthonában?",
+	"bookshelves_more_than": "Több mint $0",
+
+	"foreign_languages_title": "Hány idegen nyelven beszél?",
+	"foreign_languages_more_than": "Több mint $0",
+
+	"education_title": "Mi a legmagasabb iskolai végzettsége?",
+	"education_mother_title": "Mi az édesanyja legmagasabb iskolai végzettsége?",
+	"education_father_title": "Mi az édesapja legmagasabb iskolai végzettsége?",
+	"education_primary_school": "Általános Iskola",
+	"education_high_school": "Középiskola",
+	"education_polytechnic": "technikum/OKJ",
+	"education_college": "Főiskola",
+	"education_bachelor": "BSc / BA Diploma",
+	"education_master": "MSc / MA Diploma",
+	"education_doctoral": "PhD",
+
+	"hours_slept_title": "Hány órát aludt az elmúlt éjjel??",
+	"hours_slept_more_than": "Több mint $0",
+	"consumed_coffee_title": "Fogyasztott kávét az elmúlt 12 órában?",
+	"consumed_cigarette_title": "Dohányzott az elmúlt 48 órában?",
+
+	"smoking_title": "Mióta dohányzik?",
+	"smoking_not_smoking": "Nem dohányzom",
+	"smoking_months": "$0 hónapja",
+	"smoking_years": "$0 éve",
+	"smoking_years_more_than": "Több mint $0 éve",
+
+
+	"eco_family_title": "Értékelje a családja gazdasági helyzetét!",
+	"eco_self_title": "Értékelje a saját gazdasági helyzetét!",
+	"eco_help": "A skálán 0 az átlagos.",
+
+	"allergy_title": "Allergiás valamire az alábbiak közül?",
+	"allergy_pollen": "Pollen",
+	"allergy_fur": "Állatszőr",
+	"allergy_dust": "Por",
+	"allergy_drug": "Gyógyszer",
+	"allergy_food": "Ételallergia",
+	"allergy_other": "Más",
+	"matured_age_title": "Körülbelül hány évesen volt az első menstruációja vagy ejakulációja?",
+	"matured_age_younger_than": "Fiatalabban, mint $0",
+	"matured_age_older_than": "Idősebben, mint $0",
+	"menstruating_title": "Aktuálisan menstruál?",
+	"contraceptive_title": "Használ fogamzásgátlót?",
+
+	"mood_title": "Hogyan jellemezné a hangulatát az elmúlt időszakban??",
+	"mood_help": "$0: kifejezetten rossz, $1: kifejezetten jó",
+	"stress_general_title": "Mekkora stressz jellemzi általában a mindennapjait??",
+	"stress_today_title": "Mekkora stressz jellemzi a mai napját?",
+	"stress_help": "$0: meglehetősen kicsi, $1: meglehetősen nagy",
+
+
+	"methods_title": "Hogyan értékeli az alábbi módszereket?",
+	"methods_help": "$0: nem hallottam róla, $1: nem tartom hatásosnak, $2: hatásosnak tartom",
+	"hypnosis_title": "Hipnózis",
+	"meditation_title": "Meditáció",
+	"mindfulness_title": "Mindfulness",
+
+	"in_love_title": "Mennyire érzi magát jelenleg szerelmesnek?",
+	"in_love_help": "$0: egyáltatlán nem, $1: éppen fülig szerelmes vagyok",
+	"smell_refinement_title": "Mennyire ítéli kifinomultnak a szaglását??",
+	"smell_refinement_help": "$0: egyáltalán nem, $1: kifinomultnak érzem",
+	"smell_sensitivity_title": "Értékelje, mennyire tartja magát érzékenynek az illatokra!",
+	"smell_sensitivity_help": "$0: egyáltalán nem befolyásolnak, $1: nagy befolyással vannak rám",
+
+	"use_title": "Használja az alábbiakat?",
+	"use_deodorant_title": "Dezodor",
+	"use_perfume_title": "Parfüm",
+	"use_oils_title": "Illóolajok",
+
+
+
+
+	"meaning_dog": "kutya",
+	"meaning_pearl": "gyöngy",
+	"meaning_cloud": "felhő",
+	"meaning_economy": "gazdaság",
+	"meaning_knee": "térd",
+	"meaning_egg": "tojás",
+	"meaning_beer": "sör",
+	"meaning_mattress": "matrac",
+	"meaning_broom": "seprű",
+	"meaning_doctor": "doktor",
+	"meaning_maggot": "kukac",
+	"meaning_bucket": "bakancs",
+	"meaning_tomato": "paradicsom",
+	"meaning_poison": "méreg",
+	"meaning_soul": "lélek",
+	"meaning_food": "étel",
+	"meaning_crab": "rák",
+	"meaning_corpse": "holttest",
+	"meaning_horse": "ló",
+	"meaning_scarf": "sál",
+	"meaning_silk": "selyem",
+	"meaning_queen": "királynő",
+	"meaning_ornament": "dísz",
+	"meaning_carpet": "kárpit",
+	"meaning_barrel": "hordó",
+	"meaning_rumor": "rumor",
+	"meaning_curtain": "curtain",
+	"meaning_snow": "snow",
+	"meaning_monkey": "monkey",
+
+
+
+
+	"tellegen_0": "Néha úgy érzek és úgy élem át a dolgokat, mint gyerekkoromban.",
+	"tellegen_1": "A szép költői szavak nagy hatással vannak rám.",
+	"tellegen_2": "Ha filmet, tv-t vagy egy színdarabot nézek, annyira bele tudok merülni, hogy egészenelfeledkezem magamról és környezetemről, és úgy élem át a történetet, mintha az valós lenne és énis részt vennék benne.",
+	"tellegen_3": "Ha mereven nézek egy képet és ezután másfelé fordítom a tekintetem, néha magam előtt látom aképet, majdnem úgy, mintha mindig azt nézném.",
+	"tellegen_4": "Néha úgy érzem, mintha gondolataim magukba zárnák az egész világot.",
+	"tellegen_5": "Szeretem nézni, ahogyan a felhők alakja változik az égen.",
+	"tellegen_6": "Ha akarom, olyan élesen magam elé tudom képzelni a dolgokat, hogy az úgy leköti a figyelmem, mint egy jó film vagy történet.",
+	"tellegen_7": "Azt hiszem, tudom, hogy mit értenek az emberek misztikus élmények alatt.",
+	"tellegen_8": "Néha kilépek a szokásos énemből és a lét teljesen más állapotát élem át.",
+	"tellegen_9": "Az anyagok — pl. gyapjú, homok, fa — néha színekre vagy zenére emlékeztetnek.",
+	"tellegen_10": "Néha úgy élem át a dolgokat, mintha azoknak két realitása lenne.",
+	"tellegen_11": "Ha zenét hallgatok, képes vagyok annyira belemerülni, hogy észre sem veszek mást.",
+	"tellegen_12": "Ha akarom, el tudom képzelni, hogy a testem olyan nehéz, hogy képtelen lennék mozdítani, haakarnám.",
+	"tellegen_13": "Néha képes vagyok valahogyan megérezni a másik ember jelenlétét, mielőtt valójában látnámvagy hallanám őt.",
+	"tellegen_14": "Az égő fáklya lángja és pattogása megindítja a képzeletemet.",
+	"tellegen_15": "Néha képes vagyok annyira belemerülni a természetbe vagy a művészetbe, hogy úgy érzem, mintha egy időre az egész tudatom megváltozna.",
+	"tellegen_16": "A különböző színeknek eltérő jelentése van a számomra.",
+	"tellegen_17": "Képes vagyok arra, hogy egy rutinfeladat végzése közben annyira elkalandozzak, ésgondolataimba merüljek, hogy elfeledkezzem arról, hogy végzem a feladatot és aztán néhány percmúlva veszem észre, hogy befejeztem.",
+	"tellegen_18": "Néha képes vagyok régi élményeimet olyan tisztán és élesen felidézni, hogy olyan érzésem van, mintha újra átélném.",
+	"tellegen_19": "Gyakran hatással vannak rám olyan dolgok, melyek másoknak jelentéktelenek.",
+	"tellegen_20": "Ha egy darabban játszanék, azt hiszem, valóban érezném a szereplő érzéseit és teljesenazonosulnék vele, megfeledkeznék magamról és a közönségről egyaránt.",
+	"tellegen_21": "Gondolataim néha nem szavak, hanem képek formájában jönnek.",
+	"tellegen_22": "Néha csodálattal nézek olyan apró dolgokat is, mint egy csillagformát a félbevágott almaközepén, vagy egy szappanbuborék vékony falát, színét.",
+	"tellegen_23": "Ha orgonazenét vagy más erőteljes zenét hallgatok, néha úgy érzem, mintha a levegőbeemelkednék.",
+	"tellegen_24": "Néha, ahogy hallgatom a zajokat, képes vagyok zenét találni bennük.",
+	"tellegen_25": "Néhány egészen élénk emlékemet illatok, szagok idézik fel.",
+	"tellegen_26": "Bizonyos zenerészletek képekre vagy mozgó színfoltokra emlékeztetnek.",
+	"tellegen_27": "Gyakran tudom, hogy mit fog valaki mondani, mielőtt megszólal.",
+	"tellegen_28": "Gyakran \"fizikai emlékeim\" vannak, pl. úszás után úgy érzem néha, mintha vízben lennék.",
+	"tellegen_29": "Az emberi hang olyan csodálatos tud lenni a számomra, hogy néha akármeddig elhallgatnám.",
+	"tellegen_30": "Néha valahogyan érzem a jelenlétét valakinek, aki fizikailag nincs ott.",
+	"tellegen_31": "Néha a legkisebb erőfeszítés nélkül is jönnek elő gondolatok, képek.",
+	"tellegen_32": "Úgy érzem, a különböző szagoknak különböző a színük.",
+	"tellegen_33": "A naplemente nagy hatással van rám.",
+
+
+
+
+	"panas_0": "érdeklődő",
+	"panas_1": "kiborult, magamon kívül vagyok",
+	"panas_2": "izgatott,feldobott",
+	"panas_3": "zaklatott,feldúlt",
+	"panas_4": "erős",
+	"panas_5": "bűntudatom van",
+	"panas_6": "rémült",
+	"panas_7": "ellenséges",
+	"panas_8": "lelkes",
+	"panas_9": "büszke",
+	"panas_10": "ingerlékeny",
+	"panas_11": "éber",
+	"panas_12": "megszégyenült",
+	"panas_13": "elhivatott",
+	"panas_14": "ideges",
+	"panas_15": "elszánt, határozott",
+	"panas_16": "figyelmes",
+	"panas_17": "feszült",
+	"panas_18": "aktív,élénk",
+	"panas_19": "félénk",
+
+
+
+
+	"osgood_0_left": "elégedetlen",
+	"osgood_0_right": "elégedett",
+	"osgood_1_left": "mélabús",
+	"osgood_1_right": "örvendő",
+	"osgood_2_left": "kétségbeesett",
+	"osgood_2_right": "bizakodó",
+	"osgood_3_left": "kipihent",
+	"osgood_3_right": "felvillanyozott",
+	"osgood_4_left": "pihentető",
+	"osgood_4_right": "stimuláló",
+	"osgood_5_left": "nyugodt",
+	"osgood_5_right": "feszült",
+	"osgood_6_left": "békés",
+	"osgood_6_right": "dühös",
+	"osgood_7_left": "nyugodt",
+	"osgood_7_right": "izgatott",
+	"osgood_8_left": "álmos",
+	"osgood_8_right": "éber",
+	"osgood_9_left": "eltörődött",
+	"osgood_9_right": "nyugtalan",
+	"osgood_10_left": "irányított",
+	"osgood_10_right": "irányító",
+	"osgood_11_left": "befolyásolt",
+	"osgood_11_right": "befolyásos",
+	"osgood_12_left": "védelembe vett",
+	"osgood_12_right": "hatalommal bíró",
+	"osgood_13_left": "tiszteletteljes",
+	"osgood_13_right": "megbecsült",
+	"osgood_14_left": "szubmisszív",
+	"osgood_14_right": "domináns",
+	"osgood_15_left": "irányított",
+	"osgood_15_right": "autonóm",
+	"osgood_16_left": "boldog",
+	"osgood_16_right": "boldogtalan",
+	"osgood_17_left": "bosszús",
+	"osgood_17_right": "elégedett",
+
+
+
+
+	"pleasantness_title": "Mennyire érzi kellemesnek az illatot?",
+	"impact_title": "Mit gondol mennyire lesz önre erős hatással az illat?",
+	"expectation_title": "Mit vár, milyen hatással lesz önre az illat",
+	"expectation_hint": "Elvárás",
+
+
+
+
+	"face_scale_title": "Kérem válassza ki azt az arc ábrát, ami a lehető legjobban reprezentálja a jelenlegi hangulatát.",
+	"effect_title": "Kérem írja le, hogyan hatott önre az illat az elmúlt 30 percben. Kérem írjon le mindent, ami eszébe jut, pl. érzésekeket, testérzeteket, bármilyen észlelt változást!",
+	"color_title": "Kérem válassza ki, hogy melyik szín jut eszébe az illatról, a megadottak közül melyikkel tudná asszociálni azt!",
+	"association_title": "Kérjük, foglalja össze, mi jut eszébe az illatról, amit érez!",
+
+
+
+
+	"unusual_use_brick_title": "Kérem, írjon le annyi felhasználási módot A TÉGLA HASZNÁLATÁRA, amennyit csak tud! Az összetartozó válaszelemeket kérem vesszővel válassza el!",
+	"unusual_use_toothbrush_title": "Kérem, írjon le annyi felhasználási módot A FOGKEFE HASZNÁLATÁRA, amennyit csak tud! Az összetartozó válaszelemeket kérem vesszővel válassza el!",
+	"unusual_use_hint": "Felhasználási módok",
+
+
+
+
+	"thank_you": "A kérdőív végéhez érkezett. Köszönjük a hozzájárulást a kutatásunkhoz.",
+	"response_hint": "Ha bármilyen meglátása van a kutatással kapcsolatban, kérjük ossza meg velünk!",
+	"submit": "Beadás"
+}

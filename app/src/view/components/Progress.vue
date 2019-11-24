@@ -1,3 +1,9 @@
+<template>
+	<svg xmlns="http://www.w3.org/2000/svg" :width="width" :height="height" :viewBox="`0 0 ${width} ${height}`">
+		<path :d="path" :stroke-width="stroke" stroke-linecap="round" stroke="currentColor" fill="none"></path>
+	</svg>
+</template>
+
 <script lang="ts">
 	import {Vue, Component} from "vue-property-decorator";
 
@@ -80,9 +86,3 @@
 		}
 	}
 </script>
-
-<template>
-	<svg xmlns="http://www.w3.org/2000/svg" :width="width" :height="height" :viewBox="`0 0 ${width} ${height}`">
-		<path :d="path" :stroke-width="stroke" stroke-linecap="round" stroke="currentColor" fill="none"></path>
-	</svg>
-</template>

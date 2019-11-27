@@ -33,6 +33,20 @@ body {
 		--home_settings_spacing: 24px;
 		--home_settings_height: 88px;
 
+	/* Dashboard */
+	--dashboard_padding: 56px;
+	--dashboard_spacing: 24px;
+	--dashboard_title_size: 36px;
+
+	--dashboard_session_width: 500px;
+	--dashboard_session_height: 56px;
+	--dashboard_session_padding: 16px;
+	--dashboard_session_spacing: 12px;
+
+	--dashboard_session_name_size: 24px;
+	--dashboard_session_icon_size: 24px;
+	--dashboard_session_button_padding: 8px;
+
 	/* SubTest */
 	--subtest_padding: 56px;
 	--subtest_spacing: 36px;

@@ -1,25 +1,38 @@
 <template>
 	<div class="dashboard_screen">
+		<p class="dashboard_title">{{viewModel.title}}</p>
+		<div
+				v-for="session in viewModel.sessionList"
+				:key="session.group + session.user"
+				class="card dashboard_session">
 
+			<p class="dashboard_session_group">{{session.group}}</p>
+			<p class="dashboard_session_user">{{session.user}}</p>
+
+			<div
+					class="dashboard_session_button selectable"
+					@click="viewModel.saveSession(session.group, session.user)">
+
+				<ImgSvg
+						class="dashboard_session_button_icon"
+						:src="require('res/drawable/ic_save_24px.svg')"/>
+
+			</div>
+
+		</div>
 	</div>
 </template>
 
 <script lang="ts">
-	import {Vue, Component, Watch} from "vue-property-decorator";
-
+	import {Vue, Component} from "vue-property-decorator";
 	import ImgSvg from "src/view/components/ImgSvg.vue";
 	import FloatingActionButton from "src/view/components/FloatingActionButton.vue";
-	import HomeCard from "src/view/home/HomeCard.vue";
-	import HomeModal from "src/view/home/HomeModal.vue";
-	import HomeSettings from "src/view/home/HomeSettings.vue";
-
-	import {HomeModel} from "src/viewmodel/home/HomeModel";
-	import {Event} from "src/viewmodel/ViewModel";
+	import {DashboardModel} from "src/viewmodel/dashboard/DashboardModel";
 
 	@Component({components: {ImgSvg, FloatingActionButton}})
 	export default class DashboardScreen extends Vue {
 
-		private viewModel = new HomeModel();
+		private viewModel = new DashboardModel();
 
 		destroyed() {
 			this.viewModel.dispose();
@@ -29,43 +42,59 @@
 </script>
 
 <style scoped>
-	.home_screen {
+	.dashboard_screen {
 		display: flex;
 		overflow: hidden auto;
 
 		flex-direction: column;
-		padding-bottom: var(--home_settings_height);
+		align-items: center;
+		padding: var(--dashboard_padding);
 
 		background: var(--color_surface);
 	}
 
-	.home_cards {
+	.dashboard_screen > *:not(:first-child) {
+		margin-top: var(--dashboard_spacing);
+	}
+
+	.dashboard_title {
+		font-size: var(--dashboard_title_size);
+	}
+
+	.dashboard_session {
 		display: flex;
+		max-width: 100%;
+		width: var(--dashboard_session_width);
+		height: var(--dashboard_session_height);
 
-		justify-content: center;
-		padding: var(--home_cards_padding);
+		padding-left: var(--dashboard_session_padding);
+		padding-right: var(--dashboard_session_padding);
+		align-items: center;
 	}
 
-	.home_cards > *:not(:first-child) {
-		margin-left: var(--home_cards_spacing);
+	.dashboard_session > *:not(:first-child) {
+		margin-left: var(--dashboard_session_spacing);
 	}
 
-	.home_card {
-		width: var(--home_card_width);
+	.dashboard_session_group {
+		color: var(--color_primary);
+		font-size: var(--dashboard_session_name_size);
 	}
 
-	.home_modal {
-		position: absolute;
-		top: 0;
-		bottom: 0;
-		left: 0;
-		right: 0;
+	.dashboard_session_user {
+		flex-grow: 1;
+		font-size: var(--dashboard_session_name_size);
 	}
 
-	.home_settings {
-		position: absolute;
-		bottom: 0;
-		left: 0;
-		right: 0;
+	.dashboard_session_button {
+		display: flex;
+		padding: var(--dashboard_session_button_padding);
+		border-radius: 100%;
+	}
+
+	.dashboard_session_button_icon {
+		width: var(--dashboard_session_icon_size);
+		height: var(--dashboard_session_icon_size);
+		fill: var(--color_primary);
 	}
 </style>

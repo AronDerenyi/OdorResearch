@@ -1,5 +1,5 @@
 <template>
-	<div class="iaps">
+	<div class="iaps dark">
 		<div class="iaps_image_holder">
 			<transition name="fade" mode="out-in">
 				<img class="iaps_image" :key="viewModel.imageSource" :src="viewModel.imageSource"/>
@@ -19,7 +19,7 @@
 			</div>
 			<div class="iaps_input" v-if="viewModel.showRating" key="rating">
 				<FloatingActionButton
-						class="light"
+						class="light iaps_rating_button"
 						:class="{
 							'negative': !viewModel.selected,
 							'positive': viewModel.selected
@@ -93,5 +93,9 @@
 
 	.iaps_selector {
 		width: var(--iaps_input_option_width);
+	}
+
+	.dark .iaps_rating_button {
+		background: var(--color_surface_variant);
 	}
 </style>

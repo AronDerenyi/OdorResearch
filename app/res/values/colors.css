@@ -18,6 +18,14 @@ body {
 	--color_primary: #03a9f4;
 }
 
+body .dark {
+	--color_on_primary: #181818;
+	--color_surface: #181818;
+	--color_surface_variant: #282828;
+	--color_on_surface: #aaa;
+	--color_on_surface_variant: #888;
+}
+
 body .positive {
 	--color_primary: var(--color_positive);
 }

@@ -39,6 +39,12 @@ export class IapsModel extends TimedViewModel {
 	get negative() { return this.strings["negative"] }
 	get ratingCount() { return IapsModel.RATING_COUNT }
 
+	get imageSources() {
+		const sources: string[] = [];
+		this.images.forEach((image) => sources.push(image.source));
+		return sources;
+	}
+
 	get imageSource() {
 		const image = this.images[this.index];
 		return image ? image.source : null;

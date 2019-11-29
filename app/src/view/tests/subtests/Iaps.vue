@@ -1,9 +1,11 @@
 <template>
 	<div class="iaps dark">
 		<div class="iaps_image_holder">
-			<transition name="fade" mode="out-in">
-				<img class="iaps_image" :key="viewModel.imageSource" :src="viewModel.imageSource"/>
-			</transition>
+			<img
+					class="iaps_image"
+					v-for="imageSource in viewModel.imageSources"
+					:class="{'iaps_image_hidden': !(viewModel.imageSource === imageSource)}"
+					:src="imageSource"/>
 		</div>
 
 		<transition name="float" mode="out-in">
@@ -73,8 +75,14 @@
 		height: 100%;
 
 		border-radius: 16px;
+		opacity: 1;
 
 		transform: translateX(-50%);
+		transition: opacity 0.4s;
+	}
+
+	.iaps_image.iaps_image_hidden {
+		opacity: 0;
 	}
 
 	.iaps_input {
